@@ -40,6 +40,7 @@
       pano
       appindicator
       vitals
+      quick-settings-audio-panel
     ]);
   home-manager.users.hexfae.dconf.settings."org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
     blur-my-shell.extensionUuid
@@ -48,6 +49,7 @@
     gsconnect.extensionUuid
     appindicator.extensionUuid
     vitals.extensionUuid
+    quick-settings-audio-panel.extensionUuid
   ];
   environment.gnome.excludePackages = with pkgs; [
     baobab

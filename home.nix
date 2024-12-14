@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "backup";
   home-manager.users.hexfae.programs.home-manager.enable = true;
   home-manager.users.hexfae.home.stateVersion = "24.05";
   home-manager.users.hexfae.home.sessionVariables.GDK_BACKEND = "wayland,x11,*";
@@ -11,13 +12,7 @@
   home-manager.users.hexfae.home.packages = with pkgs; [
     vesktop
     bacon
-    obs-studio
     gimp
-    dolphin-emu
-    lime3ds
-    prismlauncher
-    lutris
-    blender
     yt-dlp
     ffmpeg
     tlrc
@@ -25,10 +20,7 @@
     alejandra
     amberol
     obsidian
-    librewolf
-    bottles
     celluloid
-    distrobox
     kdenlive
   ];
 }

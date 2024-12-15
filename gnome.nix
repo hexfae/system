@@ -41,6 +41,7 @@
       appindicator
       vitals
       quick-settings-audio-panel
+      rounded-window-corners-reborn
     ]);
   home-manager.users.hexfae.dconf.settings."org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
     blur-my-shell.extensionUuid
@@ -50,6 +51,7 @@
     appindicator.extensionUuid
     vitals.extensionUuid
     quick-settings-audio-panel.extensionUuid
+    rounded-window-corners-reborn.extensionUuid
   ];
   environment.gnome.excludePackages = with pkgs; [
     baobab

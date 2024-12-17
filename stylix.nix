@@ -6,12 +6,12 @@
   theme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
   cursor.package = pkgs.posy-cursors;
   cursor.name = "Posy_Cursor_Black";
-  sansSerif.package = pkgs.recursive;
-  sansSerif.name = "Recursive Sans Casual";
-  serif.package = pkgs.recursive;
-  serif.name = "Recursive Sans Linear";
-  monospace.package = pkgs.nerd-fonts.recursive-mono;
-  monospace.name = "Recursive Mono Casual";
+  sansSerif.package = pkgs.roboto-flex;
+  sansSerif.name = "Roboto Flex";
+  serif.package = pkgs.roboto-slab;
+  serif.name = "Roboto Slab";
+  monospace.package = pkgs.maple-mono-NF;
+  monospace.name = "Maple Mono NF";
   emoji.package = pkgs.twitter-color-emoji;
   emoji.name = "Twitter Color Emoji";
 in {

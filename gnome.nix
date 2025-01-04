@@ -8,6 +8,7 @@
   services.xserver.excludePackages = [pkgs.xterm];
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.gnome.evolution-data-server.enable = lib.mkForce false;
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
   home-manager.users.hexfae.xdg.mime.enable = true;
@@ -42,6 +43,7 @@
       vitals
       quick-settings-audio-panel
       rounded-window-corners-reborn
+      media-controls
     ]);
   home-manager.users.hexfae.dconf.settings."org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
     blur-my-shell.extensionUuid
@@ -52,6 +54,7 @@
     vitals.extensionUuid
     quick-settings-audio-panel.extensionUuid
     rounded-window-corners-reborn.extensionUuid
+    media-controls.extensionUuid
   ];
   environment.gnome.excludePackages = with pkgs; [
     baobab

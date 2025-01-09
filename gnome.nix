@@ -44,6 +44,7 @@
       quick-settings-audio-panel
       rounded-window-corners-reborn
       media-controls
+      tiling-assistant
     ]);
   home-manager.users.hexfae.dconf.settings."org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
     blur-my-shell.extensionUuid
@@ -55,6 +56,7 @@
     quick-settings-audio-panel.extensionUuid
     rounded-window-corners-reborn.extensionUuid
     media-controls.extensionUuid
+    tiling-assistant.extensionUuid
   ];
   environment.gnome.excludePackages = with pkgs; [
     baobab

@@ -22,5 +22,6 @@
     obsidian
     celluloid
     kdenlive
+    distrobox
   ];
 }

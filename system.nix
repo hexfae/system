@@ -12,6 +12,8 @@
   services.auto-cpufreq.settings.charger.turbo = "auto";
   services.auto-cpufreq.settings.battery.governor = "powersave";
   services.auto-cpufreq.settings.battery.turbo = "auto";
+  virtualisation.podman.enable = true;
+  virtualisation.podman.dockerCompat = true;
   powerManagement.cpuFreqGovernor = "performance";
   programs.gamemode.enable = true;
   security.sudo.wheelNeedsPassword = false;

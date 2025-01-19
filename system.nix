@@ -25,9 +25,9 @@
   services.mullvad-vpn.enable = true;
   services.mullvad-vpn.package = pkgs.mullvad-vpn;
   services.mullvad-vpn.enableExcludeWrapper = false;
+  services.flatpak.enable = true;
   # programs.gnupg.agent.enable = true;
   # programs.gnupg.agent.enableSSHSupport = true;
-  # services.flatpak.enable = true;
   # virtualisation.podman.enable = true;
   # virtualisation.podman.dockerCompat = true;
 }

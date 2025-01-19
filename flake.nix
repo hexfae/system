@@ -39,5 +39,16 @@
         stylix.nixosModules.stylix
       ];
     };
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit self inputs;};
+      modules = [
+        ./laptop.nix
+        lix.nixosModules.default
+        chaotic.nixosModules.default
+        home-manager.nixosModules.default
+        jovian.nixosModules.default
+        stylix.nixosModules.stylix
+      ];
+    };
   };
 }

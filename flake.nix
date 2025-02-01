@@ -28,10 +28,10 @@
     wezterm,
     stylix,
   } @ inputs: {
-    nixosConfigurations.deck = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit self inputs;};
       modules = [
-        ./deck.nix
+        ./desktop.nix
         lix.nixosModules.default
         chaotic.nixosModules.default
         home-manager.nixosModules.default
@@ -43,6 +43,17 @@
       specialArgs = {inherit self inputs;};
       modules = [
         ./laptop.nix
+        lix.nixosModules.default
+        chaotic.nixosModules.default
+        home-manager.nixosModules.default
+        jovian.nixosModules.default
+        stylix.nixosModules.stylix
+      ];
+    };
+    nixosConfigurations.deck = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit self inputs;};
+      modules = [
+        ./deck.nix
         lix.nixosModules.default
         chaotic.nixosModules.default
         home-manager.nixosModules.default

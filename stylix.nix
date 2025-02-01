@@ -25,6 +25,7 @@ in {
   stylix.fonts.monospace = monospace;
   stylix.fonts.emoji = emoji;
   stylix.fonts.sizes.terminal = 16;
+  stylix.targets.plymouth.enable = false;
 
   home-manager.users.hexfae.gtk.enable = true;
   home-manager.users.hexfae.stylix.polarity = "dark";

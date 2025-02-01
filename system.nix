@@ -1,11 +1,12 @@
 {pkgs, ...}: {
-  # boot.kernelPackages = pkgs.linuxPackages_lqx;
   services.xserver.videoDrivers = ["amdgpu"];
   services.libinput.mouse.accelProfile = "flat";
   hardware.enableAllFirmware = true;
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
+  hardware.amdgpu.initrd.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.supportedFilesystems = ["bcachefs"];
   services.power-profiles-daemon.enable = false;
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings.charger.governor = "performance";
@@ -26,8 +27,4 @@
   services.mullvad-vpn.package = pkgs.mullvad-vpn;
   services.mullvad-vpn.enableExcludeWrapper = false;
   services.flatpak.enable = true;
-  # programs.gnupg.agent.enable = true;
-  # programs.gnupg.agent.enableSSHSupport = true;
-  # virtualisation.podman.enable = true;
-  # virtualisation.podman.dockerCompat = true;
 }

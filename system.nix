@@ -4,6 +4,8 @@
   hardware.enableAllFirmware = true;
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
+  hardware.cpu.amd.updateMicrocode = true;
+  hardware.enableRedistributableFirmware = true;
   hardware.amdgpu.initrd.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.supportedFilesystems = ["bcachefs"];

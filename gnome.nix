@@ -41,19 +41,30 @@
   home-manager.users.hexfae.xdg.mimeApps.enable = true;
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."image/jpeg" = "org.gnome.Loupe.desktop";
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."image/png" = "org.gnome.Loupe.desktop";
-  home-manager.users.hexfae.xdg.mimeApps.associations.added."x-scheme-handler/sms" = "org.gnome.Shell.Extensions.GSConnect.desktop";
-  home-manager.users.hexfae.xdg.mimeApps.associations.added."x-scheme-handler/tel" = "org.gnome.Shell.Extensions.GSConnect.desktop";
-  home-manager.users.hexfae.xdg.mimeApps.associations.added."image/jpeg" = "org.gnome.Loupe.desktop";
-  home-manager.users.hexfae.xdg.mimeApps.associations.added."image/png" = "org.gnome.Loupe.desktop";
-  home-manager.users.hexfae.dconf.settings."org/gnome/shell".disable-user-extensions = false;
-  home-manager.users.hexfae.dconf.settings."org/gnome/desktop/interface".clock-show-seconds = true;
-  home-manager.users.hexfae.dconf.settings."org/gnome/desktop/interface".show-battery-percentage = true;
-  home-manager.users.hexfae.dconf.settings."org/gnome/desktop/wm/preferences".button-layout = "close,minimize::";
-  home-manager.users.hexfae.dconf.settings."org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
-  home-manager.users.hexfae.dconf.settings."org/gnome/desktop/privacy".remember-recent-files = false;
-  home-manager.users.hexfae.dconf.settings."org/gnome/mutter".edge-tiling = true;
-  home-manager.users.hexfae.dconf.settings."org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
-  home-manager.users.hexfae.dconf.settings."org/gnome/mutter".dynamic-workspaces = true;
+  home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/sms" = "org.gnome.Shell.Extensions.GSConnect.desktop";
+  home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/tel" = "org.gnome.Shell.Extensions.GSConnect.desktop";
+  home-manager.users.hexfae.xdg.mimeApps.defaultApplications."TerminalEmulator" = "org.wezfurlong.wezterm.desktop";
+  home-manager.users.hexfae.dconf.settings = {
+    "org/gnome/shell".disable-user-extensions = false;
+    "org/gnome/shell".favorite-apps = [
+      "firefox.desktop"
+      "vesktop.desktop"
+      "org.gnome.Nautilus.desktop"
+      "org.wezfurlong.wezterm.desktop"
+      "com.mattjakeman.ExtensionManager.desktop"
+      "org.gnome.Settings.desktop"
+      "org.gnome.tweaks.desktop"
+      "org.prismlauncher.PrismLauncher.desktop"
+      "com.usebottles.bottles.desktop"
+    ];
+    "org/gnome/desktop/interface".clock-show-seconds = true;
+    "org/gnome/desktop/interface".show-battery-percentage = true;
+    "org/gnome/desktop/wm/preferences".button-layout = "close,minimize::";
+    "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
+    "org/gnome/desktop/privacy".remember-recent-files = false;
+    "org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
+    "org/gnome/mutter".dynamic-workspaces = true;
+  };
   home-manager.users.hexfae.home.packages =
     (with pkgs; [
       gnome-tweaks

@@ -4,6 +4,7 @@
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   inputs.lix.url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-2.tar.gz";
   inputs.lix.inputs.nixpkgs.follows = "nixpkgs";
+  inputs.zen-browser.url = "github:0xc000022070/zen-browser-flake";
   inputs.helix.url = "github:helix-editor/helix";
   inputs.chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   inputs.home-manager.url = "github:nix-community/home-manager";
@@ -20,6 +21,7 @@
     self,
     nixpkgs,
     lix,
+    zen-browser,
     helix,
     chaotic,
     home-manager,

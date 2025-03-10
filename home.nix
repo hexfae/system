@@ -15,6 +15,7 @@
   home-manager.users.hexfae.home.sessionVariables.MOZ_USE_XINPUT2 = "1";
   home-manager.users.hexfae.home.packages = with pkgs; [
     inputs.zen-browser.packages."${system}".twilight
+    jetbrains.idea-community-bin
     vesktop
     bacon
     gimp

@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   services.xserver.videoDrivers = ["amdgpu"];
   services.libinput.mouse.accelProfile = "flat";
+  programs.adb.enable = true;
+  users.users.hexfae.extraGroups = ["adbusers"];
   hardware.enableAllFirmware = true;
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
@@ -17,6 +19,24 @@
   services.auto-cpufreq.settings.battery.turbo = "auto";
   virtualisation.podman.enable = true;
   virtualisation.podman.dockerCompat = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+      ovmf = {
+        enable = true;
+        packages = [
+          (pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          })
+          .fd
+        ];
+      };
+    };
+  };
   powerManagement.cpuFreqGovernor = "performance";
   programs.gamemode.enable = true;
   security.sudo.wheelNeedsPassword = false;

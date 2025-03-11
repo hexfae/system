@@ -25,6 +25,7 @@ in {
   stylix.fonts.monospace = monospace;
   stylix.fonts.emoji = emoji;
   stylix.fonts.sizes.terminal = 16;
+  stylix.homeManagerIntegration.followSystem = true;
   stylix.targets.plymouth.enable = false;
 
   home-manager.users.hexfae.gtk.enable = true;
@@ -40,4 +41,5 @@ in {
   home-manager.users.hexfae.stylix.fonts.monospace = monospace;
   home-manager.users.hexfae.stylix.fonts.emoji = emoji;
   home-manager.users.hexfae.stylix.fonts.sizes.terminal = 16;
+  home-manager.users.hexfae.stylix.targets.qt.platform = "qtct";
 }

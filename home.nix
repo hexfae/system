@@ -4,7 +4,7 @@
   ...
 }: {
   home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
+  # home-manager.useGlobalPkgs = true;
   home-manager.backupFileExtension = "backup";
   home-manager.users.hexfae.programs.home-manager.enable = true;
   home-manager.users.hexfae.home.stateVersion = "24.05";
@@ -16,6 +16,8 @@
   home-manager.users.hexfae.home.packages = with pkgs; [
     inputs.zen-browser.packages."${system}".twilight
     jetbrains.idea-community-bin
+    kdePackages.kdenlive
+    imagemagick
     vesktop
     bacon
     gimp
@@ -27,7 +29,6 @@
     amberol
     obsidian
     celluloid
-    kdenlive
     distrobox
   ];
 }

@@ -8,6 +8,12 @@
     ../../stylix.nix
     ../../system.nix
     ../../user.nix
+    ../../hardware/amd.nix
+    ../../services/mullvad.nix
+    ../../services/auto-cpufreq.nix
+    ../../services/virtualization.nix
+    ../../programs/adb.nix
+    ../../programs/distrobox.nix
     ../../programs/git.nix
     ../../programs/helix.nix
     ../../programs/zellij.nix
@@ -16,13 +22,10 @@
     ../../programs/nushell.nix
     ../../programs/wezterm.nix
     ../../programs/starship.nix
+    ../../programs/steam.nix
   ];
 
   networking.hostName = "laptop";
-  # jovian.steam.enable = true;
-  programs.steam.enable = true;
-  programs.steam.extraCompatPackages = [pkgs.proton-ge-bin];
-  programs.steam.extest.enable = true;
   home-manager.users.hexfae.home.packages = with pkgs; [
     obs-studio
     dolphin-emu

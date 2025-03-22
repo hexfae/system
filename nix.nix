@@ -1,9 +1,9 @@
 {...}: {
   documentation.nixos.enable = false;
+  nixpkgs.config.allowUnfree = true;
   nix.gc.automatic = true;
   nix.gc.dates = "weekly";
   nix.gc.options = "--delete-older-than 1w";
-  nixpkgs.config.allowUnfree = true;
   nix.settings.auto-optimise-store = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.trusted-users = ["hexfae"];

@@ -5,14 +5,18 @@
 }: {
   services.xserver.enable = true;
   services.displayManager.autoLogin.user = "hexfae";
-  # gnome auto login workaround
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
+  services.libinput.mouse.accelProfile = "flat";
+  services.dbus.enable = true;
+  services.dbus.implementation = "broker";
+  services.flatpak.enable = true;
   services.xserver.excludePackages = [pkgs.xterm];
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.gnome.evolution-data-server.enable = lib.mkForce false;
   services.gnome.gnome-browser-connector.enable = true;
+  # gnome auto login workaround
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
   home-manager.users.hexfae.xdg.mime.enable = true;

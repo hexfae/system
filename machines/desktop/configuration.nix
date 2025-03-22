@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../boot.nix
     ../../gnome.nix
@@ -12,6 +8,14 @@
     ../../stylix.nix
     ../../system.nix
     ../../user.nix
+    ../../hardware/amd.nix
+    ../../hardware/b650-fix-suspend.nix
+    ../../services/mullvad.nix
+    ../../services/auto-cpufreq.nix
+    ../../services/virtualization.nix
+    ../../services/openrgb.nix
+    ../../programs/adb.nix
+    ../../programs/distrobox.nix
     ../../programs/git.nix
     ../../programs/helix.nix
     ../../programs/zellij.nix
@@ -20,23 +24,18 @@
     ../../programs/nushell.nix
     ../../programs/wezterm.nix
     ../../programs/starship.nix
+    ../../programs/steam.nix
   ];
 
   networking.hostName = "desktop";
-  # my motherboard has an issue where it immediately wakes up from suspend, this fixes it
-  services.udev.extraRules = lib.concatStringsSep ", " [
-    ''ACTION=="add"''
-
-    ''SUBSYSTEM=="pci"''
-    ''ATTR{vendor}=="0x1022"''
-    ''ATTR{device}=="0x15b6"''
-
-    ''ATTR{power/wakeup}="disabled"''
+  boot.kernelModules = [
+    "r8169" # ethernet
+    "mt7921e" # wifi
   ];
-  services.hardware.openrgb.enable = true;
-  programs.steam.enable = true;
-  programs.steam.extraCompatPackages = [pkgs.proton-ge-bin];
-  programs.steam.extest.enable = true;
+  boot.initrd.kernelModules = [
+    "r8169" #ethernet
+    "mt7921e" #wifi
+  ];
   home-manager.users.hexfae.home.packages = with pkgs; [
     ffmpegthumbnailer
     video-trimmer

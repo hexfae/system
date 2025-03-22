@@ -1,7 +1,8 @@
 {pkgs, ...}: {
+  users.mutableUsers = false;
   users.users.hexfae.isNormalUser = true;
   users.users.hexfae.password = "pass";
-  users.users.hexfae.extraGroups = ["wheel" "input" "libvirtd"];
+  users.users.hexfae.extraGroups = ["networkmanager" "wheel" "input" "libvirtd"];
   users.users.hexfae.shell = pkgs.nushell;
   home-manager.users.hexfae.home.username = "hexfae";
   home-manager.users.hexfae.home.homeDirectory = "/home/hexfae";

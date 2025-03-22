@@ -40,8 +40,19 @@
         lix.nixosModules.default
         chaotic.nixosModules.default
         home-manager.nixosModules.default
-        jovian.nixosModules.default
         stylix.nixosModules.stylix
+        {nixpkgs.overlays = [nur.overlays.default];}
+      ];
+    };
+    nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit self inputs;};
+      modules = [
+        ./machines/server
+        lix.nixosModules.default
+        chaotic.nixosModules.default
+        home-manager.nixosModules.default
+        stylix.nixosModules.stylix
+        disko.nixosModules.disko
         {nixpkgs.overlays = [nur.overlays.default];}
       ];
     };
@@ -52,7 +63,6 @@
         lix.nixosModules.default
         chaotic.nixosModules.default
         home-manager.nixosModules.default
-        jovian.nixosModules.default
         stylix.nixosModules.stylix
         {nixpkgs.overlays = [nur.overlays.default];}
       ];

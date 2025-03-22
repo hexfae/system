@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  imports = [../boot.nix ../gnome.nix ../home.nix ../i18n.nix ../nix.nix ../programs ../stylix.nix ../system.nix ../user.nix];
+  imports = [../../boot.nix ../../gnome.nix ../../home.nix ../../i18n.nix ../../nix.nix ../../programs ../../stylix.nix ../../system.nix ../../user.nix];
 
   networking.hostName = "desktop";
   # my motherboard has an issue where it immediately wakes up from suspend, this fixes it

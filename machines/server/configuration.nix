@@ -42,6 +42,7 @@
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "no";
   services.openssh.settings.PasswordAuthentication = false;
+  services.openssh.settings = {PrintLastLog = "no";};
 
   services.getty.autologinUser = null;
 

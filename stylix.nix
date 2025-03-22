@@ -28,18 +28,27 @@ in {
   stylix.homeManagerIntegration.followSystem = true;
   stylix.targets.plymouth.enable = false;
 
-  home-manager.users.hexfae.gtk.enable = true;
-  home-manager.users.hexfae.stylix.polarity = "dark";
-  home-manager.users.hexfae.gtk.iconTheme.package = pkgs.papirus-icon-theme;
-  home-manager.users.hexfae.gtk.iconTheme.name = "Papirus-Dark";
-  home-manager.users.hexfae.stylix.enable = true;
-  home-manager.users.hexfae.stylix.image = wallpaper;
-  home-manager.users.hexfae.stylix.base16Scheme = theme;
-  home-manager.users.hexfae.stylix.cursor = cursor;
-  home-manager.users.hexfae.stylix.fonts.sansSerif = sansSerif;
-  home-manager.users.hexfae.stylix.fonts.serif = serif;
-  home-manager.users.hexfae.stylix.fonts.monospace = monospace;
-  home-manager.users.hexfae.stylix.fonts.emoji = emoji;
-  home-manager.users.hexfae.stylix.fonts.sizes.terminal = 16;
-  home-manager.users.hexfae.stylix.targets.qt.platform = "qtct";
+  home-manager.users.hexfae = {
+    gtk.enable = true;
+    gtk.iconTheme.package = pkgs.papirus-icon-theme;
+    gtk.iconTheme.name = "Papirus-Dark";
+    stylix = {
+      polarity = "dark";
+      enable = true;
+      image = wallpaper;
+      base16Scheme = theme;
+      cursor = cursor;
+      targets = {
+        qt.platform = "qtct";
+        firefox.profileNames = ["hexfae"];
+      };
+      fonts = {
+        sansSerif = sansSerif;
+        serif = serif;
+        monospace = monospace;
+        emoji = emoji;
+        sizes.terminal = 16;
+      };
+    };
+  };
 }

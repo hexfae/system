@@ -7,6 +7,8 @@
   inputs.zen-browser.url = "github:0xc000022070/zen-browser-flake";
   inputs.helix.url = "github:helix-editor/helix";
   inputs.chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+  inputs.nur.url = "github:nix-community/NUR";
+  inputs.nur.inputs.nixpkgs.follows = "nixpkgs";
   inputs.home-manager.url = "github:nix-community/home-manager";
   inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
   inputs.jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
@@ -24,6 +26,7 @@
     zen-browser,
     helix,
     chaotic,
+    nur,
     home-manager,
     jovian,
     disko,
@@ -39,6 +42,7 @@
         home-manager.nixosModules.default
         jovian.nixosModules.default
         stylix.nixosModules.stylix
+        {nixpkgs.overlays = [nur.overlays.default];}
       ];
     };
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
@@ -50,6 +54,7 @@
         home-manager.nixosModules.default
         jovian.nixosModules.default
         stylix.nixosModules.stylix
+        {nixpkgs.overlays = [nur.overlays.default];}
       ];
     };
     nixosConfigurations.deck = nixpkgs.lib.nixosSystem {
@@ -61,6 +66,7 @@
         home-manager.nixosModules.default
         jovian.nixosModules.default
         stylix.nixosModules.stylix
+        {nixpkgs.overlays = [nur.overlays.default];}
       ];
     };
   };

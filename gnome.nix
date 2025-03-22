@@ -12,6 +12,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.gnome.evolution-data-server.enable = lib.mkForce false;
+  services.gnome.gnome-browser-connector.enable = true;
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
   home-manager.users.hexfae.xdg.mime.enable = true;
@@ -21,6 +22,11 @@
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/sms" = "org.gnome.Shell.Extensions.GSConnect.desktop";
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/tel" = "org.gnome.Shell.Extensions.GSConnect.desktop";
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."TerminalEmulator" = "org.wezfurlong.wezterm.desktop";
+  home-manager.users.hexfae.xdg.mimeApps.defaultApplications."text/html" = "firefox.desktop";
+  home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/http" = "firefox.desktop";
+  home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/https" = "firefox.desktop";
+  home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/about" = "firefox.desktop";
+  home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/unknown" = "firefox.desktop";
   home-manager.users.hexfae.dconf.settings = {
     "org/gnome/shell".disable-user-extensions = false;
     "org/gnome/shell".favorite-apps = [

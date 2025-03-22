@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  imports = [./hardware/deck-hardware-configuration.nix ../boot.nix ../gnome.nix ../home.nix ../i18n.nix ../nix.nix ../programs ../stylix.nix ../system.nix ../user.nix];
+  imports = [../boot.nix ../gnome.nix ../home.nix ../i18n.nix ../nix.nix ../programs ../stylix.nix ../system.nix ../user.nix];
 
   networking.hostName = "deck";
   # jovian.steam.enable = true;

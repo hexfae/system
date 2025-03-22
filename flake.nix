@@ -36,7 +36,7 @@
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit self inputs;};
       modules = [
-        ./machines/desktop.nix
+        ./machines/desktop
         lix.nixosModules.default
         chaotic.nixosModules.default
         home-manager.nixosModules.default
@@ -48,7 +48,7 @@
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit self inputs;};
       modules = [
-        ./machines/laptop.nix
+        ./machines/laptop
         lix.nixosModules.default
         chaotic.nixosModules.default
         home-manager.nixosModules.default
@@ -60,7 +60,7 @@
     nixosConfigurations.deck = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit self inputs;};
       modules = [
-        ./machines/deck.nix
+        ./machines/deck
         lix.nixosModules.default
         chaotic.nixosModules.default
         home-manager.nixosModules.default

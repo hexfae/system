@@ -225,15 +225,15 @@
         force = true;
         default = "4get";
         privateDefault = "4get";
-        order = ["4get" "Nix Packages" "Nix Options" "Nix Home Manager Options" "Github" "Rust Standard Library" "Rust Libraries" "Google"];
+        order = ["4get" "Nix Packages" "Nix Options" "Nix Home Manager Options" "Github" "Rust Standard Library" "Rust Libraries" "google" "Google Images"];
         engines = {
-          "Google".metaData.alias = "!g";
-          "Bing".metaData.hidden = true;
-          "DuckDuckGo".metaData.hidden = true;
-          "Wikipedia (en)".metaData.hidden = true;
+          google.metaData.alias = "!g";
+          bing.metaData.hidden = true;
+          ddg.metaData.hidden = true;
+          wikipedia.metaData.hidden = true;
           "4get" = {
             urls = [{template = "https://4get.thebunny.zone/web?s={searchTerms}";}];
-            iconUpdateURL = "https://4get.thebunny.zone/favicon.ico";
+            icon = "https://4get.thebunny.zone/favicon.ico";
           };
           "Nix Packages" = {
             urls = [{template = "https://search.nixos.org/packages?type=packages&channel=unstable&query={searchTerms}";}];
@@ -252,22 +252,28 @@
           };
           "Github" = {
             urls = [{template = "https://github.com/search?type=repositories&q={searchTerms}";}];
-            iconUpdateURL = "https://github.com/favicon.ico";
+            icon = "https://github.com/favicon.ico";
             definedAliases = ["!gh"];
           };
           "Rust Standard Library" = {
             urls = [{template = "https://doc.rust-lang.org/std/?search={searchTerms}";}];
-            iconUpdateURL = "https://rust-lang.org/static/images/favicon.ico";
+            icon = "https://rust-lang.org/static/images/favicon.ico";
             definedAliases = ["!std"];
           };
           "Rust Libraries" = {
             urls = [{template = "https://lib.rs/search?q={searchTerms}";}];
-            iconUpdateURL = "https://lib.rs/favicon.ico";
+            icon = "https://lib.rs/favicon.ico";
+            definedAliases = ["!lib"];
+          };
+          "Google Images" = {
+            urls = [{template = "https://google.com/search?udm=2&q={searchTerms}";}];
+            icon = "https://google.com/favicon.ico";
             definedAliases = ["!lib"];
           };
         };
       };
-      bookmarks = [
+      bookmarks.force = true;
+      bookmarks.settings = [
         {
           name = "Toolbar";
           toolbar = true;

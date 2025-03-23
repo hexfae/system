@@ -268,7 +268,7 @@
           "Google Images" = {
             urls = [{template = "https://google.com/search?udm=2&q={searchTerms}";}];
             icon = "https://google.com/favicon.ico";
-            definedAliases = ["!lib"];
+            definedAliases = ["!gi"];
           };
         };
       };

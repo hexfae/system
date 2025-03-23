@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   nixpkgs.overlays = [
     (final: prev: {
       windsurf = prev.windsurf.overrideAttrs (oldAttrs: {
@@ -10,9 +14,10 @@
       });
     })
   ];
-  home-manager.useUserPackages = true;
   # home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
   home-manager.backupFileExtension = "backup";
+  home-manager.sharedModules = [inputs.nixcord.homeManagerModules.nixcord];
   home-manager.users.hexfae.programs.home-manager.enable = true;
   home-manager.users.hexfae.home.stateVersion = "24.05";
   home-manager.users.hexfae.home.sessionVariables.GDK_BACKEND = "wayland,x11,*";

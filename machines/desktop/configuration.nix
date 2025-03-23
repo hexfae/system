@@ -13,9 +13,11 @@
     ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix
     ../../services/virtualization.nix
+    ../../services/binfmt.nix
     ../../services/openrgb.nix
     ../../programs/adb.nix
     ../../programs/distrobox.nix
+    # ../../programs/vesktop.nix
     ../../programs/git.nix
     ../../programs/helix.nix
     ../../programs/zellij.nix

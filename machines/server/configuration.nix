@@ -13,6 +13,7 @@
     ../../user.nix
     ../../services/ssh.nix
     ../../services/auto-cpufreq.nix
+    ../../services/binfmt.nix
     ../../programs/adb.nix
     ../../programs/git.nix
     ../../programs/helix.nix

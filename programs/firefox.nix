@@ -225,7 +225,7 @@
         force = true;
         default = "4get";
         privateDefault = "4get";
-        order = ["4get" "Nix Packages" "Nix Options" "Google"];
+        order = ["4get" "Nix Packages" "Nix Options" "Nix Home Manager Options" "Github" "Rust Standard Library" "Rust Libraries" "Google"];
         engines = {
           "Google".metaData.alias = "!g";
           "Bing".metaData.hidden = true;
@@ -236,69 +236,34 @@
             iconUpdateURL = "https://4get.thebunny.zone/favicon.ico";
           };
           "Nix Packages" = {
-            urls = [
-              {
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "channel";
-                    value = "unstable";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
+            urls = [{template = "https://search.nixos.org/packages?type=packages&channel=unstable&query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["!np"];
           };
           "Nix Options" = {
-            urls = [
-              {
-                template = "https://search.nixos.org/options";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "channel";
-                    value = "unstable";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
+            urls = [{template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["!no"];
           };
           "Nix Home Manager Options" = {
-            urls = [
-              {
-                template = "https://home-manager-options.extranix.com/";
-                params = [
-                  {
-                    name = "release";
-                    value = "master";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
+            urls = [{template = "https://home-manager-options.extranix.com/?release=master&query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["!ho"];
+          };
+          "Github" = {
+            urls = [{template = "https://github.com/search?type=repositories&q={searchTerms}";}];
+            iconUpdateURL = "https://github.com/favicon.ico";
+            definedAliases = ["!gh"];
+          };
+          "Rust Standard Library" = {
+            urls = [{template = "https://doc.rust-lang.org/std/?search={searchTerms}";}];
+            iconUpdateURL = "https://rust-lang.org/static/images/favicon.ico";
+            definedAliases = ["!std"];
+          };
+          "Rust Libraries" = {
+            urls = [{template = "https://lib.rs/search?q={searchTerms}";}];
+            iconUpdateURL = "https://lib.rs/favicon.ico";
+            definedAliases = ["!lib"];
           };
         };
       };

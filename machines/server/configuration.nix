@@ -20,6 +20,7 @@
     ../../programs/zellij.nix
     ../../programs/zoxide.nix
     ../../programs/nushell.nix
+    ../../programs/nh.nix
     ../../programs/starship.nix
   ];
 

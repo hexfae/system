@@ -28,6 +28,7 @@
   home-manager.users.hexfae.home.packages = with pkgs; [
     jetbrains.idea-community-bin
     kdePackages.kdenlive
+    windsurf
     imagemagick
     vesktop
     bacon

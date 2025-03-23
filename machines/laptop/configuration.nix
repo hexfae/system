@@ -22,6 +22,7 @@
     ../../programs/zoxide.nix
     ../../programs/firefox.nix
     ../../programs/nushell.nix
+    ../../programs/nh.nix
     ../../programs/wezterm.nix
     ../../programs/starship.nix
     ../../programs/steam.nix

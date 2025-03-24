@@ -4,6 +4,7 @@
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   inputs.lix.url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-2.tar.gz";
   inputs.lix.inputs.nixpkgs.follows = "nixpkgs";
+  inputs.agenix.url = "github:yaxitech/ragenix";
   inputs.helix.url = "github:helix-editor/helix";
   inputs.nixcord.url = "github:kaylorben/nixcord";
   inputs.chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
@@ -23,6 +24,7 @@
     self,
     nixpkgs,
     lix,
+    agenix,
     helix,
     nixcord,
     chaotic,
@@ -41,6 +43,7 @@
         chaotic.nixosModules.default
         home-manager.nixosModules.default
         stylix.nixosModules.stylix
+        agenix.nixosModules.default
         {nixpkgs.overlays = [nur.overlays.default];}
       ];
     };
@@ -52,6 +55,7 @@
         chaotic.nixosModules.default
         home-manager.nixosModules.default
         stylix.nixosModules.stylix
+        agenix.nixosModules.default
         disko.nixosModules.disko
         {nixpkgs.overlays = [nur.overlays.default];}
       ];
@@ -64,6 +68,7 @@
         chaotic.nixosModules.default
         home-manager.nixosModules.default
         stylix.nixosModules.stylix
+        agenix.nixosModules.default
         {nixpkgs.overlays = [nur.overlays.default];}
       ];
     };
@@ -76,6 +81,7 @@
         home-manager.nixosModules.default
         jovian.nixosModules.default
         stylix.nixosModules.stylix
+        agenix.nixosModules.default
         {nixpkgs.overlays = [nur.overlays.default];}
       ];
     };

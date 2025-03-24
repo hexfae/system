@@ -2,7 +2,6 @@
   imports = [
     ../../boot.nix
     ../../gnome.nix
-    ../../home.nix
     ../../i18n.nix
     ../../nix.nix
     ../../stylix.nix

@@ -2,8 +2,13 @@
   users.mutableUsers = false;
   users.users.hexfae.isNormalUser = true;
   users.users.hexfae.password = "pass";
-  users.users.hexfae.extraGroups = ["networkmanager" "wheel" "input" "libvirtd"];
+  users.users.hexfae.extraGroups = ["networkmanager" "wheel" "input" "libvirtd" "transmission"];
   users.users.hexfae.shell = pkgs.nushell;
+  # home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.backupFileExtension = "backup";
+  home-manager.users.hexfae.programs.home-manager.enable = true;
+  home-manager.users.hexfae.home.stateVersion = "24.05";
   home-manager.users.hexfae.home.username = "hexfae";
   home-manager.users.hexfae.home.homeDirectory = "/home/hexfae";
   home-manager.users.hexfae.xdg.userDirs.enable = true;

@@ -2,12 +2,13 @@
   imports = [
     ../../boot.nix
     ../../gnome.nix
-    ../../home.nix
     ../../i18n.nix
     ../../nix.nix
     ../../stylix.nix
     ../../system.nix
     ../../user.nix
+    ../../packages/cli.nix
+    ../../packages/gui.nix
     ../../hardware/amd.nix
     ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix

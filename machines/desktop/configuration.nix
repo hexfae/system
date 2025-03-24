@@ -8,6 +8,8 @@
     ../../stylix.nix
     ../../system.nix
     ../../user.nix
+    ../../packages/cli.nix
+    ../../packages/gui.nix
     ../../hardware/amd.nix
     ../../hardware/b650-fix-suspend.nix
     ../../services/mullvad.nix

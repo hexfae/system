@@ -8,6 +8,8 @@
     ../../stylix.nix
     ../../system.nix
     ../../user.nix
+    ../../packages/cli.nix
+    ../../packages/gui.nix
     ../../hardware/amd.nix
     ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix

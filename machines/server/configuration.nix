@@ -5,15 +5,17 @@
 }: {
   imports = [
     ../../boot.nix
-    ../../home.nix
     ../../i18n.nix
     ../../nix.nix
     ../../stylix.nix
     ../../system.nix
     ../../user.nix
+    ../../packages/cli.nix
     ../../services/ssh.nix
     ../../services/auto-cpufreq.nix
-    ../../services/binfmt.nix
+    # building qemu on aarch64 failed for me
+    # ../../services/binfmt.nix
+    ../../services/transmission.nix
     ../../programs/adb.nix
     ../../programs/git.nix
     ../../programs/helix.nix

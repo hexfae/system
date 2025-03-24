@@ -12,6 +12,7 @@
     ../../packages/gui.nix
     ../../hardware/amd.nix
     ../../hardware/b650-fix-suspend.nix
+    ../../services/ssh.nix
     ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix
     ../../services/virtualization.nix

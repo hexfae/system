@@ -10,13 +10,14 @@
     ../../packages/cli.nix
     ../../packages/gui.nix
     ../../hardware/amd.nix
+    ../../services/ssh.nix
     ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix
     ../../services/virtualization.nix
     ../../services/binfmt.nix
     ../../programs/adb.nix
     ../../programs/distrobox.nix
-    ../../programs/vesktop.nix
+    # ../../programs/vesktop.nix
     ../../programs/git.nix
     ../../programs/helix.nix
     ../../programs/zellij.nix
@@ -33,7 +34,8 @@
   home-manager.users.hexfae.home.packages = with pkgs; [
     obs-studio
     dolphin-emu
-    lime3ds
+    # fails to build
+    # lime3ds
     prismlauncher
     lutris
     blender

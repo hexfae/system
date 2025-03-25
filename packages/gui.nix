@@ -19,15 +19,8 @@
     jetbrains.idea-community-bin
     kdePackages.kdenlive
     windsurf
-    imagemagick
     vesktop
-    bacon
     gimp
-    yt-dlp
-    ffmpeg
-    tlrc
-    nil
-    alejandra
     amberol
     obsidian
     celluloid

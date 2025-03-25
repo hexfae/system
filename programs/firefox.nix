@@ -11,6 +11,25 @@
       ];
     };
     profiles.hexfae = {
+      extensions = {
+        force = true;
+        packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          ublock-origin
+          proton-pass
+          userchrome-toggle-extended
+          sidebery
+          gnome-shell-integration
+          sponsorblock
+          return-youtube-dislikes
+          videospeed
+          enhanced-github
+        ];
+        settings = {
+          # "userchrome-toggle-extended@n2ezr.ru" = {};
+          # "{3c078156-979c-498b-8990-85f7987dd929}" = {};
+          # "uBlock0@raymondhill.net" = {};
+        };
+      };
       settings = {
         "extensions.autoDisableScopes" = 0;
         "app.normandy.first_run" = false;
@@ -204,22 +223,6 @@
         "general.smoothScroll.currentVelocityWeighting" = "1";
         "general.smoothScroll.stopDecelerationWeighting" = "1";
         "mousewheel.default.delta_multiplier_y" = 300;
-      };
-      extensions = {
-        force = true;
-        packages = with pkgs.nur.repos.rycee.firefox-addons; [
-          ublock-origin
-          proton-pass
-          userchrome-toggle-extended
-          sidebery
-          gnome-shell-integration
-          sponsorblock
-        ];
-        settings = {
-          # "userchrome-toggle-extended@n2ezr.ru" = {};
-          # "{3c078156-979c-498b-8990-85f7987dd929}" = {};
-          # "uBlock0@raymondhill.net" = {};
-        };
       };
       search = {
         force = true;

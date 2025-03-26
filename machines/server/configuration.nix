@@ -16,6 +16,7 @@
     # building qemu on aarch64 failed for me
     # ../../services/binfmt.nix
     ../../services/transmission.nix
+    ../../services/discordtavern.nix
     ../../programs/adb.nix
     ../../programs/git.nix
     ../../programs/helix.nix

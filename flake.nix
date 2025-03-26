@@ -16,6 +16,7 @@
   inputs.jovian.follows = "chaotic/jovian";
   inputs.disko.url = "github:nix-community/disko";
   inputs.disko.inputs.nixpkgs.follows = "nixpkgs";
+  inputs.discordtavern.url = "github:hexfae/discordtavern";
   inputs.wezterm.url = "github:wez/wezterm/main?dir=nix";
   inputs.wezterm.inputs.nixpkgs.follows = "nixpkgs";
   inputs.stylix.url = "github:danth/stylix";
@@ -32,6 +33,7 @@
     home-manager,
     jovian,
     disko,
+    discordtavern,
     wezterm,
     stylix,
   } @ inputs: {
@@ -57,6 +59,7 @@
         stylix.nixosModules.stylix
         agenix.nixosModules.default
         disko.nixosModules.disko
+        discordtavern.nixosModules.default
         {nixpkgs.overlays = [nur.overlays.default];}
       ];
     };

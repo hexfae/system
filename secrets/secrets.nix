@@ -13,4 +13,5 @@ let
 in {
   "transmission.age".publicKeys = all;
   "github.age".publicKeys = all;
+  "discordtavern.age".publicKeys = all;
 }

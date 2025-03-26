@@ -30,6 +30,62 @@
           # "uBlock0@raymondhill.net" = {};
         };
       };
+      search = {
+        force = true;
+        default = "4get";
+        privateDefault = "4get";
+        order = ["4get" "Nix Packages" "Nix Options" "Nix Home Manager Options" "Github" "Rust Standard Library" "Rust Libraries" "google" "Google Images"];
+        engines = {
+          google.metaData.alias = "!g";
+          bing.metaData.hidden = true;
+          ddg.metaData.hidden = true;
+          wikipedia.metaData.hidden = true;
+          "4get" = {
+            urls = [{template = "https://4get.thebunny.zone/web?s={searchTerms}";}];
+            icon = "https://4get.thebunny.zone/favicon.ico";
+          };
+          "Nix Packages" = {
+            urls = [{template = "https://search.nixos.org/packages?type=packages&channel=unstable&query={searchTerms}";}];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["!np"];
+          };
+          "Nix Options" = {
+            urls = [{template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";}];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["!no"];
+          };
+          "Nix Home Manager Options" = {
+            urls = [{template = "https://home-manager-options.extranix.com/?release=master&query={searchTerms}";}];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["!ho"];
+          };
+          "Github" = {
+            urls = [{template = "https://github.com/search?type=repositories&q={searchTerms}";}];
+            icon = "https://github.com/favicon.ico";
+            definedAliases = ["!gh"];
+          };
+          "Rust Standard Library" = {
+            urls = [{template = "https://doc.rust-lang.org/std/?search={searchTerms}";}];
+            icon = "https://rust-lang.org/static/images/favicon.ico";
+            definedAliases = ["!std"];
+          };
+          "Rust Libraries" = {
+            urls = [{template = "https://lib.rs/search?q={searchTerms}";}];
+            icon = "https://lib.rs/favicon.ico";
+            definedAliases = ["!lib"];
+          };
+          "Google Images" = {
+            urls = [{template = "https://google.com/search?udm=2&q={searchTerms}";}];
+            icon = "https://google.com/favicon.ico";
+            definedAliases = ["!gi"];
+          };
+          "Youtube" = {
+            urls = [{template = "https://www.youtube.com/results?search_query={searchTerms}";}];
+            icon = "https://youtube.com/favicon.ico";
+            definedAliases = ["!yt"];
+          };
+        };
+      };
       settings = {
         "extensions.autoDisableScopes" = 0;
         "app.normandy.first_run" = false;
@@ -223,57 +279,6 @@
         "general.smoothScroll.currentVelocityWeighting" = "1";
         "general.smoothScroll.stopDecelerationWeighting" = "1";
         "mousewheel.default.delta_multiplier_y" = 300;
-      };
-      search = {
-        force = true;
-        default = "4get";
-        privateDefault = "4get";
-        order = ["4get" "Nix Packages" "Nix Options" "Nix Home Manager Options" "Github" "Rust Standard Library" "Rust Libraries" "google" "Google Images"];
-        engines = {
-          google.metaData.alias = "!g";
-          bing.metaData.hidden = true;
-          ddg.metaData.hidden = true;
-          wikipedia.metaData.hidden = true;
-          "4get" = {
-            urls = [{template = "https://4get.thebunny.zone/web?s={searchTerms}";}];
-            icon = "https://4get.thebunny.zone/favicon.ico";
-          };
-          "Nix Packages" = {
-            urls = [{template = "https://search.nixos.org/packages?type=packages&channel=unstable&query={searchTerms}";}];
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["!np"];
-          };
-          "Nix Options" = {
-            urls = [{template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";}];
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["!no"];
-          };
-          "Nix Home Manager Options" = {
-            urls = [{template = "https://home-manager-options.extranix.com/?release=master&query={searchTerms}";}];
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["!ho"];
-          };
-          "Github" = {
-            urls = [{template = "https://github.com/search?type=repositories&q={searchTerms}";}];
-            icon = "https://github.com/favicon.ico";
-            definedAliases = ["!gh"];
-          };
-          "Rust Standard Library" = {
-            urls = [{template = "https://doc.rust-lang.org/std/?search={searchTerms}";}];
-            icon = "https://rust-lang.org/static/images/favicon.ico";
-            definedAliases = ["!std"];
-          };
-          "Rust Libraries" = {
-            urls = [{template = "https://lib.rs/search?q={searchTerms}";}];
-            icon = "https://lib.rs/favicon.ico";
-            definedAliases = ["!lib"];
-          };
-          "Google Images" = {
-            urls = [{template = "https://google.com/search?udm=2&q={searchTerms}";}];
-            icon = "https://google.com/favicon.ico";
-            definedAliases = ["!gi"];
-          };
-        };
       };
       bookmarks.force = true;
       bookmarks.settings = [

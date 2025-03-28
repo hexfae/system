@@ -182,14 +182,17 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1742962924,
-        "narHash": "sha256-U2VNv1IOYKmUfh7tM8Z3ltmrZrguj2o+eiscnnimQTE=",
-        "path": "/home/hexfae/dox/rust/discordtavern",
-        "type": "path"
+        "lastModified": 1742965048,
+        "narHash": "sha256-uwYbPz0hyeoi0jg7K9ItTnglPBetAJe+u9rx/4OHZUY=",
+        "owner": "hexfae",
+        "repo": "discordtavern",
+        "rev": "77a472e455215d8923aa67668d85b36cb1d495fd",
+        "type": "github"
       },
       "original": {
-        "path": "/home/hexfae/dox/rust/discordtavern",
-        "type": "path"
+        "owner": "hexfae",
+        "repo": "discordtavern",
+        "type": "github"
       }
     },
     "disko": {

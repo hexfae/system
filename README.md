@@ -2,10 +2,10 @@
 
 ## machines
 
-- desktop: custom desktop pc
-- server: oracle cloud arm vps
-- laptop: dell precision 3540
-- deck: steam deck
+- [desktop](https://github.com/hexfae/system/blob/main/machines/desktop/configuration.nix): custom desktop pc
+- [server](https://github.com/hexfae/system/blob/main/machines/server/configuration.nix): oracle cloud arm vps
+- [laptop](https://github.com/hexfae/system/blob/main/machines/laptop/configuration.nix): dell precision 3540
+- [deck](https://github.com/hexfae/system/blob/main/machines/deck/configuration.nix): steam deck
 
 ## noteworthy
 
@@ -13,9 +13,11 @@
   includes a fix for a sleep bug in my desktop's motherboard (asus tuf gaming b650-e wifi) where it
   immediately wakes up when going to sleep
 - [programs/firefox.nix](https://github.com/hexfae/system/blob/main/programs/firefox.nix) is a pretty detailed
-  firefox home manager configuration, that sets profile-sync-daemon, gnome browser connector, a few extensions (and
-  in the future should also configure them), configures search engines like !np (nix packages on nixos.org) or !lib
-  (rust libraries on [lib.rs](https://lib.rs)), sets a bunch of `about:config` preferences, and 2 toolbar bookmarks
+  firefox home manager configuration, that sets profile-sync-daemon, gnome browser connector, a few extensions
+  (and in the future should also configure them), configures search engines like !np/!no/!ho (nix
+  packages/options on [search.nixos.org](https://search.nixos.org/)/home manager options on
+  [home-manager-options.extranix.com](https://home-manager-options.extranix.com/)) or !lib (rust libraries
+  on [lib.rs](https://lib.rs)), sets a bunch of `about:config` preferences, and 2 toolbar bookmarks
 - [programs/helix.nix](https://github.com/hexfae/system/blob/main/programs/helix.nix) configures helix to be a pretty
   decent rust/nix ide
 - [programs/nushell.nix](https://github.com/hexfae/system/blob/main/programs/nushell.nix) configures some nix-related

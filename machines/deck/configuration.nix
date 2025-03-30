@@ -9,11 +9,9 @@
     ../../user.nix
     ../../packages/cli.nix
     ../../packages/gui.nix
-    ../../hardware/amd.nix
     ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix
     ../../services/virtualization.nix
-    ../../services/binfmt.nix
     ../../programs/adb.nix
     ../../programs/distrobox.nix
     # ../../programs/vesktop.nix
@@ -25,6 +23,9 @@
     ../../programs/nushell.nix
     ../../programs/nh.nix
     ../../programs/wezterm.nix
+    ../../programs/ghostty.nix
+    ../../programs/bat.nix
+    ../../programs/ripgrep.nix
     ../../programs/starship.nix
     ../../programs/steam.nix
   ];
@@ -44,17 +45,7 @@
   jovian.steamos.enableSysctlConfig = true;
   # jupiter-fan-control service produces error when switching
   jovian.devices.steamdeck.enableOsFanControl = false;
-  home-manager.users.hexfae.home.packages = with pkgs; [
-    obs-studio
-    dolphin-emu
-    lime3ds
-    prismlauncher
-    lutris
-    blender
-    librewolf
-    bottles
-    adwsteamgtk
-  ];
+  home-manager.users.hexfae.home.packages = [pkgs.lime3ds];
 
   system.stateVersion = "24.05";
 }

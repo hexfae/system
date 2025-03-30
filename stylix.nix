@@ -12,8 +12,8 @@
   sansSerif.name = "Roboto Flex";
   serif.package = pkgs.roboto-slab;
   serif.name = "Roboto Slab";
-  monospace.package = pkgs.maple-mono-NF;
-  monospace.name = "Maple Mono NF";
+  monospace.package = pkgs.maple-mono.NF-CN;
+  monospace.name = "Maple Mono NF CN";
   emoji.package = pkgs.twitter-color-emoji;
   emoji.name = "Twitter Color Emoji";
   fonts.sansSerif = sansSerif;

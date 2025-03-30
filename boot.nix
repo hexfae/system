@@ -1,5 +1,7 @@
 {...}: {
   systemd.network.wait-online.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false;
+  services.journald.extraConfig = "SystemMaxUse=10M";
   boot.plymouth.enable = true;
   boot.tmp.cleanOnBoot = true;
   boot.initrd.compressor = "cat";
@@ -10,7 +12,6 @@
   boot.loader.systemd-boot.configurationLimit = 10;
   boot.loader.timeout = 0;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.blacklistedKernelModules = ["k10temp"];
   boot.consoleLogLevel = 3;
   boot.kernelParams = [
     "quiet"

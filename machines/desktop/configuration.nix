@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ../../boot.nix
     ../../gnome.nix
@@ -9,13 +9,11 @@
     ../../user.nix
     ../../packages/cli.nix
     ../../packages/gui.nix
-    ../../hardware/amd.nix
-    ../../hardware/b650-fix-suspend.nix
+    # ../../hardware/b650-fix-suspend.nix
     ../../services/ssh.nix
     ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix
     ../../services/virtualization.nix
-    ../../services/binfmt.nix
     ../../services/openrgb.nix
     ../../programs/adb.nix
     ../../programs/distrobox.nix
@@ -28,32 +26,22 @@
     ../../programs/nushell.nix
     ../../programs/nh.nix
     ../../programs/wezterm.nix
+    ../../programs/ghostty.nix
+    ../../programs/bat.nix
+    ../../programs/ripgrep.nix
     ../../programs/starship.nix
     ../../programs/steam.nix
   ];
 
   networking.hostName = "desktop";
-  boot.kernelModules = [
-    "r8169" # ethernet
-    "mt7921e" # wifi
-  ];
+
   boot.initrd.kernelModules = [
     "r8169" #ethernet
     "mt7921e" #wifi
   ];
-  home-manager.users.hexfae.home.packages = with pkgs; [
-    ffmpegthumbnailer
-    video-trimmer
-    obs-studio
-    dolphin-emu
-    # fails to build
-    # lime3ds
-    prismlauncher
-    lutris
-    blender
-    librewolf
-    bottles
-    adwsteamgtk
+  boot.kernelModules = [
+    "r8169" # ethernet
+    "mt7921e" # wifi
   ];
 
   system.stateVersion = "24.11";

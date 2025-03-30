@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ../../boot.nix
     ../../gnome.nix
@@ -9,12 +9,10 @@
     ../../user.nix
     ../../packages/cli.nix
     ../../packages/gui.nix
-    ../../hardware/amd.nix
     ../../services/ssh.nix
     ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix
     ../../services/virtualization.nix
-    ../../services/binfmt.nix
     ../../programs/adb.nix
     ../../programs/distrobox.nix
     # ../../programs/vesktop.nix
@@ -26,23 +24,14 @@
     ../../programs/nushell.nix
     ../../programs/nh.nix
     ../../programs/wezterm.nix
+    ../../programs/ghostty.nix
+    ../../programs/bat.nix
+    ../../programs/ripgrep.nix
     ../../programs/starship.nix
     ../../programs/steam.nix
   ];
 
   networking.hostName = "laptop";
-  home-manager.users.hexfae.home.packages = with pkgs; [
-    obs-studio
-    dolphin-emu
-    # fails to build
-    # lime3ds
-    prismlauncher
-    lutris
-    blender
-    librewolf
-    bottles
-    adwsteamgtk
-  ];
 
   system.stateVersion = "24.05";
 }

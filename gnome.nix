@@ -17,6 +17,8 @@
   # gnome auto login workaround
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
+  programs.nautilus-open-any-terminal.enable = true;
+  programs.nautilus-open-any-terminal.terminal = "ghostty";
   programs.kdeconnect.enable = true;
   programs.kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
   home-manager.users.hexfae.xdg.mime.enable = true;
@@ -37,7 +39,7 @@
       "firefox.desktop"
       "vesktop.desktop"
       "org.gnome.Nautilus.desktop"
-      "org.wezfurlong.wezterm.desktop"
+      "com.mitchellh.ghostty.desktop"
       "com.mattjakeman.ExtensionManager.desktop"
       "org.gnome.Settings.desktop"
       "org.gnome.tweaks.desktop"

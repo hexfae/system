@@ -10,6 +10,7 @@
   inputs.chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   inputs.nur.url = "github:nix-community/NUR";
   inputs.nur.inputs.nixpkgs.follows = "nixpkgs";
+  inputs.nixos-hardware.url = "github:nixos/nixos-hardware";
   inputs.home-manager.url = "github:nix-community/home-manager";
   inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
   inputs.jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
@@ -30,6 +31,7 @@
     nixcord,
     chaotic,
     nur,
+    nixos-hardware,
     home-manager,
     jovian,
     disko,
@@ -39,15 +41,21 @@
   } @ inputs: {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit self inputs;};
-      modules = [
-        ./machines/desktop
-        lix.nixosModules.default
-        chaotic.nixosModules.default
-        home-manager.nixosModules.default
-        stylix.nixosModules.stylix
-        agenix.nixosModules.default
-        {nixpkgs.overlays = [nur.overlays.default];}
-      ];
+      modules =
+        [
+          ./machines/desktop
+          lix.nixosModules.default
+          chaotic.nixosModules.default
+          home-manager.nixosModules.default
+          stylix.nixosModules.stylix
+          agenix.nixosModules.default
+          {nixpkgs.overlays = [nur.overlays.default];}
+        ]
+        ++ (with nixos-hardware.nixosModules; [
+          common-cpu-amd-pstate
+          common-cpu-amd-zenpower
+          gigabyte-b650
+        ]);
     };
     nixosConfigurations.server = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit self inputs;};

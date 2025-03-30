@@ -13,8 +13,6 @@
     ../../packages/cli.nix
     ../../services/ssh.nix
     ../../services/auto-cpufreq.nix
-    # building qemu on aarch64 failed for me
-    # ../../services/binfmt.nix
     ../../services/transmission.nix
     ../../services/discordtavern.nix
     ../../programs/adb.nix
@@ -24,6 +22,8 @@
     ../../programs/zoxide.nix
     ../../programs/nushell.nix
     ../../programs/nh.nix
+    ../../programs/bat.nix
+    ../../programs/ripgrep.nix
     ../../programs/starship.nix
   ];
 
@@ -32,12 +32,9 @@
   documentation.enable = false;
 
   hardware.graphics.enable32Bit = lib.mkForce false;
+  # building linux_zen failed for me
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
   home-manager.users.hexfae.xdg.userDirs.createDirectories = lib.mkForce false;
-
-  environment.systemPackages = with pkgs; [
-    wget
-  ];
 
   system.stateVersion = "24.11";
 }

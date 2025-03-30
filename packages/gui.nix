@@ -24,5 +24,16 @@
     amberol
     obsidian
     celluloid
+    video-trimmer
+    obs-studio
+    dolphin-emu
+    # fails to build
+    # lime3ds
+    prismlauncher
+    lutris
+    blender-hip
+    librewolf
+    bottles
+    adwsteamgtk
   ];
 }

@@ -34,7 +34,7 @@
         force = true;
         default = "4get";
         privateDefault = "4get";
-        order = ["4get" "Nix Packages" "Nix Options" "Nix Home Manager Options" "Github" "Rust Standard Library" "Rust Libraries" "google" "Google Images"];
+        order = ["4get" "Nix Packages" "Nix Options" "Nix Wiki" "Nix Home Manager Options" "Github" "Rust Standard Library" "Rust Libraries" "google" "Google Images"];
         engines = {
           google.metaData.alias = "!g";
           bing.metaData.hidden = true;
@@ -53,6 +53,11 @@
             urls = [{template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["!no"];
+          };
+          "Nix Wiki" = {
+            urls = [{template = "https://wiki.nixos.org/w/index.php?search={searchTerms}";}];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["!nw"];
           };
           "Nix Home Manager Options" = {
             urls = [{template = "https://home-manager-options.extranix.com/?release=master&query={searchTerms}";}];
@@ -280,23 +285,23 @@
         "general.smoothScroll.stopDecelerationWeighting" = "1";
         "mousewheel.default.delta_multiplier_y" = 300;
       };
-      bookmarks.force = true;
-      bookmarks.settings = [
-        {
-          name = "Toolbar";
-          toolbar = true;
-          bookmarks = [
-            {
-              name = "std";
-              url = "https://doc.rust-lang.org/std/";
-            }
-            {
-              name = "lib";
-              url = "https://lib.rs/";
-            }
-          ];
-        }
-      ];
+      # bookmarks.force = true;
+      # bookmarks.settings = [
+      #   {
+      #     name = "Toolbar";
+      #     toolbar = true;
+      #     bookmarks = [
+      #       {
+      #         name = "std";
+      #         url = "https://doc.rust-lang.org/std/";
+      #       }
+      #       {
+      #         name = "lib";
+      #         url = "https://lib.rs/";
+      #       }
+      #     ];
+      #   }
+      # ];
     };
   };
 }

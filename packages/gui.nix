@@ -15,6 +15,7 @@
   home-manager.users.hexfae.home.sessionVariables.SDL_VIDEODRIVER = "wayland";
   home-manager.users.hexfae.home.sessionVariables.CLUTTER_BACKEND = "wayland";
   home-manager.users.hexfae.home.sessionVariables.MOZ_USE_XINPUT2 = "1";
+  home-manager.users.hexfae.home.sessionVariables.FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
   home-manager.users.hexfae.home.packages = with pkgs; [
     jetbrains.idea-community-bin
     kdePackages.kdenlive

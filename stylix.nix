@@ -7,7 +7,7 @@
   polarity = "dark";
   cursor.package = pkgs.posy-cursors;
   cursor.name = "Posy_Cursor_Black";
-  cursor.size = 36;
+  cursor.size = 32;
   sansSerif.package = pkgs.roboto-flex;
   sansSerif.name = "Roboto Flex";
   serif.package = pkgs.roboto-slab;

@@ -9,9 +9,6 @@
 
 ## noteworthy
 
-- [hardware/b650-fix-suspend.nix](https://github.com/hexfae/system/blob/main/hardware/b650-fix-suspend.nix)
-  includes a fix for a sleep bug in my desktop's motherboard (asus tuf gaming b650-e wifi) where it
-  immediately wakes up when going to sleep
 - [programs/firefox.nix](https://github.com/hexfae/system/blob/main/programs/firefox.nix) is a pretty detailed
   firefox home manager configuration, that sets profile-sync-daemon, gnome browser connector, a few extensions
   (and in the future should also configure them), configures search engines like !np/!no/!ho (nix

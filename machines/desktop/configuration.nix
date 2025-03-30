@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ../../boot.nix
     ../../gnome.nix
@@ -9,7 +9,6 @@
     ../../user.nix
     ../../packages/cli.nix
     ../../packages/gui.nix
-    # ../../hardware/b650-fix-suspend.nix
     ../../services/ssh.nix
     ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix
@@ -34,6 +33,10 @@
   ];
 
   networking.hostName = "desktop";
+
+  hardware.graphics.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+  ];
 
   boot.initrd.kernelModules = [
     "r8169" #ethernet

@@ -237,6 +237,7 @@
         "toolkit.telemetry.shutdownPingSender.enabledFirstsession" = false;
         "browser.vpn_promo.enabled" = false;
         "browser.toolbars.bookmarks.visibility" = "always";
+        "middlemouse.paste" = false;
         # shyfox
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "sidebar.revamp" = false;

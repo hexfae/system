@@ -2,10 +2,10 @@
   nixpkgs.overlays = [
     (final: prev: {
       windsurf = prev.windsurf.overrideAttrs (oldAttrs: {
-        version = "1.5.9";
+        version = "1.6.1";
         src = prev.fetchurl {
-          url = "https://windsurf-stable.codeiumdata.com/linux-x64/stable/b3241b91445f79878ccc91626dfe190f90563e53/Windsurf-linux-x64-1.5.9.tar.gz";
-          sha256 = "sha256-3jPS64q1qiTuRbzA+K9vlzMR8bSaLA4xw/EODGN0z3M=";
+          url = "https://windsurf-stable.codeiumdata.com/linux-x64/stable/99b87db1614759d7a35c9527e55d38406c2212e9/Windsurf-linux-x64-1.6.1.tar.gz";
+          sha256 = "sha256-f4LkMia+0z2baxDo9rhLixf/54ZFZqctsrJl64nGlYU=";
         };
       });
     })

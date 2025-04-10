@@ -18,8 +18,6 @@
   inputs.disko.url = "github:nix-community/disko";
   inputs.disko.inputs.nixpkgs.follows = "nixpkgs";
   inputs.discordtavern.url = "github:hexfae/discordtavern";
-  inputs.wezterm.url = "github:wez/wezterm/main?dir=nix";
-  inputs.wezterm.inputs.nixpkgs.follows = "nixpkgs";
   inputs.stylix.url = "github:danth/stylix";
 
   outputs = {
@@ -36,7 +34,6 @@
     jovian,
     disko,
     discordtavern,
-    wezterm,
     stylix,
   } @ inputs: {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {

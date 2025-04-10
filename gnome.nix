@@ -27,7 +27,7 @@
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."image/png" = "org.gnome.Loupe.desktop";
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/sms" = "org.gnome.Shell.Extensions.GSConnect.desktop";
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/tel" = "org.gnome.Shell.Extensions.GSConnect.desktop";
-  home-manager.users.hexfae.xdg.mimeApps.defaultApplications."TerminalEmulator" = "org.wezfurlong.wezterm.desktop";
+  home-manager.users.hexfae.xdg.mimeApps.defaultApplications."TerminalEmulator" = "com.mitchellh.ghostty.desktop";
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."text/html" = "firefox.desktop";
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/http" = "firefox.desktop";
   home-manager.users.hexfae.xdg.mimeApps.defaultApplications."x-scheme-handler/https" = "firefox.desktop";

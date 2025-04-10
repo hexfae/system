@@ -23,7 +23,6 @@
     ../../programs/firefox.nix
     ../../programs/nushell.nix
     ../../programs/nh.nix
-    ../../programs/wezterm.nix
     ../../programs/ghostty.nix
     ../../programs/bat.nix
     ../../programs/ripgrep.nix

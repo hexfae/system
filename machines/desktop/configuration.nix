@@ -2,6 +2,7 @@
   imports = [
     ../../boot.nix
     ../../gnome.nix
+    # ../../hyprland.nix
     ../../i18n.nix
     ../../nix.nix
     ../../stylix.nix
@@ -24,7 +25,6 @@
     ../../programs/firefox.nix
     ../../programs/nushell.nix
     ../../programs/nh.nix
-    ../../programs/wezterm.nix
     ../../programs/ghostty.nix
     ../../programs/bat.nix
     ../../programs/ripgrep.nix

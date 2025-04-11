@@ -85,9 +85,14 @@
             definedAliases = ["!gi"];
           };
           "Youtube" = {
-            urls = [{template = "https://www.youtube.com/results?search_query={searchTerms}";}];
+            urls = [{template = "https://youtube.com/results?search_query={searchTerms}";}];
             icon = "https://youtube.com/favicon.ico";
             definedAliases = ["!yt"];
+          };
+          "SoundCloud" = {
+            urls = [{template = "https://soundcloud.com/search?q={searchTerms}";}];
+            icon = "https://soundcloud.com/favicon.ico";
+            definedAliases = ["!sc"];
           };
         };
       };

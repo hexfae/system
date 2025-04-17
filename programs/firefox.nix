@@ -23,6 +23,7 @@
           return-youtube-dislikes
           videospeed
           enhanced-github
+          downthemall
         ];
         settings = {
           # "userchrome-toggle-extended@n2ezr.ru" = {};

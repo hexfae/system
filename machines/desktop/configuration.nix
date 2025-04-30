@@ -35,12 +35,26 @@
   networking.hostName = "desktop";
 
   boot.initrd.kernelModules = [
-    "r8169" #ethernet
-    "mt7921e" #wifi
-  ];
-  boot.kernelModules = [
+    "amdgpu" # gpu
     "r8169" # ethernet
     "mt7921e" # wifi
+  ];
+  boot.kernelModules = [
+    "amdgpu" # gpu
+    "r8169" # ethernet
+    "mt7921e" # wifi
+  ];
+  services.xserver.videoDrivers = ["amdgpu"];
+
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+  hardware.graphics.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+    amdvlk
+  ];
+  hardware.graphics.extraPackages32 = with pkgs; [
+    driversi686Linux.amdvlk
   ];
 
   system.stateVersion = "24.11";

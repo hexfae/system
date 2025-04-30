@@ -182,11 +182,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1743805035,
-        "narHash": "sha256-YaGHTrX7WhaJHhTmctW/x5f0xGIaHIrFU5uLmSKlz7s=",
+        "lastModified": 1746043531,
+        "narHash": "sha256-EzA9PxvsaBSF0v870TREMGA6dQo2P8xQUgHA2f+bFHA=",
         "owner": "hexfae",
         "repo": "discordtavern",
-        "rev": "e7bde8b99ad0c2e03b6b762fd9dca20f4c802949",
+        "rev": "9540c5238a3c2961579c1305ebd93166b4ada758",
         "type": "github"
       },
       "original": {

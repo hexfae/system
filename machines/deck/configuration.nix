@@ -31,19 +31,25 @@
 
   networking.hostName = "deck";
   # jovian.steam.enable = true;
-  jovian.devices.steamdeck.enable = true;
-  jovian.devices.steamdeck.autoUpdate = true;
-  jovian.devices.steamdeck.enableGyroDsuService = true;
-  jovian.steamos.enableBluetoothConfig = true;
-  jovian.steamos.enableDefaultCmdlineConfig = true;
-  jovian.steamos.enableEarlyOOM = true;
-  jovian.steamos.enableVendorRadv = true;
-  jovian.steamos.enableMesaPatches = true;
-  jovian.steamos.enableProductSerialAccess = true;
-  jovian.steamos.enableZram = true;
-  jovian.steamos.enableSysctlConfig = true;
-  # jupiter-fan-control service produces error when switching
-  jovian.devices.steamdeck.enableOsFanControl = false;
+  jovian = {
+    devices.steamdeck = {
+      enable = true;
+      autoUpdate = true;
+      enableGyroDsuService = true;
+    };
+    steamos = {
+      enableBluetoothConfig = true;
+      enableDefaultCmdlineConfig = true;
+      enableEarlyOOM = true;
+      enableVendorRadv = true;
+      enableMesaPatches = true;
+      enableProductSerialAccess = true;
+      enableZram = true;
+      enableSysctlConfig = true;
+    };
+    # jupiter-fan-control service produces error when switching
+    devices.steamdeck.enableOsFanControl = false;
+  };
   home-manager.users.hexfae.home.packages = [pkgs.lime3ds];
 
   system.stateVersion = "24.05";

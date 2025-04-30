@@ -1,9 +1,9 @@
 {pkgs, ...}: let
-  wallpaper = pkgs.fetchurl {
+  image = pkgs.fetchurl {
     url = "https://images.unsplash.com/photo-1480796927426-f609979314bd";
     sha256 = "sha256-S0MumuBGJulUekoGI2oZfUa/50Jw0ZzkqDDu1nRkFUA=";
   };
-  theme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
+  base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
   polarity = "dark";
   cursor.package = pkgs.posy-cursors;
   cursor.name = "Posy_Cursor_Black";
@@ -21,26 +21,28 @@
   fonts.monospace = monospace;
   fonts.emoji = emoji;
   fonts.sizes.terminal = 16;
-  icons.package = pkgs.papirus-icon-theme;
-  icons.dark = "Papirus-Dark";
-  icons.enable = true;
+  iconTheme.package = pkgs.papirus-icon-theme;
+  iconTheme.dark = "Papirus-Dark";
+  iconTheme.enable = true;
 in {
-  stylix.enable = true;
-  stylix.image = wallpaper;
-  stylix.polarity = polarity;
-  stylix.base16Scheme = theme;
-  stylix.cursor = cursor;
-  stylix.fonts = fonts;
-  stylix.targets.plymouth.enable = false;
+  stylix = {
+    enable = true;
+    inherit image;
+    inherit polarity;
+    inherit base16Scheme;
+    inherit cursor;
+    inherit fonts;
+    targets.plymouth.enable = false;
+  };
 
   home-manager.users.hexfae.stylix = {
     enable = true;
-    image = wallpaper;
-    polarity = polarity;
-    base16Scheme = theme;
-    cursor = cursor;
-    fonts = fonts;
-    iconTheme = icons;
+    inherit image;
+    inherit polarity;
+    inherit base16Scheme;
+    inherit cursor;
+    inherit fonts;
+    inherit iconTheme;
     targets.firefox.profileNames = ["hexfae"];
     targets.qt.platform = "qtct";
   };

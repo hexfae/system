@@ -34,10 +34,6 @@
 
   networking.hostName = "desktop";
 
-  hardware.graphics.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
-  ];
-
   boot.initrd.kernelModules = [
     "r8169" #ethernet
     "mt7921e" #wifi

@@ -71,6 +71,19 @@
           {nixpkgs.overlays = [nur.overlays.default];}
         ];
       };
+      thinkpad = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit self inputs;};
+        modules = [
+          ./machines/thinkpad
+          lix.nixosModules.default
+          chaotic.nixosModules.default
+          home-manager.nixosModules.default
+          stylix.nixosModules.stylix
+          agenix.nixosModules.default
+          nixos-hardware.nixosModules.lenovo-thinkpad-t480s
+          {nixpkgs.overlays = [nur.overlays.default];}
+        ];
+      };
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit self inputs;};
         modules = [

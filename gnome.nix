@@ -63,6 +63,7 @@
       "org/gnome/desktop/privacy".remember-recent-files = false;
       "org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
       "org/gnome/mutter".dynamic-workspaces = true;
+      "org/gnome/desktop/input-sources".xkb-options = ["compose:caps"];
       "org/gnome/shell".favorite-apps = [
         "firefox.desktop"
         "vesktop.desktop"
@@ -86,7 +87,51 @@
         media-controls.extensionUuid
         tiling-assistant.extensionUuid
         runcat.extensionUuid
+        color-picker.extensionUuid
       ];
+      "org/gnome/shell/extensions/blur-my-shell/panel".blur = false;
+      "org/gnome/shell/extensions/vitals" = {
+        position-in-panel = 0;
+        update-time = 1;
+        show-temperature = false;
+        show-voltage = false;
+        show-fan = false;
+        show-processor = false;
+        show-storage = false;
+        hot-sensors = "['__network-rx_max__', '_memory_available_', '_system_uptime_']";
+      };
+      "org/gnome/shell/extensions/runcat" = {
+        displaying-items = "character-and-percentage";
+        idle-threshold = 10;
+      };
+      "org/gnome/shell/extensions/mediacontrols" = {
+        show-label = false;
+        show-control-icons-seek-backward = false;
+        show-control-icons-seek-forward = false;
+        colored-player-icon = false;
+        extension-position = "Left";
+      };
+      "org/gnome/shell/extensions/pano" = {
+        paste-on-select = false;
+        send-notification-on-copy = false;
+        play-audio-on-copy = false;
+        history-length = 200;
+      };
+      "org/gnome/shell/extensions/dash-to-dock" = {
+        dock-position = "LEFT";
+        extend-height = true;
+        dock-fixed = true;
+        show-apps-at-top = true;
+        show-trash = false;
+        show-mounts = false;
+        click-action = "minimize-or-previews";
+        running-indicator-style = "CILIORA";
+        customize-alphas = true;
+        min-alpha = 0.0;
+        max-alpha = 1.0;
+        custom-background-color = true;
+        selected-color = "[(0.20784313976764679, 0.23137255012989044, 0.27058824896812439, 1.0), (0.14509804546833038, 0.14509804546833038, 0.14509804546833038, 1.0), (0.070588238537311554, 0.070588238537311554, 0.070588238537311554, 1.0), (0.11372549086809158, 0.11372549086809158, 0.11372549086809158, 1.0)]";
+      };
     };
     home.packages =
       (with pkgs; [
@@ -106,6 +151,7 @@
         media-controls
         tiling-assistant
         runcat
+        color-picker
       ]);
   };
   environment.gnome.excludePackages = with pkgs; [

@@ -50,20 +50,25 @@
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["!np"];
           };
-          "Nix Options" = {
+          "NixOS Options" = {
             urls = [{template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["!no"];
           };
-          "Nix Wiki" = {
+          "NixOS Wiki" = {
             urls = [{template = "https://wiki.nixos.org/w/index.php?search={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["!nw"];
           };
-          "Nix Home Manager Options" = {
+          "Home Manager Options" = {
             urls = [{template = "https://home-manager-options.extranix.com/?release=master&query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["!ho"];
+          };
+          "Arch Linux Wiki" = {
+            urls = [{template = "https://wiki.archlinux.org/index.php?search={searchTerms}";}];
+            icon = "https://wiki.archlinux.org/favicon.ico";
+            definedAliases = ["!aw"];
           };
           "Github" = {
             urls = [{template = "https://github.com/search?type=repositories&q={searchTerms}";}];

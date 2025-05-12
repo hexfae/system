@@ -7,7 +7,8 @@
   boot = {
     plymouth.enable = true;
     tmp.cleanOnBoot = true;
-    kernelParams = ["quiet"];
+    kernelParams = ["quiet" "splash" "loglevel=3" "udev.log_level=3" "rd.udev.log_level=3" "systemd.show_status=auto"];
+    kernel.sysctl = {"kernel.printk" = "3 3 3 3";};
     initrd = {
       compressor = "cat";
       verbose = false;

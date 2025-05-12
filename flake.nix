@@ -8,14 +8,12 @@
     agenix.url = "github:yaxitech/ragenix";
     helix.url = "github:helix-editor/helix";
     nixcord.url = "github:kaylorben/nixcord";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-hardware.url = "github:nixos/nixos-hardware";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
-    jovian.follows = "chaotic/jovian";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     discordtavern.url = "github:hexfae/discordtavern";
@@ -29,9 +27,8 @@
     agenix,
     helix,
     nixcord,
-    chaotic,
-    nur,
     nixos-hardware,
+    nur,
     home-manager,
     jovian,
     disko,
@@ -45,7 +42,6 @@
           [
             ./machines/desktop
             lix.nixosModules.default
-            chaotic.nixosModules.default
             home-manager.nixosModules.default
             stylix.nixosModules.stylix
             agenix.nixosModules.default
@@ -62,7 +58,6 @@
         modules = [
           ./machines/server
           lix.nixosModules.default
-          chaotic.nixosModules.default
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default
@@ -76,7 +71,6 @@
         modules = [
           ./machines/thinkpad
           lix.nixosModules.default
-          chaotic.nixosModules.default
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default
@@ -89,7 +83,6 @@
         modules = [
           ./machines/laptop
           lix.nixosModules.default
-          chaotic.nixosModules.default
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default
@@ -101,7 +94,6 @@
         modules = [
           ./machines/deck
           lix.nixosModules.default
-          chaotic.nixosModules.default
           home-manager.nixosModules.default
           jovian.nixosModules.default
           stylix.nixosModules.stylix

@@ -1,15 +1,4 @@
 {pkgs, ...}: {
-  nixpkgs.overlays = [
-    (final: prev: {
-      windsurf = prev.windsurf.overrideAttrs (oldAttrs: {
-        version = "1.9.0";
-        src = prev.fetchurl {
-          url = "https://windsurf-stable.codeiumdata.com/linux-x64/stable/fbebfca390b10f7a152fd231f94606109d576e12/Windsurf-linux-x64-1.9.0.tar.gz";
-          sha256 = "941640e3514a5ee524943135b439219243adb288fec484712ebc2935173aa938";
-        };
-      });
-    })
-  ];
   home-manager.users.hexfae.home = {
     sessionVariables = {
       GDK_BACKEND = "wayland,x11,*";

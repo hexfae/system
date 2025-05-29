@@ -18,6 +18,7 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
     discordtavern.url = "github:hexfae/discordtavern";
     stylix.url = "github:danth/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {

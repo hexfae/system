@@ -16,8 +16,6 @@
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           proton-pass
-          userchrome-toggle-extended
-          sidebery
           gnome-shell-integration
           sponsorblock
           return-youtube-dislikes
@@ -297,23 +295,6 @@
         "general.smoothScroll.stopDecelerationWeighting" = "1";
         "mousewheel.default.delta_multiplier_y" = 300;
       };
-      # bookmarks.force = true;
-      # bookmarks.settings = [
-      #   {
-      #     name = "Toolbar";
-      #     toolbar = true;
-      #     bookmarks = [
-      #       {
-      #         name = "std";
-      #         url = "https://doc.rust-lang.org/std/";
-      #       }
-      #       {
-      #         name = "lib";
-      #         url = "https://lib.rs/";
-      #       }
-      #     ];
-      #   }
-      # ];
     };
   };
 }

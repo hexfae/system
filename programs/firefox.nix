@@ -73,6 +73,11 @@
             icon = "https://github.com/favicon.ico";
             definedAliases = ["!gh"];
           };
+          "Minecraft Wiki" = {
+            urls = [{template = "https://minecraft.wiki/?search={searchTerms}";}];
+            icon = "https://minecraft.wiki/favicon.ico";
+            definedAliases = ["!mc"];
+          };
           "Rust Standard Library" = {
             urls = [{template = "https://doc.rust-lang.org/std/?search={searchTerms}";}];
             icon = "https://rust-lang.org/static/images/favicon.ico";

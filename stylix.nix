@@ -8,10 +8,10 @@
   cursor.package = pkgs.posy-cursors;
   cursor.name = "Posy_Cursor_Black";
   cursor.size = 32;
-  sansSerif.package = pkgs.roboto-flex;
-  sansSerif.name = "Roboto Flex";
-  serif.package = pkgs.roboto-slab;
-  serif.name = "Roboto Slab";
+  sansSerif.package = pkgs.geist-font;
+  sansSerif.name = "Geist Regular";
+  serif.package = pkgs.geist-font;
+  serif.name = "Geist Regular";
   monospace.package = pkgs.maple-mono.NF-CN;
   monospace.name = "Maple Mono NF CN";
   emoji.package = pkgs.twitter-color-emoji;

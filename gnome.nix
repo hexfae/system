@@ -76,6 +76,7 @@
         "com.usebottles.bottles.desktop"
       ];
       "org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
+        user-themes.extensionUuid
         blur-my-shell.extensionUuid
         dash-to-dock.extensionUuid
         pano.extensionUuid
@@ -88,6 +89,8 @@
         tiling-assistant.extensionUuid
         runcat.extensionUuid
         color-picker.extensionUuid
+        burn-my-windows.extensionUuid
+        kando-integration.extensionUuid
       ];
       "org/gnome/shell/extensions/blur-my-shell/panel".blur = false;
       "org/gnome/shell/extensions/vitals" = {
@@ -137,6 +140,7 @@
         gnome-tweaks
         gnome-extension-manager
         resources
+        kando
       ])
       ++ (with pkgs.gnomeExtensions; [
         dash-to-dock
@@ -151,6 +155,8 @@
         tiling-assistant
         runcat
         color-picker
+        burn-my-windows
+        kando-integration
       ]);
   };
   environment.gnome.excludePackages = with pkgs; [

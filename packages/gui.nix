@@ -22,13 +22,12 @@
       video-trimmer
       obs-studio
       dolphin-emu
-      # fails to build
-      # lime3ds
+      azahar
       prismlauncher
       lutris
       blender-hip
       librewolf
-      bottles
+      (pkgs.bottles.override {removeWarningPopup = true;})
       adwsteamgtk
     ];
   };

@@ -25,6 +25,7 @@
     ../../programs/firefox.nix
     ../../programs/nushell.nix
     ../../programs/nh.nix
+    ../../programs/obs.nix
     ../../programs/ghostty.nix
     ../../programs/bat.nix
     ../../programs/ripgrep.nix

@@ -45,7 +45,7 @@
           "image/png" = "org.gnome.Loupe.desktop";
           "x-scheme-handler/sms" = "org.gnome.Shell.Extensions.GSConnect.desktop";
           "x-scheme-handler/tel" = "org.gnome.Shell.Extensions.GSConnect.desktop";
-          "TerminalEmulator" = "com.mitchellh.ghostty.desktop";
+          "x-terminal-emulator" = "com.mitchellh.ghostty.desktop";
           "text/html" = "firefox.desktop";
           "x-scheme-handler/http" = "firefox.desktop";
           "x-scheme-handler/https" = "firefox.desktop";
@@ -65,7 +65,7 @@
       "org/gnome/mutter".dynamic-workspaces = true;
       "org/gnome/desktop/input-sources".xkb-options = ["compose:caps"];
       "org/gnome/shell".favorite-apps = [
-        "firefox.desktop"
+        "zen-beta.desktop"
         "vesktop.desktop"
         "org.gnome.Nautilus.desktop"
         "com.mitchellh.ghostty.desktop"

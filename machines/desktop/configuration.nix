@@ -22,7 +22,8 @@
     ../../programs/helix.nix
     ../../programs/zellij.nix
     ../../programs/zoxide.nix
-    ../../programs/firefox.nix
+    # ../../programs/firefox.nix
+    ../../programs/zen.nix
     ../../programs/nushell.nix
     ../../programs/nh.nix
     ../../programs/obs.nix

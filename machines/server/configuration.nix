@@ -15,6 +15,7 @@
     ../../services/auto-cpufreq.nix
     ../../services/transmission.nix
     ../../services/discordtavern.nix
+    ../../services/harry.nix
     ../../programs/adb.nix
     ../../programs/git.nix
     ../../programs/helix.nix
@@ -27,10 +28,16 @@
     ../../programs/starship.nix
   ];
 
-  networking.hostName = "server";
-  networking.networkmanager.enable = true;
-  documentation.enable = false;
+  networking = {
+    hostName = "server";
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [8000];
+    };
+  };
 
+  documentation.enable = false;
   hardware.graphics.enable32Bit = lib.mkForce false;
   # building linux_zen failed for me
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;

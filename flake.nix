@@ -3,8 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    lix.url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-2.tar.gz";
-    lix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url = "github:yaxitech/ragenix";
     helix.url = "github:helix-editor/helix";
     nixcord.url = "github:kaylorben/nixcord";
@@ -19,6 +17,7 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     discordtavern.url = "github:hexfae/discordtavern";
+    harry.url = "/home/hexfae/dox/rust/ultimate_harry";
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -26,7 +25,6 @@
   outputs = {
     self,
     nixpkgs,
-    lix,
     agenix,
     helix,
     nixcord,
@@ -37,6 +35,7 @@
     jovian,
     disko,
     discordtavern,
+    harry,
     stylix,
   } @ inputs: {
     nixosConfigurations = {
@@ -45,7 +44,6 @@
         modules =
           [
             ./machines/desktop
-            lix.nixosModules.default
             home-manager.nixosModules.default
             stylix.nixosModules.stylix
             agenix.nixosModules.default
@@ -61,12 +59,12 @@
         specialArgs = {inherit self inputs;};
         modules = [
           ./machines/server
-          lix.nixosModules.default
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default
           disko.nixosModules.disko
           discordtavern.nixosModules.default
+          harry.nixosModules.default
           {nixpkgs.overlays = [nur.overlays.default];}
         ];
       };
@@ -74,7 +72,6 @@
         specialArgs = {inherit self inputs;};
         modules = [
           ./machines/thinkpad
-          lix.nixosModules.default
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default
@@ -86,7 +83,6 @@
         specialArgs = {inherit self inputs;};
         modules = [
           ./machines/laptop
-          lix.nixosModules.default
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default
@@ -97,7 +93,6 @@
         specialArgs = {inherit self inputs;};
         modules = [
           ./machines/deck
-          lix.nixosModules.default
           home-manager.nixosModules.default
           jovian.nixosModules.default
           stylix.nixosModules.stylix

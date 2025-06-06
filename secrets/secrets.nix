@@ -16,5 +16,6 @@ in {
   "transmission.age".publicKeys = all;
   "github.age".publicKeys = all;
   "discordtavern.age".publicKeys = all;
+  "harry.age".publicKeys = all;
   "syncthing.age".publicKeys = all;
 }

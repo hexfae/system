@@ -8,14 +8,14 @@
     displayManager.autoLogin.user = "hexfae";
     libinput.mouse.accelProfile = "flat";
     flatpak.enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
     dbus = {
       enable = true;
       implementation = "broker";
     };
     xserver = {
       excludePackages = [pkgs.xterm];
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
     };
     gnome = {
       evolution-data-server.enable = lib.mkForce false;

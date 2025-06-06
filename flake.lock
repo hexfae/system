@@ -440,14 +440,17 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1749193283,
-        "narHash": "sha256-X87VMXvB8CsQa+oUQCdIXW4rMHRtMlNzUV97P5QgcLI=",
-        "path": "/home/hexfae/dox/rust/ultimate_harry",
-        "type": "path"
+        "lastModified": 1749192613,
+        "narHash": "sha256-cVKeM8Jd1M/oGNL2ZQGrM4OaGZvl322wBwcPXan1Fbk=",
+        "ref": "refs/heads/staging",
+        "rev": "6576f3d60c0cd258c5205dddd6a1aa39e2368cfe",
+        "revCount": 15,
+        "type": "git",
+        "url": "file:///home/hexfae/dox/rust/ultimate_harry"
       },
       "original": {
-        "path": "/home/hexfae/dox/rust/ultimate_harry",
-        "type": "path"
+        "type": "git",
+        "url": "file:///home/hexfae/dox/rust/ultimate_harry"
       }
     },
     "helix": {

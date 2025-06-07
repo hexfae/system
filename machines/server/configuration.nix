@@ -14,7 +14,7 @@
     ../../services/ssh.nix
     ../../services/auto-cpufreq.nix
     ../../services/transmission.nix
-    ../../services/discordtavern.nix
+    # ../../services/discordtavern.nix
     ../../services/harry.nix
     ../../programs/adb.nix
     ../../programs/git.nix

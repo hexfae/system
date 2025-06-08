@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   imports = [
     ../../boot.nix
     ../../gnome.nix
@@ -21,7 +21,8 @@
     ../../programs/helix.nix
     ../../programs/zellij.nix
     ../../programs/zoxide.nix
-    ../../programs/firefox.nix
+    # ../../programs/firefox.nix
+    ../../programs/zen.nix
     ../../programs/nushell.nix
     ../../programs/nh.nix
     ../../programs/ghostty.nix
@@ -33,5 +34,7 @@
 
   networking.hostName = "thinkpad";
 
-  system.stateVersion = "24.11";
+  home-manager.users.hexfae.home.stateVersion = lib.mkForce "25.05";
+
+  system.stateVersion = "25.05";
 }

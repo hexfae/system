@@ -15,6 +15,7 @@
     ../../services/auto-cpufreq.nix
     ../../services/virtualization.nix
     ../../services/openrgb.nix
+    ../../services/home-assistant.nix
     ../../programs/adb.nix
     ../../programs/distrobox.nix
     # ../../programs/vesktop.nix

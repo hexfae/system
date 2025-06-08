@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     agenix.url = "github:yaxitech/ragenix";
-    helix.url = "github:helix-editor/helix";
     nixcord.url = "github:kaylorben/nixcord";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
@@ -26,7 +25,6 @@
     self,
     nixpkgs,
     agenix,
-    helix,
     nixcord,
     nixos-hardware,
     nur,

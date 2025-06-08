@@ -1,11 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home-manager.users.hexfae.programs.helix = {
     enable = true;
-    package = inputs.helix.packages."${pkgs.system}".helix;
     defaultEditor = true;
     languages = {
       language = [

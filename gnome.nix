@@ -91,6 +91,8 @@
         color-picker.extensionUuid
         burn-my-windows.extensionUuid
         kando-integration.extensionUuid
+        smart-home.extensionUuid
+        color-picker.extensionUuid
       ];
       "org/gnome/shell/extensions/blur-my-shell/panel".blur = false;
       "org/gnome/shell/extensions/vitals" = {
@@ -157,6 +159,8 @@
         color-picker
         burn-my-windows
         kando-integration
+        smart-home
+        color-picker
       ]);
   };
   environment.gnome.excludePackages = with pkgs; [

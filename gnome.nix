@@ -4,7 +4,6 @@
   ...
 }: {
   services = {
-    xserver.enable = true;
     displayManager.autoLogin.user = "hexfae";
     libinput.mouse.accelProfile = "flat";
     flatpak.enable = true;
@@ -14,9 +13,7 @@
       enable = true;
       implementation = "broker";
     };
-    xserver = {
-      excludePackages = [pkgs.xterm];
-    };
+    xserver.excludePackages = [pkgs.xterm];
     gnome = {
       evolution-data-server.enable = lib.mkForce false;
       gnome-browser-connector.enable = true;
@@ -91,7 +88,7 @@
         color-picker.extensionUuid
         burn-my-windows.extensionUuid
         kando-integration.extensionUuid
-        smart-home.extensionUuid
+        # smart-home.extensionUuid
         color-picker.extensionUuid
       ];
       "org/gnome/shell/extensions/blur-my-shell/panel".blur = false;
@@ -159,38 +156,46 @@
         color-picker
         burn-my-windows
         kando-integration
-        smart-home
+        # smart-home
         color-picker
       ]);
   };
+  # https://wiki.nixos.org/wiki/GNOME#Excluding_GNOME_Applications
   environment.gnome.excludePackages = with pkgs; [
-    baobab
-    epiphany
-    geary
-    snapshot
-    totem
-    evince
-    simple-scan
-    seahorse
-    yelp
+    orca # screen reader
+    evince # document viewer
+    file-roller # archive manager
+    geary # mail client
+    seahorse # keyring manager
+    sushi # file previewer
+    sysprof # system profiler
     adwaita-icon-theme
-    gnome-themes-extra
-    gnome-tour
-    gnome-connections
-    gnome-calendar
-    gnome-user-docs
-    gnome-font-viewer
-    gnome-console
+    baobab # disk analyzer
+    epiphany # web browser
+    simple-scan # document scanner
+    snapshot # camera app
+    totem # video player
+    yelp # help app
     gnome-disk-utility
-    gnome-system-monitor
-    gnome-text-editor
-    gnome-music
-    gnome-contacts
-    gnome-weather
-    gnome-clocks
-    gnome-maps
-    gnome-characters
-    gnome-logs
     gnome-shell-extensions
+    gnome-backgrounds
+    gnome-color-manager
+    gnome-tour
+    gnome-user-docs
+    gnome-text-editor
+    gnome-calculator
+    gnome-calendar
+    gnome-characters
+    gnome-clocks
+    gnome-console
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-system-monitor
+    gnome-weather
+    gnome-connections
+    gnome-themes-extra
   ];
 }

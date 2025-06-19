@@ -29,6 +29,7 @@
             videospeed
             enhanced-github
             downthemall
+            istilldontcareaboutcookies
           ];
           settings = {
             # "userchrome-toggle-extended@n2ezr.ru" = {};

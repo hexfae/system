@@ -74,6 +74,7 @@
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default
+          disko.nixosModules.disko
           nixos-hardware.nixosModules.lenovo-thinkpad-t480s
           {nixpkgs.overlays = [nur.overlays.default];}
         ];

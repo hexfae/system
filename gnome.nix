@@ -53,10 +53,20 @@
     };
     dconf.settings = {
       "org/gnome/shell".disable-user-extensions = false;
-      "org/gnome/desktop/interface".clock-show-seconds = true;
-      "org/gnome/desktop/interface".show-battery-percentage = true;
-      "org/gnome/desktop/wm/preferences".button-layout = "close,minimize::";
+      "org/gnome/desktop/interface" = {
+        clock-show-seconds = true;
+        show-battery-percentage = true;
+        font-hinting = "full";
+        font-aliasing = "rgba";
+      };
+      "org/gnome/desktop/wm/preferences" = {
+        button-layout = "close,minimize::";
+        action-middle-click-titlebar = "minimize";
+        resize-with-right-button = true;
+        focus-mode = "sloppy";
+      };
       "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
+      "org/gnome/desktop/peripherals/touchpad".accel-profile = "flat";
       "org/gnome/desktop/privacy".remember-recent-files = false;
       "org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
       "org/gnome/mutter".dynamic-workspaces = true;
@@ -91,6 +101,7 @@
         # smart-home.extensionUuid
         color-picker.extensionUuid
       ];
+      "org/gnome/tweaks".show-extensions-notice = false;
       "org/gnome/shell/extensions/blur-my-shell/panel".blur = false;
       "org/gnome/shell/extensions/vitals" = {
         position-in-panel = 0;
@@ -126,12 +137,15 @@
         show-apps-at-top = true;
         show-trash = false;
         show-mounts = false;
+        custom-theme-shrink = true;
         click-action = "minimize-or-previews";
+        transparency-mode = "DYNAMIC";
         running-indicator-style = "CILIORA";
         customize-alphas = true;
         min-alpha = 0.0;
         max-alpha = 1.0;
-        custom-background-color = false;
+        custom-background-color = true;
+        background-color = "rgb(53,59,69)";
       };
     };
     home.packages =

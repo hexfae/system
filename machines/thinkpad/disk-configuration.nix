@@ -18,8 +18,7 @@
               };
             };
             root = {
-              name = "root";
-              size = "100%";
+              end = "-24G";
               content = {
                 type = "filesystem";
                 format = "bcachefs";
@@ -27,11 +26,11 @@
               };
             };
             swap = {
-              end = "22774740480B";
+              size = "100%";
               content = {
                 type = "swap";
                 discardPolicy = "both";
-                resumeDevice = "true";
+                resumeDevice = true;
               };
             };
           };

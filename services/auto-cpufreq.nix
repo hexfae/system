@@ -12,4 +12,9 @@
       };
     };
   };
+  home-manager.users.hexfae.xdg.desktopEntries."auto-cpufreq-gtk" = {
+    name = "auto-cpufreq";
+    exec = "auto-cpufreq-gtk";
+    noDisplay = true;
+  };
 }

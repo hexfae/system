@@ -10,10 +10,10 @@
     ../../packages/cli.nix
     ../../packages/gui.nix
     ../../services/ssh.nix
-    ../../services/mullvad.nix
+    # ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix
     # ../../services/virtualization.nix
-    ../../services/syncthing.nix
+    # ../../services/syncthing.nix
     ../../programs/adb.nix
     ../../programs/distrobox.nix
     # ../../programs/vesktop.nix

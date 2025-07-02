@@ -8,10 +8,10 @@
   cursor.package = pkgs.posy-cursors;
   cursor.name = "Posy_Cursor_Black";
   cursor.size = 32;
-  sansSerif.package = pkgs.geist-font;
-  sansSerif.name = "Geist Regular";
-  serif.package = pkgs.geist-font;
-  serif.name = "Geist Regular";
+  sansSerif.package = pkgs.atkinson-hyperlegible-next;
+  sansSerif.name = "Atkinson Hyperlegible Next";
+  serif.package = pkgs.atkinson-hyperlegible-next;
+  serif.name = "Atkinson Hyperlegible Next";
   monospace.package = pkgs.maple-mono.NF-CN;
   monospace.name = "Maple Mono NF CN";
   emoji.package = pkgs.twitter-color-emoji;
@@ -35,15 +35,34 @@ in {
     targets.plymouth.enable = false;
   };
 
-  home-manager.users.hexfae.stylix = {
-    enable = true;
-    inherit image;
-    inherit polarity;
-    inherit base16Scheme;
-    inherit cursor;
-    inherit fonts;
-    inherit iconTheme;
-    targets.firefox.profileNames = ["hexfae"];
-    targets.qt.platform = "qtct";
+  home-manager.users.hexfae = {
+    stylix = {
+      enable = true;
+      inherit image;
+      inherit polarity;
+      inherit base16Scheme;
+      inherit cursor;
+      inherit fonts;
+      inherit iconTheme;
+      targets.firefox.profileNames = ["hexfae"];
+      targets.qt.platform = "qtct";
+    };
+    xdg.desktopEntries = {
+      "kvantummanager" = {
+        name = "Kvantum Manager";
+        exec = "kvantummanager";
+        noDisplay = true;
+      };
+      "qt5ct" = {
+        name = "Qt5 Settings";
+        exec = "qt5ct";
+        noDisplay = true;
+      };
+      "qt6ct" = {
+        name = "Qt6 Settings";
+        exec = "qt6ct";
+        noDisplay = true;
+      };
+    };
   };
 }

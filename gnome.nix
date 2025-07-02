@@ -32,7 +32,7 @@
     enable = true;
     package = pkgs.gnomeExtensions.gsconnect;
   };
-  home-manager.users.hexfae = {
+  home-manager.users.hexfae = {lib, ...}: {
     xdg = {
       mime.enable = true;
       mimeApps = {
@@ -43,11 +43,11 @@
           "x-scheme-handler/sms" = "org.gnome.Shell.Extensions.GSConnect.desktop";
           "x-scheme-handler/tel" = "org.gnome.Shell.Extensions.GSConnect.desktop";
           "x-terminal-emulator" = "com.mitchellh.ghostty.desktop";
-          "text/html" = "firefox.desktop";
-          "x-scheme-handler/http" = "firefox.desktop";
-          "x-scheme-handler/https" = "firefox.desktop";
-          "x-scheme-handler/about" = "firefox.desktop";
-          "x-scheme-handler/unknown" = "firefox.desktop";
+          "text/html" = "zen.desktop";
+          "x-scheme-handler/http" = "zen.desktop";
+          "x-scheme-handler/https" = "zen.desktop";
+          "x-scheme-handler/about" = "zen.desktop";
+          "x-scheme-handler/unknown" = "zen.desktop";
         };
       };
     };
@@ -65,12 +65,19 @@
         resize-with-right-button = true;
         focus-mode = "sloppy";
       };
+      "org/gnome/desktop/session".idle-delay = lib.hm.gvariant.mkUint32 0;
       "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
       "org/gnome/desktop/peripherals/touchpad".accel-profile = "flat";
       "org/gnome/desktop/privacy".remember-recent-files = false;
       "org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
       "org/gnome/mutter".dynamic-workspaces = true;
       "org/gnome/desktop/input-sources".xkb-options = ["compose:caps"];
+      "org/gnome/tweaks".show-extensions-notice = false;
+      "org/gnome/settings-daemon/plugins/power" = {
+        idle-dim = false;
+        sleep-inactive-battery-type = "nothing";
+        sleep-inactive-ac-type = "nothing";
+      };
       "org/gnome/shell".favorite-apps = [
         "zen-beta.desktop"
         "vesktop.desktop"
@@ -100,9 +107,11 @@
         kando-integration.extensionUuid
         # smart-home.extensionUuid
         color-picker.extensionUuid
+        # TODO: add https://github.com/romanlefler/SimpleWeather when available on nixpkgs
       ];
-      "org/gnome/tweaks".show-extensions-notice = false;
+      "org/gnome/shell/extensions/burn-my-windows".active-profile = "/home/hexfae/.config/burn-my-windows/profiles/bmw.conf";
       "org/gnome/shell/extensions/blur-my-shell/panel".blur = false;
+      "org/gnome/shell/extensions/blur-my-shell/dash-to-dock".blur = false;
       "org/gnome/shell/extensions/vitals" = {
         position-in-panel = 0;
         update-time = 1;
@@ -111,7 +120,7 @@
         show-fan = false;
         show-processor = false;
         show-storage = false;
-        hot-sensors = "['__network-rx_max__', '_memory_available_', '_system_uptime_']";
+        hot-sensors = ["_system_uptime_" "_memory_available_" "__network-rx_max__"];
       };
       "org/gnome/shell/extensions/runcat" = {
         displaying-items = "character-and-percentage";
@@ -148,12 +157,20 @@
         background-color = "rgb(53,59,69)";
       };
     };
+    home.file."/home/hexfae/.config/burn-my-windows/profiles/bmw.conf".text = "[burn-my-windows-profile]
+      fire-enable-effect=false
+      glide-enable-effect=true
+      tv-enable-effect=true";
     home.packages =
       (with pkgs; [
         gnome-tweaks
         gnome-extension-manager
         resources
         kando
+        amberol
+        celluloid
+        video-trimmer
+        adwsteamgtk
       ])
       ++ (with pkgs.gnomeExtensions; [
         dash-to-dock

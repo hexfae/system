@@ -4,19 +4,13 @@
   ...
 }: {
   home-manager.users.hexfae = {
-    imports = [inputs.zen-browser.homeModules.beta];
-
+    imports = [inputs.zen-browser.homeModules.twilight];
     services.psd = {
       enable = true;
       browsers = ["zen-browser"];
     };
     programs.zen-browser = {
       enable = true;
-      # package = pkgs.firefox.override {
-      #   nativeMessagingHosts = [
-      #     pkgs.gnome-browser-connector
-      #   ];
-      # };
       profiles.hexfae = {
         extensions = {
           force = true;
@@ -29,6 +23,7 @@
             videospeed
             enhanced-github
             downthemall
+            # TODO: remove below and configure ublock origin instead
             istilldontcareaboutcookies
           ];
           settings = {

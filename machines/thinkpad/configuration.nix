@@ -1,7 +1,9 @@
 {lib, ...}: {
   imports = [
     ../../boot.nix
-    ../../gnome.nix
+    # ../../gnome.nix
+    ../../niri.nix
+    # ../../hyprland.nix
     ../../i18n.nix
     ../../nix.nix
     ../../stylix.nix

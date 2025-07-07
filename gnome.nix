@@ -33,6 +33,7 @@
     package = pkgs.gnomeExtensions.gsconnect;
   };
   home-manager.users.hexfae = {lib, ...}: {
+    programs.zen-browser.nativeMessagingHosts = [pkgs.gnome-browser-connector];
     xdg = {
       mime.enable = true;
       mimeApps = {

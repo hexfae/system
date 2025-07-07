@@ -11,6 +11,8 @@
     nur.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    niri.url = "github:sodiboo/niri-flake";
+    niri.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
@@ -30,6 +32,7 @@
     nixos-hardware,
     nur,
     zen-browser,
+    niri,
     home-manager,
     jovian,
     disko,
@@ -71,6 +74,7 @@
         specialArgs = {inherit self inputs;};
         modules = [
           ./machines/thinkpad
+          niri.nixosModules.niri
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default

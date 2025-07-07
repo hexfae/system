@@ -5,10 +5,12 @@
 }: {
   home-manager.users.hexfae = {
     imports = [inputs.zen-browser.homeModules.twilight];
-    services.psd = {
-      enable = true;
-      browsers = ["zen-browser"];
-    };
+    # TODO: psd has community support for zen via the contrib folder in the
+    # repo, but needs to be manually added to the supported browsers folder?
+    # services.psd = {
+    #   enable = true;
+    #   browsers = ["zen"];
+    # };
     programs.zen-browser = {
       enable = true;
       profiles.hexfae = {

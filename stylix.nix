@@ -44,7 +44,6 @@ in {
       inherit cursor;
       inherit fonts;
       inherit iconTheme;
-      targets.firefox.profileNames = ["hexfae"];
       targets.qt.platform = "qtct";
     };
     xdg.desktopEntries = {

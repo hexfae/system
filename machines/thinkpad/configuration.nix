@@ -1,9 +1,7 @@
 {lib, ...}: {
   imports = [
     ../../boot.nix
-    # ../../gnome.nix
     ../../niri.nix
-    # ../../hyprland.nix
     ../../i18n.nix
     ../../nix.nix
     ../../stylix.nix
@@ -12,18 +10,13 @@
     ../../packages/cli.nix
     ../../packages/gui.nix
     ../../services/ssh.nix
-    # ../../services/mullvad.nix
     ../../services/auto-cpufreq.nix
-    # ../../services/virtualization.nix
-    # ../../services/syncthing.nix
     ../../programs/adb.nix
     ../../programs/distrobox.nix
-    # ../../programs/vesktop.nix
     ../../programs/git.nix
     ../../programs/helix.nix
     ../../programs/zellij.nix
     ../../programs/zoxide.nix
-    # ../../programs/firefox.nix
     ../../programs/zen.nix
     ../../programs/nushell.nix
     ../../programs/nh.nix

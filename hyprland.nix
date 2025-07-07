@@ -15,7 +15,7 @@
 
       bind = [
         "$mod, Return, exec, ghostty"
-        "$mod, W, exec, firefox"
+        "$mod, W, exec, zen"
         "$mod, D, exec, vesktop"
         "$mod, E, exec, nautilus"
 

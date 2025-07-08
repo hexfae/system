@@ -25,11 +25,8 @@
             videospeed
             enhanced-github
             downthemall
-            # TODO: remove below and configure ublock origin instead
-            istilldontcareaboutcookies
           ];
           settings = {
-            # "userchrome-toggle-extended@n2ezr.ru" = {};
             # "{3c078156-979c-498b-8990-85f7987dd929}" = {};
             # "uBlock0@raymondhill.net" = {};
           };
@@ -37,7 +34,7 @@
         search = {
           force = true;
           default = "4get";
-          privateDefault = "4get";
+          privateDefault = "google";
           order = ["4get" "Nix Packages" "Nix Options" "Nix Wiki" "Nix Home Manager Options" "Github" "Rust Standard Library" "Rust Libraries" "google" "Google Images"];
           engines = {
             google.metaData.alias = "!g";
@@ -304,6 +301,10 @@
           "general.smoothScroll.currentVelocityWeighting" = "1";
           "general.smoothScroll.stopDecelerationWeighting" = "1";
           "mousewheel.default.delta_multiplier_y" = 300;
+          # sine
+          "general.config.obscure_value" = 0;
+          "general.config.filename" = "config.js";
+          "general.config.sandbox_enabled" = false;
         };
       };
     };

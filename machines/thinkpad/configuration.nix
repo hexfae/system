@@ -11,7 +11,6 @@
     ../../packages/gui.nix
     ../../services/ssh.nix
     ../../services/auto-cpufreq.nix
-    ../../services/swww.nix
     ../../programs/adb.nix
     ../../programs/distrobox.nix
     ../../programs/git.nix

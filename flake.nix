@@ -46,6 +46,7 @@
         modules =
           [
             ./machines/desktop
+            niri.nixosModules.niri
             home-manager.nixosModules.default
             stylix.nixosModules.stylix
             agenix.nixosModules.default

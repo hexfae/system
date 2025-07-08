@@ -1,7 +1,8 @@
 {pkgs, ...}: {
   imports = [
     ../../boot.nix
-    ../../gnome.nix
+    # ../../gnome.nix
+    ../../niri.nix
     ../../i18n.nix
     ../../nix.nix
     ../../stylix.nix
@@ -13,7 +14,9 @@
     ../../services/auto-cpufreq.nix
     ../../services/openrgb.nix
     ../../services/home-assistant.nix
+    ../../services/swww.nix
     ../../programs/adb.nix
+    ../../programs/fd.nix
     ../../programs/git.nix
     ../../programs/helix.nix
     ../../programs/zellij.nix

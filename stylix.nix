@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   image = pkgs.fetchurl {
-    url = "https://images.unsplash.com/photo-1480796927426-f609979314bd";
-    sha256 = "sha256-S0MumuBGJulUekoGI2oZfUa/50Jw0ZzkqDDu1nRkFUA=";
+    url = "https://w.wallhaven.cc/full/zp/wallhaven-zpx3xw.png";
+    sha256 = "sha256-WzJacHB9WEnq1QFdGIdZy4XqDNUHOxjqzYz9wW4aYRw=";
   };
   base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
   polarity = "dark";

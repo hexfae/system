@@ -36,6 +36,13 @@ in {
       niriswitcher.enable = true;
       niri.settings = {
         hotkey-overlay.skip-at-startup = true;
+        layout = {
+          preset-column-widths = [
+            {proportion = 1. / 3.;}
+            {proportion = .5;}
+            {proportion = 2. / 3.;}
+          ];
+        };
         window-rules = [
           {
             geometry-corner-radius = {
@@ -49,8 +56,8 @@ in {
         ];
         spawn-at-startup = [
           {command = ["niriswitcher"];}
-          # {command = ["mako"];}
           {command = ["swww" "img" "${image}"];}
+          {command = ["ulauncher --daemon"];}
         ];
         input = {
           keyboard = {
@@ -103,7 +110,7 @@ in {
           "Mod+E".action.spawn = "nautilus";
           "Mod+W".action.spawn = "zen";
           "Mod+D".action.spawn = ["vesktop" "--ozone-platform=wayland"];
-          "Mod+Space".action.spawn = "ulauncher";
+          "Mod+Space".action.spawn = "ulauncher-toggle";
 
           "Alt+Tab" = {
             repeat = false;
@@ -126,7 +133,10 @@ in {
           "Mod+Shift+J".action = move-window-down-or-to-workspace-down;
           "Mod+Shift+K".action = move-window-up-or-to-workspace-up;
 
-          "Mod+F".action = fullscreen-window;
+          "Mod+F".action = maximize-column;
+          "Mod+Shift+F".action = fullscreen-window;
+          "Mod+Q".action = close-window;
+          "Mod+R".action = switch-preset-column-width;
           "Mod+Tab".action = toggle-overview;
 
           "Mod+Shift+E".action.quit.skip-confirmation = true;

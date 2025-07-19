@@ -1,12 +1,16 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: let
   image = pkgs.fetchurl {
     url = "https://w.wallhaven.cc/full/zp/wallhaven-zpx3xw.png";
     sha256 = "sha256-WzJacHB9WEnq1QFdGIdZy4XqDNUHOxjqzYz9wW4aYRw=";
   };
+  blurred-image = pkgs.runCommand "blurred-wallpaper.png" {} ''
+    ${lib.getExe' pkgs.imagemagick "magick"} "${image}" -blur 0x8 $out
+  '';
 in {
   imports = [
     services/pipewire.nix
@@ -30,13 +34,27 @@ in {
       glib
       nautilus
       swww
+      swaybg
       ulauncher
+      xwayland-satellite
     ];
     programs = {
       niriswitcher.enable = true;
       niri.settings = {
         hotkey-overlay.skip-at-startup = true;
+        clipboard.disable-primary = true;
+        layer-rules = [
+          {
+            matches = [
+              {
+                namespace = "^wallpaper$";
+              }
+            ];
+            place-within-backdrop = true;
+          }
+        ];
         layout = {
+          gaps = 8;
           preset-column-widths = [
             {proportion = 1. / 3.;}
             {proportion = .5;}
@@ -57,7 +75,8 @@ in {
         spawn-at-startup = [
           {command = ["niriswitcher"];}
           {command = ["swww" "img" "${image}"];}
-          {command = ["ulauncher --daemon"];}
+          {command = ["ulauncher" "daemon"];}
+          {command = ["swaybg" "--image" "${blurred-image}"];}
         ];
         input = {
           keyboard = {
@@ -138,6 +157,7 @@ in {
           "Mod+Q".action = close-window;
           "Mod+R".action = switch-preset-column-width;
           "Mod+Tab".action = toggle-overview;
+          "Mod+T".action = toggle-column-tabbed-display;
 
           "Mod+Shift+E".action.quit.skip-confirmation = true;
         };

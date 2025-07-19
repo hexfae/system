@@ -98,6 +98,9 @@ in {
           };
         };
         outputs = {
+          "eDP-1" = {
+            scale = 1.0;
+          };
           "DP-2" = {
             variable-refresh-rate = true;
             focus-at-startup = true;

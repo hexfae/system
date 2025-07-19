@@ -3,7 +3,7 @@
     url = "https://w.wallhaven.cc/full/zp/wallhaven-zpx3xw.png";
     sha256 = "sha256-WzJacHB9WEnq1QFdGIdZy4XqDNUHOxjqzYz9wW4aYRw=";
   };
-  base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
+  base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
   polarity = "dark";
   cursor.package = pkgs.posy-cursors;
   cursor.name = "Posy_Cursor_Black";
@@ -37,12 +37,6 @@ in {
 
   home-manager.users.hexfae = {
     stylix = {
-      enable = true;
-      inherit image;
-      inherit polarity;
-      inherit base16Scheme;
-      inherit cursor;
-      inherit fonts;
       inherit iconTheme;
       targets.qt.platform = "qtct";
     };

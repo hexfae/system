@@ -51,7 +51,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        output = ["DP-2"];
+        output = ["DP-2" "eDP-1"];
 
         modules-left = ["niri/workspaces"];
         modules-center = ["clock"];

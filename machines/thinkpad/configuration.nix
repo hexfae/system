@@ -11,12 +11,14 @@
     ../../packages/gui.nix
     ../../services/ssh.nix
     ../../services/auto-cpufreq.nix
+    ../../services/swww.nix
     ../../programs/adb.nix
-    ../../programs/distrobox.nix
+    ../../programs/fd.nix
     ../../programs/git.nix
     ../../programs/helix.nix
     ../../programs/zellij.nix
     ../../programs/zoxide.nix
+    ../../programs/zed-editor.nix
     ../../programs/zen.nix
     ../../programs/nushell.nix
     ../../programs/nh.nix

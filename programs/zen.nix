@@ -11,6 +11,13 @@
     #   enable = true;
     #   browsers = ["zen"];
     # };
+    xdg.mimeApps.defaultApplications = {
+      "text/html" = "zen-twilight.desktop";
+      "x-scheme-handler/http" = "zen-twilight.desktop";
+      "x-scheme-handler/https" = "zen-twilight.desktop";
+      "x-scheme-handler/about" = "zen-twilight.desktop";
+      "x-scheme-handler/unknown" = "zen-twilight.desktop";
+    };
     programs.zen-browser = {
       enable = true;
       profiles.hexfae = {
@@ -305,6 +312,10 @@
           "general.config.obscure_value" = 0;
           "general.config.filename" = "config.js";
           "general.config.sandbox_enabled" = false;
+          # zen
+          "zen.workspaces.continue-where-left-off" = true;
+          "zen.view.show-newtab-button-top" = false;
+          "zen.view.show-newtab-button-border-top" = true;
         };
       };
     };

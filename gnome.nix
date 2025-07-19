@@ -35,20 +35,12 @@
   home-manager.users.hexfae = {lib, ...}: {
     programs.zen-browser.nativeMessagingHosts = [pkgs.gnome-browser-connector];
     xdg = {
-      mime.enable = true;
       mimeApps = {
-        enable = true;
         defaultApplications = {
           "image/jpeg" = "org.gnome.Loupe.desktop";
           "image/png" = "org.gnome.Loupe.desktop";
           "x-scheme-handler/sms" = "org.gnome.Shell.Extensions.GSConnect.desktop";
           "x-scheme-handler/tel" = "org.gnome.Shell.Extensions.GSConnect.desktop";
-          "x-terminal-emulator" = "com.mitchellh.ghostty.desktop";
-          "text/html" = "zen-twilight.desktop";
-          "x-scheme-handler/http" = "zen-twilight.desktop";
-          "x-scheme-handler/https" = "zen-twilight.desktop";
-          "x-scheme-handler/about" = "zen-twilight.desktop";
-          "x-scheme-handler/unknown" = "zen-twilight.desktop";
         };
       };
     };

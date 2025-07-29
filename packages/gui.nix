@@ -31,6 +31,8 @@
       };
       packages = with pkgs; [
         kdePackages.kdenlive
+        loupe
+        celluloid
         vesktop
         gimp
         obsidian
@@ -41,6 +43,7 @@
         blender-hip
         librewolf
         (pkgs.bottles.override {removeWarningPopup = true;})
+        retroarch-full
       ];
     };
   };

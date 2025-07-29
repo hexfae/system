@@ -161,7 +161,6 @@
         resources
         kando
         amberol
-        celluloid
         video-trimmer
         adwsteamgtk
       ])

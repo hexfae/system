@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     agenix.url = "github:yaxitech/ragenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
-    nixcord.url = "github:kaylorben/nixcord";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
@@ -28,7 +27,6 @@
     self,
     nixpkgs,
     agenix,
-    nixcord,
     nixos-hardware,
     nur,
     zen-browser,

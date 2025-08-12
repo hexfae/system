@@ -38,7 +38,10 @@ in {
   home-manager.users.hexfae = {
     stylix = {
       inherit iconTheme;
-      targets.qt.platform = "qtct";
+      targets = {
+        qt.platform = "qtct";
+        zen-browser.profileNames = ["hexfae"];
+      };
     };
     xdg.desktopEntries = {
       "kvantummanager" = {

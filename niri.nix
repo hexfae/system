@@ -29,14 +29,16 @@ in {
     implementation = "broker";
   };
   home-manager.users.hexfae = {config, ...}: {
+    dconf.settings."org/gnome/desktop/wm/preferences".button-layout = "close,minimize::";
     services.mako.enable = true;
     home.packages = with pkgs; [
       glib
       nautilus
       swww
       swaybg
-      ulauncher
       xwayland-satellite
+      pavucontrol
+      albert
     ];
     programs = {
       niriswitcher.enable = true;
@@ -74,8 +76,8 @@ in {
         ];
         spawn-at-startup = [
           {command = ["niriswitcher"];}
+          {command = ["albert"];}
           {command = ["swww" "img" "${image}"];}
-          {command = ["ulauncher" "daemon"];}
           {command = ["swaybg" "--image" "${blurred-image}"];}
         ];
         input = {
@@ -115,7 +117,6 @@ in {
             };
           };
           "HDMI-A-2" = {
-            variable-refresh-rate = true;
             mode = {
               width = 1920;
               height = 1080;
@@ -132,7 +133,7 @@ in {
           "Mod+E".action.spawn = "nautilus";
           "Mod+W".action.spawn = "zen";
           "Mod+D".action.spawn = ["vesktop" "--ozone-platform=wayland"];
-          "Mod+Space".action.spawn = "ulauncher-toggle";
+          "Mod+Space".action.spawn = ["albert" "toggle"];
 
           "Alt+Tab" = {
             repeat = false;

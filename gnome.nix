@@ -158,7 +158,6 @@
       (with pkgs; [
         gnome-tweaks
         gnome-extension-manager
-        resources
         kando
         amberol
         video-trimmer

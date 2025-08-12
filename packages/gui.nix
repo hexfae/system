@@ -27,13 +27,14 @@
         ELECTRON_OZONE_PLATFORM_HINT = "auto";
         NIXOS_OZONE_WL = "1";
         MOZ_USE_XINPUT2 = "1";
+        SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = "0";
         FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
       };
       packages = with pkgs; [
         kdePackages.kdenlive
         loupe
         celluloid
-        vesktop
+        resources
         gimp
         obsidian
         obs-studio

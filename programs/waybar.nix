@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   home-manager.users.hexfae.programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -40,6 +40,7 @@
       #custom-media,
       #tray,
       #mode,
+      #wireplumber,
       #idle_inhibitor,
       #mpd {
           /*padding: 0 10px;*/
@@ -55,7 +56,7 @@
 
         modules-left = ["niri/workspaces"];
         modules-center = ["clock"];
-        modules-right = ["tray" "pulseaudio" "network" "cpu" "memory"];
+        modules-right = ["tray" "wireplumber"];
 
         tray = {
           icon-size = 16;
@@ -68,27 +69,10 @@
           interval = 1;
         };
 
-        cpu = {
-          format = "CPU: {usage}% ";
-          tooltip = true;
-          interval = 1;
-        };
-
-        memory = {
-          format = "MEM: {}%";
-          interval = 1;
-        };
-
-        network = {
-          format-wifi = "";
-          format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
-          format-disconnected = "Disconnected ⚠";
-        };
-
-        pulseaudio = {
-          format = "{volume}% {icon}";
-          format-bluetooth = "{volume}% {icon}";
+        wireplumber = {
+          format = "{icon}    {volume}%";
           format-muted = "";
+          format-icons = ["" "" ""];
           on-click = "pavucontrol";
         };
       };

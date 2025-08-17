@@ -19,6 +19,7 @@ in {
 
   hardware.bluetooth.enable = true;
   networking.networkmanager.enable = true;
+  services.blueman.enable = true;
   nixpkgs.overlays = [inputs.niri.overlays.niri];
   programs.niri = {
     package = pkgs.niri-unstable;
@@ -29,7 +30,7 @@ in {
     implementation = "broker";
   };
   home-manager.users.hexfae = {config, ...}: {
-    dconf.settings."org/gnome/desktop/wm/preferences".button-layout = "close,minimize::";
+    dconf.settings."org/gnome/desktop/wm/preferences".button-layout = "close::";
     services.mako.enable = true;
     home.packages = with pkgs; [
       glib

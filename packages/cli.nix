@@ -14,5 +14,6 @@
     tlrc
     nil
     alejandra
+    fastfetch
   ];
 }

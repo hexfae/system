@@ -38,13 +38,9 @@
         gimp
         obsidian
         obs-studio
-        dolphin-emu
-        azahar
-        prismlauncher
         blender-hip
         librewolf
         (pkgs.bottles.override {removeWarningPopup = true;})
-        retroarch-full
       ];
     };
   };

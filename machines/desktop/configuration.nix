@@ -10,6 +10,7 @@
     ../../user.nix
     ../../packages/cli.nix
     ../../packages/gui.nix
+    ../../packages/gaming.nix
     ../../services/ssh.nix
     ../../services/auto-cpufreq.nix
     ../../services/openrgb.nix

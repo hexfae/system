@@ -4,7 +4,7 @@
     users.hexfae = {
       isNormalUser = true;
       password = "pass";
-      extraGroups = ["networkmanager" "wheel" "input" "libvirtd" "transmission"];
+      extraGroups = ["networkmanager" "wheel" "input" "libvirtd" "transmission" "dialout"];
       shell = pkgs.nushell;
     };
   };

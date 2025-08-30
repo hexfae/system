@@ -117,6 +117,12 @@ in {
               y = 0;
             };
           };
+          "HDMI-A-1" = {
+            position = {
+              x = -1920;
+              y = 240;
+            };
+          };
           "HDMI-A-2" = {
             mode = {
               width = 1920;

@@ -26,7 +26,6 @@
     ../../programs/bat.nix
     ../../programs/ripgrep.nix
     ../../programs/starship.nix
-    ../../programs/steam.nix
     ../../programs/vesktop.nix
   ];
 

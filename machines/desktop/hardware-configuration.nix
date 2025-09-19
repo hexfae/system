@@ -31,7 +31,7 @@
   fileSystems."/home/hexfae/usb" = {
     device = "/dev/disk/by-uuid/D566-24E7";
     fsType = "exfat";
-    options = ["uid=1000" "gid=1000" "fmask=0133" "dmask=0022"];
+    options = ["uid=1000" "gid=1000" "fmask=0133" "dmask=0022" "nofail"];
   };
 
   fileSystems."/home/hexfae/win" = {

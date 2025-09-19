@@ -14,7 +14,7 @@
     ../../services/ssh.nix
     ../../services/auto-cpufreq.nix
     ../../services/openrgb.nix
-    ../../services/home-assistant.nix
+    # ../../services/home-assistant.nix
     ../../services/swww.nix
     ../../programs/adb.nix
     ../../programs/fd.nix

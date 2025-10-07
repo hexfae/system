@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.supportedFilesystems = ["bcachefs"];
   programs.gamemode.enable = true;
   security.sudo.wheelNeedsPassword = false;

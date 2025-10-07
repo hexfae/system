@@ -8,6 +8,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     niri.url = "github:sodiboo/niri-flake";
@@ -29,6 +30,7 @@
     agenix,
     nixos-hardware,
     nur,
+    chaotic,
     zen-browser,
     niri,
     home-manager,
@@ -44,6 +46,7 @@
         modules =
           [
             ./machines/desktop
+            chaotic.nixosModules.default
             niri.nixosModules.niri
             home-manager.nixosModules.default
             stylix.nixosModules.stylix

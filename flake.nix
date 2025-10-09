@@ -18,7 +18,6 @@
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
-    discordtavern.url = "github:hexfae/discordtavern";
     harry.url = "/home/hexfae/dox/rust/ultimate_harry";
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +35,6 @@
     home-manager,
     jovian,
     disko,
-    discordtavern,
     harry,
     stylix,
   } @ inputs: {
@@ -45,7 +43,9 @@
         specialArgs = {inherit self inputs;};
         modules =
           [
-            ./machines/desktop
+            ./modules
+            ./common
+            ./hosts/desktop
             chaotic.nixosModules.default
             niri.nixosModules.niri
             home-manager.nixosModules.default
@@ -62,12 +62,11 @@
       server = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit self inputs;};
         modules = [
-          ./machines/server
+          ./hosts/server
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default
           disko.nixosModules.disko
-          discordtavern.nixosModules.default
           harry.nixosModules.default
           {nixpkgs.overlays = [nur.overlays.default];}
         ];
@@ -75,7 +74,7 @@
       thinkpad = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit self inputs;};
         modules = [
-          ./machines/thinkpad
+          ./hosts/thinkpad
           niri.nixosModules.niri
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
@@ -88,7 +87,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit self inputs;};
         modules = [
-          ./machines/laptop
+          ./hosts/laptop
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default
@@ -98,7 +97,7 @@
       deck = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit self inputs;};
         modules = [
-          ./machines/deck
+          ./hosts/deck
           home-manager.nixosModules.default
           stylix.nixosModules.stylix
           agenix.nixosModules.default

@@ -1,0 +1,16 @@
+{
+  lib,
+  config,
+  ...
+}: {
+  config = lib.mkIf config.huncs.programs.nh.enable {
+    programs.nh = {
+      enable = true;
+      # flake = /home/hexfae/nix;
+      clean = {
+        enable = true;
+        extraArgs = "--keep 10 --keep-since 7d";
+      };
+    };
+  };
+}

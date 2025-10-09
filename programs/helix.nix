@@ -19,6 +19,10 @@
             auto-format = true;
             formatter.command = "${pkgs.alejandra}/bin/alejandra";
           }
+          {
+            name = "toml";
+            auto-format = true;
+          }
         ];
         language-server.rust-analyzer.config.check.command = "clippy";
       };

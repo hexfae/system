@@ -14,6 +14,7 @@
     tlrc
     nil
     alejandra
+    taplo
     fastfetch
   ];
 }

@@ -1,6 +1,4 @@
 {
-  description = "A simple NixOS flake";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     agenix.url = "github:yaxitech/ragenix";

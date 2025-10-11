@@ -16,7 +16,6 @@
     users.hexfae = {
       programs.home-manager.enable = true;
       home = {
-        stateVersion = "24.05";
         username = "hexfae";
         homeDirectory = "/home/hexfae";
       };

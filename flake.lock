@@ -395,8 +395,8 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1759600770,
-        "narHash": "sha256-CLr8D1Fa/nDf/OmaLtorE9XitVz+tw/wdwLadaXT66c=",
+        "lastModified": 1763670334,
+        "narHash": "sha256-VS68kqbGMwGnOs3ZxSZVVEGuL1YE7/GfIa12A+Y427c=",
         "path": "/home/hexfae/dox/rust/ultimate_harry",
         "type": "path"
       },

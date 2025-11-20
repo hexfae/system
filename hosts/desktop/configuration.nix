@@ -19,6 +19,7 @@
       zed-editor.enable = true;
       mpv.enable = true;
       obsidian.enable = true;
+      telegram-desktop.enable = true;
     };
   };
 

@@ -23,5 +23,6 @@
     ./fd.nix
     ./rclone.nix
     ./yt-dlp.nix
+    ./telegram-desktop.nix
   ];
 }

@@ -10,6 +10,7 @@
       vesktop.enable = true;
       ghostty.enable = true;
       zed-editor.enable = true;
+      telegram-desktop.enable = true;
     };
   };
 }

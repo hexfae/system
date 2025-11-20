@@ -11,7 +11,7 @@
       enable = true;
       # for some reason this compiles from source right now instead
       # of downloading from chaotic's nyx's binary cache
-      # package = pkgs.zed-editor-fhs_git;
+      package = pkgs.zed-editor-fhs_git;
       extraPackages = with pkgs; [nil];
       extensions = [
         "nix"

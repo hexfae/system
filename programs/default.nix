@@ -1,0 +1,27 @@
+{...}: {
+  imports = [
+    ./waybar.nix
+    ./zed-editor.nix
+    ./obsidian.nix
+    ./tealdeer.nix
+    ./mpv.nix
+    ./zoxide.nix
+    ./starship.nix
+    ./helix.nix
+    ./nix-your-shell.nix
+    ./nix-direnv.nix
+    ./zen-browser.nix
+    ./nh.nix
+    ./ghostty.nix
+    ./vesktop.nix
+    ./steam.nix
+    ./zellij.nix
+    ./git.nix
+    ./yazi.nix
+    ./nushell.nix
+    ./ripgrep-all.nix
+    ./fd.nix
+    ./rclone.nix
+    ./yt-dlp.nix
+  ];
+}

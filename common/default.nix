@@ -1,11 +1,10 @@
 {...}: {
   imports = [
     ./boot.nix
-    ./huncs.nix
-    ./i18n.nix
-    ./nix.nix
+    ./networking.nix
     ./stylix.nix
     ./system.nix
+    ./nix.nix
     ./user.nix
   ];
 }

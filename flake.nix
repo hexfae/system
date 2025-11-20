@@ -1,108 +1,78 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    agenix.url = "github:yaxitech/ragenix";
-    agenix.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-hardware.url = "github:nixos/nixos-hardware";
-    nur.url = "github:nix-community/NUR";
-    nur.inputs.nixpkgs.follows = "nixpkgs";
+    ucodenix.url = "github:e-tho/ucodenix";
+    nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
-    niri.url = "github:sodiboo/niri-flake";
-    niri.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
-    harry.url = "/home/hexfae/dox/rust/ultimate_harry";
-    stylix.url = "github:danth/stylix";
-    stylix.inputs.nixpkgs.follows = "nixpkgs";
+    agenix = {
+      url = "github:yaxitech/ragenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
-    agenix,
-    nixos-hardware,
-    nur,
-    chaotic,
-    zen-browser,
-    niri,
-    home-manager,
-    jovian,
-    disko,
-    harry,
-    stylix,
-  } @ inputs: {
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit self inputs;};
+    ...
+  } @ inputs: let
+    mkSystem = {
+      hostname,
+      extraModules ? [],
+    }:
+      nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
         modules =
           [
-            ./modules
             ./common
-            ./hosts/desktop
-            chaotic.nixosModules.default
-            niri.nixosModules.niri
-            home-manager.nixosModules.default
-            stylix.nixosModules.stylix
-            agenix.nixosModules.default
-            {nixpkgs.overlays = [nur.overlays.default];}
+            ./hardware
+            ./desktops
+            ./programs
+            ./services
+            ./hosts/${hostname}
+            inputs.stylix.nixosModules.stylix
+            inputs.chaotic.nixosModules.default
+            inputs.home-manager.nixosModules.default
+            inputs.nixos-facter-modules.nixosModules.facter
+            inputs.agenix.nixosModules.default
+            {config.facter.reportPath = ./hosts/${hostname}/facter.json;}
+            {networking.hostName = "${hostname}";}
           ]
-          ++ (with nixos-hardware.nixosModules; [
-            common-cpu-amd-pstate
-            common-cpu-amd-zenpower
-            gigabyte-b650
-          ]);
+          ++ extraModules;
       };
-      server = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit self inputs;};
-        modules = [
-          ./hosts/server
-          home-manager.nixosModules.default
-          stylix.nixosModules.stylix
-          agenix.nixosModules.default
-          disko.nixosModules.disko
-          harry.nixosModules.default
-          {nixpkgs.overlays = [nur.overlays.default];}
+  in {
+    nixosConfigurations = {
+      desktop = mkSystem {
+        hostname = "desktop";
+        extraModules = [
+          inputs.ucodenix.nixosModules.default
+          # inputs.niri.nixosModules.niri
         ];
       };
-      thinkpad = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit self inputs;};
-        modules = [
-          ./hosts/thinkpad
-          niri.nixosModules.niri
-          home-manager.nixosModules.default
-          stylix.nixosModules.stylix
-          agenix.nixosModules.default
-          disko.nixosModules.disko
-          nixos-hardware.nixosModules.lenovo-thinkpad-t480s
-          {nixpkgs.overlays = [nur.overlays.default];}
-        ];
-      };
-      laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit self inputs;};
-        modules = [
-          ./hosts/laptop
-          home-manager.nixosModules.default
-          stylix.nixosModules.stylix
-          agenix.nixosModules.default
-          {nixpkgs.overlays = [nur.overlays.default];}
-        ];
-      };
-      deck = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit self inputs;};
-        modules = [
-          ./hosts/deck
-          home-manager.nixosModules.default
-          stylix.nixosModules.stylix
-          agenix.nixosModules.default
-          jovian.nixosModules.default
-          {nixpkgs.overlays = [nur.overlays.default];}
-        ];
-      };
+      thinkpad = mkSystem {hostname = "thinkpad";};
     };
   };
 }

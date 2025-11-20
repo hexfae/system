@@ -1,15 +1,17 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   users = {
     mutableUsers = false;
     users.hexfae = {
       isNormalUser = true;
       password = "pass";
       extraGroups = ["networkmanager" "wheel" "input" "libvirtd" "transmission" "dialout"];
-      shell = pkgs.nushell;
     };
   };
   home-manager = {
-    # TODO: disable?
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
@@ -18,6 +20,10 @@
       home = {
         username = "hexfae";
         homeDirectory = "/home/hexfae";
+        packages = with pkgs; [
+          uutils-coreutils-noprefix
+          inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
+        ];
       };
       xdg = {
         userDirs = {

@@ -1,0 +1,3 @@
+{...}: {
+  imports = [./amd-cpu.nix];
+}

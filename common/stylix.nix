@@ -1,10 +1,11 @@
 {pkgs, ...}: let
+  enable = true;
   image = pkgs.fetchurl {
-    url = "https://w.wallhaven.cc/full/zp/wallhaven-zpx3xw.png";
-    sha256 = "sha256-WzJacHB9WEnq1QFdGIdZy4XqDNUHOxjqzYz9wW4aYRw=";
+    url = "https://w.wallhaven.cc/full/k8/wallhaven-k898gq.jpg";
+    sha256 = "sha256-BjREdU8AqHatcnVdpGE09kPrQTTt1mIagiHfLRSxPVw=";
   };
-  base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
   polarity = "dark";
+  base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
   cursor.package = pkgs.posy-cursors;
   cursor.name = "Posy_Cursor_Black";
   cursor.size = 32;
@@ -26,22 +27,15 @@
   iconTheme.enable = true;
 in {
   stylix = {
-    enable = true;
-    inherit image;
-    inherit polarity;
-    inherit base16Scheme;
-    inherit cursor;
-    inherit fonts;
+    inherit enable image polarity base16Scheme cursor fonts iconTheme;
     targets.plymouth.enable = false;
+    targets.qt.enable = false;
   };
 
   home-manager.users.hexfae = {
     stylix = {
       inherit iconTheme;
-      targets = {
-        qt.platform = "qtct";
-        zen-browser.profileNames = ["hexfae"];
-      };
+      targets.zen-browser.profileNames = ["hexfae"];
     };
     xdg.desktopEntries = {
       "kvantummanager" = {

@@ -1,16 +1,17 @@
 {pkgs, ...}: {
+  time.timeZone = "Europe/Stockholm";
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  boot.supportedFilesystems = ["bcachefs"];
-  programs.gamemode.enable = true;
-  security.sudo.wheelNeedsPassword = false;
-  security.rtkit.enable = true;
-
-  hardware = {
-    enableAllFirmware = true;
-    enableRedistributableFirmware = true;
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
+  # alternative scheduler
+  services.scx.enable = true;
+  # auto nice
+  services.ananicy.enable = true;
+  services.ananicy.rulesProvider = pkgs.ananicy-rules-cachyos_git;
+  chaotic.mesa-git = {
+    enable = true;
+    fallbackSpecialisation = false;
+  };
+  security.sudo-rs = {
+    enable = true;
+    wheelNeedsPassword = false;
   };
 }

@@ -1,33 +1,41 @@
 {...}: {
-  networking.hostName = "desktop";
   system.stateVersion = "25.11";
   home-manager.users.hexfae.home.stateVersion = "25.11";
 
   huncs = {
-    desktops.niri.enable = true;
+    hardware.amd-cpu.enable = true;
+    desktops.gnome.enable = true;
     services = {
-      ssh.enable = true;
-      auto-cpufreq.enable = true;
-      openrgb.enable = true;
+      pipewire.enable = true;
+      mysql.enable = true;
+      docker.enable = true;
+      easyeffects.enable = true;
+      amberol.enable = true;
     };
     programs = {
-      adb.enable = true;
-      bat.enable = true;
-      fd.enable = true;
-      ghostty.enable = true;
-      git.enable = true;
-      helix.enable = true;
-      nh.enable = true;
-      nushell.enable = true;
-      obs.enable = true;
-      ripgrep-all.enable = true;
-      starship.enable = true;
-      steam.enable = true;
       vesktop.enable = true;
+      steam.enable = true;
+      ghostty.enable = true;
       zed-editor.enable = true;
-      zellij.enable = true;
-      zen.enable = true;
-      zoxide.enable = true;
+      mpv.enable = true;
+      obsidian.enable = true;
     };
   };
+
+  # TODO: to check out from chaotic's nyx:
+  # discord-krisp
+  # all of the jovian packages
+  # jujutsu
+  # linuxPackages_cachyos-server / linux_cachyos-server for server
+  # latencyflex
+  # niri_git
+  # mangohud
+  # nix_git
+  # openrgb_git
+  # proton-cachyos
+  # proton-ge-custom
+  # pwvucontrol-git
+  # xdg-desktop-portal
+  # yt-dlp
+  # zfs-cachyos
 }

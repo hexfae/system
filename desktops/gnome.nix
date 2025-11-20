@@ -159,7 +159,6 @@
         };
         "org/gnome/shell".favorite-apps = [
           "zen-twilight.desktop"
-          # "vesktop.desktop"
           "discord-canary.desktop"
           "org.gnome.Nautilus.desktop"
           "com.mitchellh.ghostty.desktop"

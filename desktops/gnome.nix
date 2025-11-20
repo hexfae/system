@@ -281,6 +281,7 @@
       snapshot # camera app
       totem # video player
       yelp # help app
+      papers # document viewer
       gnome-disk-utility
       gnome-shell-extensions
       gnome-backgrounds

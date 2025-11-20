@@ -8,5 +8,6 @@
     ./amberol.nix
     ./openssh.nix
     ./harry.nix
+    ./auto-cpufreq.nix
   ];
 }

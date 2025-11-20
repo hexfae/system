@@ -44,32 +44,27 @@
     nixpkgs,
     ...
   } @ inputs: let
-    mkSystem = {
-      hostname,
-      extraModules ? [],
-    }:
+    mkSystem = {hostname}:
       nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
-        modules =
-          [
-            ./common
-            ./hardware
-            ./desktops
-            ./programs
-            ./services
-            ./hosts/${hostname}
-            inputs.stylix.nixosModules.stylix
-            inputs.chaotic.nixosModules.default
-            inputs.home-manager.nixosModules.default
-            inputs.nixos-facter-modules.nixosModules.facter
-            inputs.agenix.nixosModules.default
-            inputs.ucodenix.nixosModules.default
-            inputs.disko.nixosModules.disko
-            inputs.harry.nixosModules.default
-            {config.facter.reportPath = ./hosts/${hostname}/facter.json;}
-            {networking.hostName = "${hostname}";}
-          ]
-          ++ extraModules;
+        modules = [
+          ./common
+          ./hardware
+          ./desktops
+          ./programs
+          ./services
+          ./hosts/${hostname}
+          inputs.stylix.nixosModules.stylix
+          inputs.chaotic.nixosModules.default
+          inputs.home-manager.nixosModules.default
+          inputs.nixos-facter-modules.nixosModules.facter
+          inputs.agenix.nixosModules.default
+          inputs.ucodenix.nixosModules.default
+          inputs.disko.nixosModules.disko
+          inputs.harry.nixosModules.default
+          {config.facter.reportPath = ./hosts/${hostname}/facter.json;}
+          {networking.hostName = "${hostname}";}
+        ];
       };
   in {
     nixosConfigurations = {

@@ -21,7 +21,7 @@
     };
   };
 
-  boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = lib.mkOverride 999 pkgs.linuxPackages_cachyos; # 1 higher than default
   # alternative scheduler
   services.scx.enable = lib.mkDefault true;
   # auto nice

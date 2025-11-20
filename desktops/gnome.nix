@@ -235,7 +235,8 @@
       };
       xdg.configFile = {
         "burn-my-windows/profiles/bmw.conf".source = ../files/bmw.conf;
-        "monitors.xml".source = ../files/monitors.xml;
+        "monitors.xml" =
+          lib.mkIf (config.networking.hostName == "desktop") {source = ../files/monitors.xml;};
       };
       home.packages =
         (with pkgs; [

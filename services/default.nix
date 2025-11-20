@@ -7,5 +7,6 @@
     ./easyeffects.nix
     ./amberol.nix
     ./openssh.nix
+    ./harry.nix
   ];
 }

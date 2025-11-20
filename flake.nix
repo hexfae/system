@@ -32,6 +32,11 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    harry.url = "/home/hexfae/dox/rust/ultimate_harry";
   };
 
   outputs = {
@@ -58,6 +63,9 @@
             inputs.home-manager.nixosModules.default
             inputs.nixos-facter-modules.nixosModules.facter
             inputs.agenix.nixosModules.default
+            inputs.ucodenix.nixosModules.default
+            inputs.disko.nixosModules.disko
+            inputs.harry.nixosModules.default
             {config.facter.reportPath = ./hosts/${hostname}/facter.json;}
             {networking.hostName = "${hostname}";}
           ]
@@ -65,14 +73,9 @@
       };
   in {
     nixosConfigurations = {
-      desktop = mkSystem {
-        hostname = "desktop";
-        extraModules = [
-          inputs.ucodenix.nixosModules.default
-          # inputs.niri.nixosModules.niri
-        ];
-      };
+      desktop = mkSystem {hostname = "desktop";};
       thinkpad = mkSystem {hostname = "thinkpad";};
+      server = mkSystem {hostname = "server";};
     };
   };
 }

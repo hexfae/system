@@ -13,6 +13,7 @@
       amberol.enable = true;
     };
     programs = {
+      zen-browser.enable = true;
       vesktop.enable = true;
       steam.enable = true;
       ghostty.enable = true;

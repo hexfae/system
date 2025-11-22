@@ -7,6 +7,7 @@
     desktops.gnome.enable = true;
     services.pipewire.enable = true;
     programs = {
+      zen-browser.enable = true;
       vesktop.enable = true;
       ghostty.enable = true;
       zed-editor.enable = true;

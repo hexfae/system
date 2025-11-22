@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  config,
+  ...
+}: let
   enable = true;
   image = pkgs.fetchurl {
     url = "https://w.wallhaven.cc/full/k8/wallhaven-k898gq.jpg";

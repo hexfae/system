@@ -1,8 +1,13 @@
 {
   pkgs,
   inputs,
+  config,
   ...
-}: {
+}: let
+  stateHome = config.home-manager.users.hexfae.xdg.stateHome;
+  dataHome = config.home-manager.users.hexfae.xdg.dataHome;
+  configHome = config.home-manager.users.hexfae.xdg.configHome;
+in {
   users = {
     mutableUsers = false;
     users.hexfae = {
@@ -16,8 +21,17 @@
     useUserPackages = true;
     backupFileExtension = "backup";
     users.hexfae = {
-      programs.home-manager.enable = true;
+      programs = {
+        home-manager.enable = true;
+        bash.historyFile = "${stateHome}/bash/history";
+      };
+      gtk.gtk2.configLocation = "${configHome}/gtk-2.0/gtkrc";
       home = {
+        sessionVariables = {
+          CARGO_HOME = "${dataHome}/cargo";
+          # TODO: zen browser directory (.zen)
+          XCURSOR_PATH = "/usr/share/icons:${dataHome}/icons";
+        };
         username = "hexfae";
         homeDirectory = "/home/hexfae";
         packages = with pkgs; [
@@ -26,6 +40,7 @@
         ];
       };
       xdg = {
+        enable = true;
         userDirs = {
           enable = true;
           createDirectories = true;

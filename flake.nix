@@ -37,6 +37,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     harry.url = "/home/hexfae/dox/rust/ultimate_harry";
+    "hexfaedotdev" = {
+      url = "github:hexfae/hexfae.dev";
+      flake = false;
+    };
   };
 
   outputs = {

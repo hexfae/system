@@ -407,6 +407,22 @@
         "type": "path"
       }
     },
+    "hexfaedotdev": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1763867466,
+        "narHash": "sha256-a9eeSEkUgfh85cESQgk96uEzvNacvcBDp4U8wF/8F40=",
+        "owner": "hexfae",
+        "repo": "hexfae.dev",
+        "rev": "7f12f3382610eb5e427a9a9db7136ccfdf39daf7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hexfae",
+        "repo": "hexfae.dev",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -796,6 +812,7 @@
         "chaotic": "chaotic",
         "disko": "disko",
         "harry": "harry",
+        "hexfaedotdev": "hexfaedotdev",
         "home-manager": "home-manager_3",
         "niri": "niri",
         "nixcord": "nixcord",

@@ -8,5 +8,8 @@
   services.scx.enable = false;
   chaotic.mesa-git.enable = false;
 
-  huncs.services.harry.enable = true;
+  huncs.services = {
+    harry.enable = true;
+    nginx.enable = true;
+  };
 }

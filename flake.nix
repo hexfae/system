@@ -57,6 +57,7 @@
           ./desktops
           ./programs
           ./services
+          ./networking
           ./hosts/${hostname}
           inputs.stylix.nixosModules.stylix
           inputs.chaotic.nixosModules.default

@@ -6,6 +6,10 @@
   huncs = {
     desktops.gnome.enable = true;
     services.pipewire.enable = true;
+    networking.wireguard.client = {
+      ludd.enable = true;
+      server.enable = true;
+    };
     programs = {
       zen-browser.enable = true;
       vesktop.enable = true;

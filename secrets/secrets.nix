@@ -13,4 +13,6 @@ in {
   "syncthing.age".publicKeys = all;
   "ludd-wireguard-private-key.age".publicKeys = all;
   "ludd-s3-secret-access-key.age".publicKeys = all;
+  "server-wireguard-private-key.age".publicKeys = all;
+  "desktop-wireguard-private-key.age".publicKeys = all;
 }

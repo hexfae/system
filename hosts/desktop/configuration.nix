@@ -5,6 +5,10 @@
   huncs = {
     hardware.amd-cpu.enable = true;
     desktops.gnome.enable = true;
+    networking.wireguard.client = {
+      ludd.enable = true;
+      server.enable = true;
+    };
     services = {
       pipewire.enable = true;
       mysql.enable = true;

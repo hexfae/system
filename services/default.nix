@@ -10,5 +10,6 @@
     ./harry.nix
     ./auto-cpufreq.nix
     ./nginx.nix
+    ./fail2ban.nix
   ];
 }

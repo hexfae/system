@@ -24,5 +24,6 @@
     ./rclone.nix
     ./yt-dlp.nix
     ./telegram-desktop.nix
+    ./distrobox.nix
   ];
 }

@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   system.stateVersion = "25.11";
   home-manager.users.hexfae.home.stateVersion = "25.11";
 
@@ -11,8 +11,6 @@
     };
     services = {
       pipewire.enable = true;
-      mysql.enable = true;
-      docker.enable = true;
       easyeffects.enable = true;
       amberol.enable = true;
     };
@@ -25,6 +23,7 @@
       mpv.enable = true;
       obsidian.enable = true;
       telegram-desktop.enable = true;
+      distrobox.enable = true;
     };
   };
 

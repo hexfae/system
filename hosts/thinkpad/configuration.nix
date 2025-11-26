@@ -5,7 +5,10 @@
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
   huncs = {
     desktops.gnome.enable = true;
-    services.pipewire.enable = true;
+    services = {
+      pipewire.enable = true;
+      kerberos.enable = true;
+    };
     networking.wireguard.client = {
       ludd.enable = true;
       server.enable = true;

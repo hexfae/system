@@ -22,6 +22,9 @@
             "zen.welcome-screen.seen" = true;
             "zen.workspaces.continue-where-left-off" = true;
             "zen.view.show-newtab-button-top" = false;
+            "network.negotitate-auth.allow-non-fqdn" = true;
+            "network.negotitate-auth.delegation-uris" = "ludd.ltu.se";
+            "network.negotiate-auth.trusted-uris" = "ludd.ltu.se,.ludd.ltu.se";
           };
           extensions = {
             force = true;

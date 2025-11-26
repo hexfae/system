@@ -11,5 +11,6 @@
     ./auto-cpufreq.nix
     ./nginx.nix
     ./fail2ban.nix
+    ./kerberos.nix
   ];
 }

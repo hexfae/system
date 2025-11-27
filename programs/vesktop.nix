@@ -32,14 +32,14 @@
             betterUploadButton.enable = true;
             biggerStreamPreview.enable = true;
             callTimer.enable = true;
-            clearURLs.enable = true;
+            clearUrLs.enable = true;
             consoleJanitor.enable = true;
             copyEmojiMarkdown.enable = true;
             copyFileContents.enable = true;
             copyStickerLinks.enable = true;
-            copyUserURLs.enable = true;
+            copyUserUrLs.enable = true;
             customIdle.enable = true;
-            customRPC.enable = true;
+            customRpc.enable = true;
             dearrow.enable = true;
             decor.enable = true;
             disableCallIdle.enable = true;
@@ -96,7 +96,7 @@
             replyTimestamp.enable = true;
             revealAllSpoilers.enable = true;
             reverseImageSearch.enable = true;
-            reviewDB.enable = true;
+            reviewDb.enable = true;
             roleColorEverywhere.enable = true;
             sendTimestamps.enable = true;
             serverInfo.enable = true;
@@ -123,7 +123,7 @@
             unsuppressEmbeds.enable = true;
             userMessagesPronouns.enable = true;
             userVoiceShow.enable = true;
-            USRBG.enable = true;
+            usrbg.enable = true;
             validReply.enable = true;
             validUser.enable = true;
             vencordToolbox.enable = true;

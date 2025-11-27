@@ -13,7 +13,7 @@
     ./zen-browser.nix
     ./nh.nix
     ./ghostty.nix
-    ./vesktop.nix
+    ./discord.nix
     ./steam.nix
     ./zellij.nix
     ./git.nix

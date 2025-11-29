@@ -25,6 +25,7 @@
       telegram-desktop.enable = true;
       distrobox.enable = true;
       bottles.enable = true;
+      obs-studio.enable = true;
     };
   };
 

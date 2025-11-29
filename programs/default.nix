@@ -26,5 +26,6 @@
     ./telegram-desktop.nix
     ./distrobox.nix
     ./bottles.nix
+    ./obs-studio.nix
   ];
 }

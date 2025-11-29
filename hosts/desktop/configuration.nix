@@ -24,6 +24,7 @@
       obsidian.enable = true;
       telegram-desktop.enable = true;
       distrobox.enable = true;
+      bottles.enable = true;
     };
   };
 

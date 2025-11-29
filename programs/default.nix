@@ -25,5 +25,6 @@
     ./yt-dlp.nix
     ./telegram-desktop.nix
     ./distrobox.nix
+    ./bottles.nix
   ];
 }

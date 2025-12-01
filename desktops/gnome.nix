@@ -160,6 +160,7 @@
         "org/gnome/shell".favorite-apps = [
           "zen-twilight.desktop"
           "discord-canary.desktop"
+          "org.telegram.desktop.desktop"
           "org.gnome.Nautilus.desktop"
           "com.mitchellh.ghostty.desktop"
           "org.gnome.Settings.desktop"

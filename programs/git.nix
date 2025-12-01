@@ -15,8 +15,8 @@
         user = {
           name = "hexfae";
           email = "hexfae@proton.me";
-          init.defaultBranch = "main";
         };
+        init.defaultBranch = "main";
       };
     };
   };

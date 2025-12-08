@@ -61,6 +61,7 @@
           toggle-message-tray = [];
           toggle-quick-settings = [];
         };
+        "org/gnome/desktop/sound".theme-name = "ocean";
         "org/gnome/desktop/interface" = {
           clock-show-seconds = true;
           show-battery-percentage = true;
@@ -245,6 +246,7 @@
           fragments
           adwsteamgtk
           resources
+          kdePackages.ocean-sound-theme
         ])
         ++ (with pkgs.gnomeExtensions; [
           dash-to-dock

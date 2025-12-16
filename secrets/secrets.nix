@@ -7,7 +7,8 @@ let
   all = [desktop server laptop thinkpad];
 in {
   "transmission.age".publicKeys = all;
-  "github.age".publicKeys = all;
+  "github-token.age".publicKeys = all;
+  "vortex-password.age".publicKeys = all;
   "discordtavern.age".publicKeys = all;
   "harry.age".publicKeys = all;
   "syncthing.age".publicKeys = all;

@@ -195,7 +195,7 @@
           # smart-home.extensionUuid
           color-picker.extensionUuid
           gnome-40-ui-improvements.extensionUuid
-          # TODO: add https://github.com/romanlefler/SimpleWeather when available on nixpkgs
+          simpleweather.extensionUuid
           copyous.extensionUuid
         ];
         "org/gnome/shell/extensions/burn-my-windows".active-profile = "/home/hexfae/.config/burn-my-windows/profiles/bmw.conf";
@@ -227,6 +227,11 @@
           send-notification-on-copy = false;
           play-audio-on-copy = false;
           history-length = 200;
+        };
+        "org/gnome/shell/extensions/simple-weather" = {
+          locations = ["{\"name\":\"Luleå\",\"lat\":65.619023,\"lon\":22.1471079}"];
+          main-location-index = 0;
+          panel-box = "center";
         };
         "org/gnome/shell/extensions/dash-to-dock" = {
           dock-position = "LEFT";
@@ -283,6 +288,7 @@
           # smart-home
           color-picker
           gnome-40-ui-improvements
+          simpleweather
           copyous
         ]);
     };

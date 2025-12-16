@@ -16,6 +16,8 @@
       defaults.email = "hexfae@proton.me";
     };
 
+    systemd.tmpfiles.rules = ["d /var/www/serve.hexfae.dev 0755 nginx nginx"];
+
     services.nginx = {
       enable = true;
 
@@ -35,6 +37,14 @@
         quic = true;
 
         root = "${inputs.hexfaedotdev}/files";
+      };
+
+      virtualHosts."serve.hexfae.dev" = {
+        enableACME = true;
+        forceSSL = true;
+        quic = true;
+
+        root = "/var/www/serve.hexfae.dev";
       };
     };
   };

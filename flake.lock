@@ -682,6 +682,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-copyous": {
+      "locked": {
+        "lastModified": 1765541075,
+        "narHash": "sha256-Oyen9YEBP+5Eg8iGTbu3lml3v2AoUhNjvVMePg72EHU=",
+        "owner": "jmir1",
+        "repo": "nixpkgs",
+        "rev": "400a4a32f2b23e3d294552d54f3641242d00692a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jmir1",
+        "ref": "copyous",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1753579242,
@@ -819,6 +835,7 @@
         "nixcord": "nixcord",
         "nixos-facter-modules": "nixos-facter-modules",
         "nixpkgs": "nixpkgs_4",
+        "nixpkgs-copyous": "nixpkgs-copyous",
         "nur": "nur",
         "stylix": "stylix",
         "ucodenix": "ucodenix",

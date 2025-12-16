@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-copyous.url = "github:jmir1/nixpkgs/copyous";
     ucodenix.url = "github:e-tho/ucodenix";
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";

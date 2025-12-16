@@ -2,11 +2,22 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }: {
   options.huncs.desktops.gnome.enable = lib.mkEnableOption "gnome";
 
   config = lib.mkIf config.huncs.desktops.gnome.enable {
+    nixpkgs.overlays = [
+      (final: prev: {
+        gnomeExtensions =
+          prev.gnomeExtensions
+          // {
+            copyous = prev.callPackage "${inputs.nixpkgs-copyous}/pkgs/desktops/gnome/extensions/copyous/default.nix" {};
+          };
+      })
+    ];
+
     services = {
       displayManager.autoLogin.user = "hexfae";
       libinput.mouse.accelProfile = "flat";
@@ -185,6 +196,7 @@
           color-picker.extensionUuid
           gnome-40-ui-improvements.extensionUuid
           # TODO: add https://github.com/romanlefler/SimpleWeather when available on nixpkgs
+          copyous.extensionUuid
         ];
         "org/gnome/shell/extensions/burn-my-windows".active-profile = "/home/hexfae/.config/burn-my-windows/profiles/bmw.conf";
         "org/gnome/shell/extensions/blur-my-shell/panel".blur = false;
@@ -271,6 +283,7 @@
           # smart-home
           color-picker
           gnome-40-ui-improvements
+          copyous
         ]);
     };
     # https://wiki.nixos.org/wiki/GNOME#Excluding_GNOME_Applications

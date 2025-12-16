@@ -233,6 +233,12 @@
           custom-background-color = true;
           background-color = "rgb(41,44,60)";
         };
+        "org/gnome/nautilus/preferences" = {
+          show-create-link = true;
+          show-delete-permanently = true;
+          date-time-format = "detailed";
+        };
+        "org/gnome/nautilus/icon-view".captions = ["size" "none" "none"];
       };
       xdg.configFile = {
         "burn-my-windows/profiles/bmw.conf".source = ../files/bmw.conf;

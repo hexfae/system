@@ -15,6 +15,7 @@
         enable = true;
         profiles.hexfae = {
           settings = {
+            "middlemouse.paste" = false;
             "general.autoScroll" = true;
             "browser.aboutConfig.showWarning" = false;
             "browser.ctrlTab.sortByRecentlyUsed" = true;

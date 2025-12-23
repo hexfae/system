@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: let
+{pkgs, ...}: let
   enable = true;
   image = pkgs.fetchurl {
     url = "https://w.wallhaven.cc/full/k8/wallhaven-k898gq.jpg";
@@ -32,31 +28,12 @@
 in {
   stylix = {
     inherit enable image polarity base16Scheme cursor fonts iconTheme;
-    targets.plymouth.enable = false;
-    targets.qt.enable = false;
   };
 
   home-manager.users.hexfae = {
     stylix = {
       inherit iconTheme;
       targets.zen-browser.profileNames = ["hexfae"];
-    };
-    xdg.desktopEntries = {
-      "kvantummanager" = {
-        name = "Kvantum Manager";
-        exec = "kvantummanager";
-        noDisplay = true;
-      };
-      "qt5ct" = {
-        name = "Qt5 Settings";
-        exec = "qt5ct";
-        noDisplay = true;
-      };
-      "qt6ct" = {
-        name = "Qt6 Settings";
-        exec = "qt6ct";
-        noDisplay = true;
-      };
     };
   };
 }

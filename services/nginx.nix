@@ -21,7 +21,7 @@
     services.nginx = {
       enable = true;
 
-      package = pkgs.nginxQuic;
+      package = pkgs.angie;
 
       recommendedGzipSettings = true;
       recommendedOptimisation = true;

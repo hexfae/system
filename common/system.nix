@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }: {
   time.timeZone = "Europe/Stockholm";
@@ -21,7 +22,9 @@
     };
   };
 
-  boot.kernelPackages = lib.mkOverride 999 pkgs.linuxPackages_cachyos; # 1 higher than default
+  boot = lib.mkIf (config.networking.hostName != "server") {
+    kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
+  };
   # alternative scheduler
   services.scx.enable = lib.mkDefault true;
   # auto nice

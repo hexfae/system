@@ -16,6 +16,7 @@ in {
       isNormalUser = true;
       hashedPasswordFile = config.age.secrets.user-password.path;
       extraGroups = ["networkmanager" "wheel" "input" "libvirtd" "transmission" "dialout"];
+      uid = 1000;
     };
   };
   home-manager = {

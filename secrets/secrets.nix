@@ -9,6 +9,7 @@ in {
   "transmission.age".publicKeys = all;
   "github-token.age".publicKeys = all;
   "vortex-password.age".publicKeys = all;
+  "user-password.age".publicKeys = all;
   "discordtavern.age".publicKeys = all;
   "harry.age".publicKeys = all;
   "syncthing.age".publicKeys = all;

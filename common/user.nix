@@ -8,11 +8,13 @@
   dataHome = config.home-manager.users.hexfae.xdg.dataHome;
   configHome = config.home-manager.users.hexfae.xdg.configHome;
 in {
+  age.secrets.user-password.file = ../secrets/user-password.age;
+  services.userborn.enable = true;
   users = {
     mutableUsers = false;
     users.hexfae = {
       isNormalUser = true;
-      password = "pass";
+      hashedPasswordFile = config.age.secrets.user-password.path;
       extraGroups = ["networkmanager" "wheel" "input" "libvirtd" "transmission" "dialout"];
     };
   };

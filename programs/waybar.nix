@@ -1,12 +1,13 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.waybar.enable = lib.mkEnableOption "waybar";
 
   config = lib.mkIf config.huncs.programs.waybar.enable {
-    home-manager.users.hexfae.programs.waybar = {
+    home-manager.users.${vars.username}.programs.waybar = {
       enable = true;
       systemd.enable = true;
       style = ''

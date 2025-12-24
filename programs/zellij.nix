@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.zellij.enable = lib.mkOption {
@@ -9,7 +10,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.zellij.enable {
-    home-manager.users.hexfae.programs.zellij = {
+    home-manager.users.${vars.username}.programs.zellij = {
       enable = true;
       settings = {
         default_shell = "nu";

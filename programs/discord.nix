@@ -2,12 +2,13 @@
   inputs,
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.discord.enable = lib.mkEnableOption "discord";
 
   config = lib.mkIf config.huncs.programs.discord.enable {
-    home-manager.users.hexfae = {
+    home-manager.users.${vars.username} = {
       imports = [inputs.nixcord.homeModules.nixcord];
       programs.nixcord = {
         enable = true;

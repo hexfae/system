@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  vars,
+  ...
+}: let
   enable = true;
   image = pkgs.fetchurl {
     url = "https://w.wallhaven.cc/full/k8/wallhaven-k898gq.jpg";
@@ -30,10 +34,10 @@ in {
     inherit enable image polarity base16Scheme cursor fonts iconTheme;
   };
 
-  home-manager.users.hexfae = {
+  home-manager.users.${vars.username} = {
     stylix = {
       inherit iconTheme;
-      targets.zen-browser.profileNames = ["hexfae"];
+      targets.zen-browser.profileNames = ["${vars.username}"];
     };
   };
 }

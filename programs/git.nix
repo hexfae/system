@@ -1,8 +1,11 @@
 {
   lib,
   config,
+  vars,
   ...
-}: {
+}: let
+  user = vars.username;
+in {
   options.huncs.programs.git.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
@@ -12,28 +15,28 @@
     age.secrets = {
       github-token = {
         file = ../secrets/github-token.age;
-        owner = "hexfae";
+        owner = "${user}";
       };
       vortex-password = {
         file = ../secrets/vortex-password.age;
-        owner = "hexfae";
+        owner = "${user}";
       };
     };
 
-    home-manager.users.hexfae.programs.git = {
+    home-manager.users.${user}.programs.git = {
       enable = true;
       settings = {
         user = {
-          name = "hexfae";
-          email = "hexfae@proton.me";
+          name = "${user}";
+          email = "${vars.email}";
         };
         init.defaultBranch = "main";
         "credential \"https://github.com\"" = {
-          username = "hexfae";
+          username = "${user}";
           helper = "store --file ${config.age.secrets.github-token.path}";
         };
         "credential \"https://git.ludd.ltu.se\"" = {
-          username = "hexfae";
+          username = "${user}";
           helper = "store --file ${config.age.secrets.vortex-password.path}";
         };
       };

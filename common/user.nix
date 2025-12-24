@@ -2,28 +2,30 @@
   pkgs,
   inputs,
   config,
+  vars,
   ...
 }: let
-  stateHome = config.home-manager.users.hexfae.xdg.stateHome;
-  dataHome = config.home-manager.users.hexfae.xdg.dataHome;
-  configHome = config.home-manager.users.hexfae.xdg.configHome;
+  user = vars.username;
+  stateHome = config.home-manager.users.${user}.xdg.stateHome;
+  dataHome = config.home-manager.users.${user}.xdg.dataHome;
+  configHome = config.home-manager.users.${user}.xdg.configHome;
 in {
   age.secrets.user-password.file = ../secrets/user-password.age;
   services.userborn.enable = true;
   users = {
     mutableUsers = false;
-    users.hexfae = {
+    users.${user} = {
       isNormalUser = true;
       hashedPasswordFile = config.age.secrets.user-password.path;
       extraGroups = ["networkmanager" "wheel" "input" "libvirtd" "transmission" "dialout"];
-      uid = 1000;
+      uid = vars.uid;
     };
   };
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    users.hexfae = {
+    users.${user} = {
       programs = {
         home-manager.enable = true;
         bash.historyFile = "${stateHome}/bash/history";
@@ -35,8 +37,8 @@ in {
           # TODO: zen browser directory (.zen)
           XCURSOR_PATH = "/usr/share/icons:${dataHome}/icons";
         };
-        username = "hexfae";
-        homeDirectory = "/home/hexfae";
+        username = "${user}";
+        homeDirectory = "/home/${user}";
         packages = with pkgs; [
           uutils-coreutils-noprefix
           inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -50,11 +52,11 @@ in {
           desktop = null;
           publicShare = null;
           templates = null;
-          documents = "/home/hexfae/dox";
-          download = "/home/hexfae/dwn";
-          music = "/home/hexfae/mus";
-          pictures = "/home/hexfae/pix";
-          videos = "/home/hexfae/vid";
+          documents = "/home/${user}/dox";
+          download = "/home/${user}/dwn";
+          music = "/home/${user}/mus";
+          pictures = "/home/${user}/pix";
+          videos = "/home/${user}/vid";
         };
       };
     };

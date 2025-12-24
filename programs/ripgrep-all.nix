@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.ripgrep-all.enable = lib.mkOption {
@@ -9,6 +10,6 @@
   };
 
   config = lib.mkIf config.huncs.programs.ripgrep-all.enable {
-    home-manager.users.hexfae.programs.ripgrep-all.enable = true;
+    home-manager.users.${vars.username}.programs.ripgrep-all.enable = true;
   };
 }

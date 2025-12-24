@@ -1,8 +1,11 @@
 {
   lib,
   config,
+  vars,
   ...
-}: {
+}: let
+  user = vars.username;
+in {
   options.huncs.programs.rclone.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
@@ -10,17 +13,17 @@
 
   config = lib.mkIf config.huncs.programs.rclone.enable {
     age.secrets.s3-ludd-secret-access-key.file = ../secrets/ludd-s3-secret-access-key.age;
-    home-manager.users.hexfae.programs.rclone = {
+    home-manager.users.${user}.programs.rclone = {
       enable = true;
       remotes = {
         server = {
           config = {
             type = "sftp";
-            host = "129.151.192.240";
+            host = vars.networking.server.ip;
           };
-          mounts."/home/hexfae" = {
+          mounts."/home/${user}" = {
             enable = true;
-            mountPoint = "/home/hexfae/mnt/server";
+            mountPoint = "/home/${user}/mnt/server";
           };
         };
         lvp = {
@@ -33,7 +36,7 @@
           };
           mounts."/lvp" = {
             enable = true;
-            mountPoint = "/home/hexfae/mnt/lvp";
+            mountPoint = "/home/${user}/mnt/lvp";
           };
         };
       };

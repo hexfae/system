@@ -1,6 +1,6 @@
-{...}: {
+{vars, ...}: {
   system.stateVersion = "24.11";
-  home-manager.users.hexfae.home.stateVersion = "24.11";
+  home-manager.users.${vars.username}.home.stateVersion = "24.11";
 
   services.scx.enable = false;
   chaotic.mesa-git.enable = false;

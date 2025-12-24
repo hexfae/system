@@ -1,6 +1,6 @@
-{...}: {
+{vars, ...}: {
   system.stateVersion = "25.11";
-  home-manager.users.hexfae.home.stateVersion = "25.11";
+  home-manager.users.${vars.username}.home.stateVersion = "25.11";
 
   huncs = {
     hardware.amd-cpu.enable = true;

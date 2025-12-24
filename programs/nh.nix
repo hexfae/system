@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.nh.enable = lib.mkOption {
@@ -9,9 +10,9 @@
   };
 
   config = lib.mkIf config.huncs.programs.nh.enable {
-    home-manager.users.hexfae.programs.nh = {
+    home-manager.users.${vars.username}.programs.nh = {
       enable = true;
-      flake = /home/hexfae/nix;
+      flake = /home/${vars.username}/nix;
       clean = {
         enable = true;
         extraArgs = "--keep 10 --keep-since 7d";

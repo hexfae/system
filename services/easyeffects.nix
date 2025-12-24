@@ -1,12 +1,13 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.services.easyeffects.enable = lib.mkEnableOption "easyeffects";
 
   config = lib.mkIf config.huncs.services.easyeffects.enable {
-    home-manager.users.hexfae.services.easyeffects = {
+    home-manager.users.${vars.username}.services.easyeffects = {
       enable = true;
       preset = "microphone";
       extraPresets = {

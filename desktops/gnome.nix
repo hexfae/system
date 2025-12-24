@@ -3,8 +3,11 @@
   lib,
   config,
   inputs,
+  vars,
   ...
-}: {
+}: let
+  user = vars.username;
+in {
   options.huncs.desktops.gnome.enable = lib.mkEnableOption "gnome";
 
   config = lib.mkIf config.huncs.desktops.gnome.enable {
@@ -19,7 +22,7 @@
     ];
 
     services = {
-      displayManager.autoLogin.user = "hexfae";
+      displayManager.autoLogin.user = "${user}";
       libinput.mouse.accelProfile = "flat";
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
@@ -45,7 +48,7 @@
       enable = true;
       package = pkgs.gnomeExtensions.gsconnect;
     };
-    home-manager.users.hexfae = {lib, ...}: {
+    home-manager.users.${user} = {lib, ...}: {
       programs.zen-browser.nativeMessagingHosts = [pkgs.gnome-browser-connector];
       xdg = {
         mimeApps = {
@@ -197,7 +200,7 @@
           simpleweather.extensionUuid
           copyous.extensionUuid
         ];
-        "org/gnome/shell/extensions/burn-my-windows".active-profile = "/home/hexfae/.config/burn-my-windows/profiles/bmw.conf";
+        "org/gnome/shell/extensions/burn-my-windows".active-profile = "/home/${user}/.config/burn-my-windows/profiles/bmw.conf";
         "org/gnome/shell/extensions/blur-my-shell/panel".blur = false;
         "org/gnome/shell/extensions/blur-my-shell/dash-to-dock".blur = false;
         "org/gnome/shell/extensions/vitals" = {

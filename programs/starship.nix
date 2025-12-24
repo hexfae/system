@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.starship.enable = lib.mkOption {
@@ -9,7 +10,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.starship.enable {
-    home-manager.users.hexfae.programs.starship = {
+    home-manager.users.${vars.username}.programs.starship = {
       enable = true;
       settings = {
         character = {

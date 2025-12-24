@@ -2,12 +2,13 @@
   pkgs,
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.zed-editor.enable = lib.mkEnableOption "zed";
 
   config = lib.mkIf config.huncs.programs.zed-editor.enable {
-    home-manager.users.hexfae.programs.zed-editor = {
+    home-manager.users.${vars.username}.programs.zed-editor = {
       enable = true;
       # for some reason this compiles from source right now instead
       # of downloading from chaotic's nyx's binary cache

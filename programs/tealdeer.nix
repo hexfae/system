@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.tealdeer.enable = lib.mkOption {
@@ -9,7 +10,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.tealdeer.enable {
-    home-manager.users.hexfae.programs.tealdeer = {
+    home-manager.users.${vars.username}.programs.tealdeer = {
       enable = true;
       settings.updates.auto_update = true;
     };

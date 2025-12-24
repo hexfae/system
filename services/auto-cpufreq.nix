@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.services.auto-cpufreq.enable = lib.mkOption {
@@ -22,7 +23,7 @@
         };
       };
     };
-    home-manager.users.hexfae.xdg.desktopEntries."auto-cpufreq-gtk" = {
+    home-manager.users.${vars.username}.xdg.desktopEntries."auto-cpufreq-gtk" = {
       name = "auto-cpufreq";
       exec = "auto-cpufreq-gtk";
       noDisplay = true;

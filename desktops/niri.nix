@@ -3,6 +3,7 @@
   inputs,
   lib,
   config,
+  vars,
   ...
 }: let
   image = pkgs.fetchurl {
@@ -24,7 +25,7 @@ in {
       };
     };
 
-    services.getty.autologinUser = "hexfae";
+    services.getty.autologinUser = "${vars.username}";
     hardware.bluetooth.enable = true;
     networking.networkmanager.enable = true;
     services.blueman.enable = true;
@@ -37,7 +38,7 @@ in {
       enable = true;
       implementation = "broker";
     };
-    home-manager.users.hexfae = {config, ...}: {
+    home-manager.users.${vars.username} = {config, ...}: {
       dconf.settings."org/gnome/desktop/wm/preferences".button-layout = "close::";
       services.mako.enable = true;
       home.packages = with pkgs; [

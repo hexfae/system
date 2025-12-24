@@ -3,6 +3,7 @@
   config,
   pkgs,
   inputs,
+  vars,
   ...
 }: {
   options.huncs.services.nginx.enable = lib.mkEnableOption "nginx";
@@ -13,7 +14,7 @@
 
     security.acme = {
       acceptTerms = true;
-      defaults.email = "hexfae@proton.me";
+      defaults.email = "${vars.email}";
     };
 
     systemd.tmpfiles.rules = ["d /var/www/serve.hexfae.dev 0755 nginx nginx"];

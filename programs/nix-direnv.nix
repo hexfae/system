@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.nix-direnv.enable = lib.mkOption {
@@ -9,7 +10,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.nix-direnv.enable {
-    home-manager.users.hexfae.programs.direnv = {
+    home-manager.users.${vars.username}.programs.direnv = {
       enable = true;
       enableNushellIntegration = true;
       silent = true;

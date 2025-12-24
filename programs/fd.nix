@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.fd.enable = lib.mkOption {
@@ -9,7 +10,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.fd.enable {
-    home-manager.users.hexfae.programs.fd = {
+    home-manager.users.${vars.username}.programs.fd = {
       enable = true;
       hidden = true;
     };

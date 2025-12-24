@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.nushell.enable = lib.mkOption {
@@ -10,8 +11,8 @@
   };
 
   config = lib.mkIf config.huncs.programs.nushell.enable {
-    users.users.hexfae.shell = pkgs.nushell;
-    home-manager.users.hexfae.programs.nushell = {
+    users.users.${vars.username}.shell = pkgs.nushell;
+    home-manager.users.${vars.username}.programs.nushell = {
       enable = true;
       settings = {
         show_banner = false;

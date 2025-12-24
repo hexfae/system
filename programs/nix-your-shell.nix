@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.nix-your-shell.enable = lib.mkOption {
@@ -9,7 +10,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.nix-your-shell.enable {
-    home-manager.users.hexfae.programs.nix-your-shell = {
+    home-manager.users.${vars.username}.programs.nix-your-shell = {
       enable = true;
       enableNushellIntegration = true;
     };

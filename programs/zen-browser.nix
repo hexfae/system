@@ -3,17 +3,18 @@
   inputs,
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.zen-browser.enable = lib.mkEnableOption "zen-browser";
 
   config = lib.mkIf config.huncs.programs.zen-browser.enable {
     nixpkgs.overlays = [inputs.nur.overlays.default];
-    home-manager.users.hexfae = {
+    home-manager.users.${vars.username} = {
       imports = [inputs.zen-browser.homeModules.twilight];
       programs.zen-browser = {
         enable = true;
-        profiles.hexfae = {
+        profiles.${vars.username} = {
           settings = {
             "middlemouse.paste" = false;
             "general.autoScroll" = true;

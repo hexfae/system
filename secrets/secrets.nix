@@ -1,10 +1,11 @@
 let
-  desktop = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKmYt2uCGGDrW9ckK1ubHf0x+ttmGwi2OHeUc5FonB+X root@desktop";
-  server = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO3rgqbhUiuc5MV+niwye5UluNH/ERtBoUbrtZIixrPp root@server";
-  laptop = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDVGbEm5nO4L5VQxlfRHKM8kroTUUb06wPa7ot4fqz09 root@laptop";
-  thinkpad = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGW6UmPfAV2qVVHDqGit+OSPQd0dzmj9P0MqvYShkdVK root@thinkpad";
+  vars = import ../vars.nix;
 
-  all = [desktop server laptop thinkpad];
+  desktop = builtins.elemAt vars.keys.root 0;
+  server = builtins.elemAt vars.keys.root 1;
+  thinkpad = builtins.elemAt vars.keys.root 2;
+
+  all = [desktop server thinkpad];
 in {
   "transmission.age".publicKeys = all;
   "github-token.age".publicKeys = all;

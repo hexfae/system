@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.openssh.enable = lib.mkOption {
@@ -9,7 +10,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.openssh.enable {
-    home-manager.users.hexfae.programs.ssh = {
+    home-manager.users.${vars.username}.programs.ssh = {
       enable = true;
       enableDefaultConfig = false;
       matchBlocks = {
@@ -27,7 +28,7 @@
         };
         "server" = {
           host = "server";
-          hostname = "129.151.192.240";
+          hostname = vars.networking.server.ip;
           controlMaster = "auto";
           controlPath = "~/.ssh/master-%r@%n:%p";
           controlPersist = "10m";

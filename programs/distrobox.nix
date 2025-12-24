@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  vars,
   ...
 }: {
   options.huncs.programs.distrobox.enable = lib.mkEnableOption "distrobox";
@@ -12,6 +13,6 @@
       dockerCompat = true;
     };
 
-    home-manager.users.hexfae.home.packages = [pkgs.distrobox];
+    home-manager.users.${vars.username}.home.packages = [pkgs.distrobox];
   };
 }

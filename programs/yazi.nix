@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.yazi.enable = lib.mkOption {
@@ -9,7 +10,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.yazi.enable {
-    home-manager.users.hexfae = {
+    home-manager.users.${vars.username} = {
       xdg.desktopEntries."yazi" = {
         name = "Yazi";
         exec = "yazi %u";

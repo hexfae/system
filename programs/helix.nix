@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.helix.enable = lib.mkOption {
@@ -10,7 +11,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.helix.enable {
-    home-manager.users.hexfae = {
+    home-manager.users.${vars.username} = {
       xdg.desktopEntries."Helix" = {
         name = "Helix";
         exec = "helix";

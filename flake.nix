@@ -49,9 +49,10 @@
     nixpkgs,
     ...
   } @ inputs: let
+    vars = import ./vars.nix;
     mkSystem = {hostname}:
       nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs vars;};
         modules = [
           ./common
           ./hardware

@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  vars,
   ...
 }: {
   options.huncs.programs.yt-dlp.enable = lib.mkOption {
@@ -10,7 +11,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.yt-dlp.enable {
-    home-manager.users.hexfae.programs.yt-dlp = {
+    home-manager.users.${vars.username}.programs.yt-dlp = {
       enable = true;
       package = pkgs.yt-dlp_git;
       settings = {

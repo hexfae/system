@@ -2,6 +2,7 @@
   config,
   lib,
   modulesPath,
+  vars,
   ...
 }: {
   imports = [
@@ -24,19 +25,19 @@
     options = ["fmask=0022" "dmask=0022"];
   };
 
-  fileSystems."/home/hexfae/mnt/usb" = {
+  fileSystems."/home/${vars.username}/mnt/usb" = {
     device = "/dev/disk/by-uuid/D566-24E7";
     fsType = "exfat";
     options = ["uid=1000" "gid=1000" "fmask=0133" "dmask=0022" "nofail"];
   };
 
-  fileSystems."/home/hexfae/mnt/win" = {
+  fileSystems."/home/${vars.username}/mnt/win" = {
     device = "/dev/disk/by-uuid/1ABCD52DBCD503E3";
     fsType = "ntfs";
     options = ["uid=1000" "gid=1000" "fmask=0133" "dmask=0022" "nofail"];
   };
 
-  fileSystems."/home/hexfae/mnt/ext" = {
+  fileSystems."/home/${vars.username}/mnt/ext" = {
     device = "/dev/disk/by-uuid/520601f3-187a-4a66-a468-5b109f8a83f1";
     fsType = "bcachefs";
     options = ["noauto"];

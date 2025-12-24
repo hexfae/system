@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   options.huncs.programs.zoxide.enable = lib.mkOption {
@@ -9,7 +10,7 @@
   };
 
   config = lib.mkIf config.huncs.programs.zoxide.enable {
-    home-manager.users.hexfae.programs.zoxide = {
+    home-manager.users.${vars.username}.programs.zoxide = {
       enable = true;
       enableNushellIntegration = true;
     };

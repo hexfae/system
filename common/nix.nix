@@ -1,4 +1,4 @@
-{...}: {
+{vars, ...}: {
   nixpkgs.config.allowUnfree = true;
   documentation.nixos.enable = false;
   documentation.man.enable = false;
@@ -7,7 +7,7 @@
     distributedBuilds = true;
     buildMachines = [
       {
-        hostName = "129.151.192.240";
+        hostName = vars.networking.server.ip;
         system = "aarch64-linux";
         protocol = "ssh-ng";
         supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];

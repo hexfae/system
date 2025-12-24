@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  vars,
   ...
 }: {
   # act as a wireguard server, running on the machine with the hostname "server"
@@ -11,24 +12,22 @@
 
     networking = {
       firewall = {
-        allowedUDPPorts = [51820];
+        allowedUDPPorts = [vars.networking.server.port];
         trustedInterfaces = ["wg0"];
       };
       wg-quick.interfaces = {
         wg0 = {
-          address = ["10.100.0.1/24"];
-          listenPort = 51820;
+          address = [vars.networking.server.wgIp];
+          listenPort = vars.networking.server.port;
           privateKeyFile = config.age.secrets.server-wireguard-private-key.path;
           peers = [
             {
-              # desktop
-              publicKey = "ArMsMaebYbsZ1tEaW4xnyjniCOGsWPvWbaeCwCIwiHk=";
-              allowedIPs = ["10.100.0.2/32"];
+              publicKey = vars.networking.desktop.publicKey;
+              allowedIPs = vars.networking.desktop.allowedIPs;
             }
             {
-              # phone
-              publicKey = "MB8cQUyUsUIlR5i2WjgtWib0PhIRNSV5vCbWxDM0fyw=";
-              allowedIPs = ["10.100.0.3/32"];
+              publicKey = vars.networking.phone.publicKey;
+              allowedIPs = vars.networking.phone.allowedIPs;
             }
           ];
         };

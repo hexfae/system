@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   system.stateVersion = "25.11";
   home-manager.users.hexfae.home.stateVersion = "25.11";
 
@@ -17,7 +17,7 @@
     };
     programs = {
       zen-browser.enable = true;
-      vesktop.enable = true;
+      discord.enable = true;
       steam.enable = true;
       ghostty.enable = true;
       zed-editor.enable = true;

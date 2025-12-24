@@ -4,9 +4,9 @@
   config,
   ...
 }: {
-  options.huncs.programs.vesktop.enable = lib.mkEnableOption "vesktop";
+  options.huncs.programs.discord.enable = lib.mkEnableOption "discord";
 
-  config = lib.mkIf config.huncs.programs.vesktop.enable {
+  config = lib.mkIf config.huncs.programs.discord.enable {
     home-manager.users.hexfae = {
       imports = [inputs.nixcord.homeModules.nixcord];
       programs.nixcord = {

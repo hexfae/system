@@ -148,7 +148,7 @@ in {
             "Mod+Return".action.spawn = ["ghostty" "+new-window"];
             "Mod+E".action.spawn = "nautilus";
             "Mod+W".action.spawn = "zen";
-            "Mod+D".action.spawn = ["vesktop" "--ozone-platform=wayland"];
+            "Mod+D".action.spawn = ["discordcanary" "--ozone-platform=wayland"];
             "Mod+Space".action.spawn = ["albert" "toggle"];
 
             "Alt+Tab" = {

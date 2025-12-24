@@ -27,7 +27,6 @@
         enable = true;
         implementation = "broker";
       };
-      xserver.excludePackages = [pkgs.xterm];
       gnome = {
         evolution-data-server.enable = lib.mkForce false;
         gnome-browser-connector.enable = true;

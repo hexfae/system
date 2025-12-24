@@ -22,9 +22,12 @@
     };
   };
 
-  boot = lib.mkIf (config.networking.hostName != "server") {
-    kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
+  zramSwap.enable = true;
+  boot = {
+    tmp.useTmpfs = true;
+    kernelPackages = lib.mkIf (config.networking.hostName != "server") pkgs.linuxPackages_cachyos-lto-znver4;
   };
+
   # alternative scheduler
   services.scx.enable = lib.mkDefault true;
   # auto nice

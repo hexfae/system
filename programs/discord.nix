@@ -33,14 +33,14 @@
             betterUploadButton.enable = true;
             biggerStreamPreview.enable = true;
             callTimer.enable = true;
-            clearUrLs.enable = true;
+            ClearURLs.enable = true;
             consoleJanitor.enable = true;
             copyEmojiMarkdown.enable = true;
             copyFileContents.enable = true;
             copyStickerLinks.enable = true;
-            copyUserUrLs.enable = true;
+            CopyUserURLs.enable = true;
             customIdle.enable = true;
-            customRpc.enable = true;
+            CustomRPC.enable = true;
             dearrow.enable = true;
             decor.enable = true;
             disableCallIdle.enable = true;
@@ -72,7 +72,7 @@
             messageClickActions.enable = true;
             messageLinkEmbeds.enable = true;
             messageLogger.enable = true;
-            mutualGroupDMs.enable = true;
+            MutualGroupDMs.enable = true;
             noDevtoolsWarning.enable = true;
             noF1.enable = true;
             noOnboardingDelay.enable = true;
@@ -85,7 +85,7 @@
             permissionsViewer.enable = true;
             petpet.enable = true;
             pictureInPicture.enable = true;
-            pinDMs.enable = true;
+            PinDMs.enable = true;
             platformIndicators.enable = true;
             previewMessage.enable = true;
             quickMention.enable = true;
@@ -97,7 +97,7 @@
             replyTimestamp.enable = true;
             revealAllSpoilers.enable = true;
             reverseImageSearch.enable = true;
-            reviewDb.enable = true;
+            ReviewDB.enable = true;
             roleColorEverywhere.enable = true;
             sendTimestamps.enable = true;
             serverInfo.enable = true;
@@ -124,7 +124,7 @@
             unsuppressEmbeds.enable = true;
             userMessagesPronouns.enable = true;
             userVoiceShow.enable = true;
-            usrbg.enable = true;
+            USRBG.enable = true;
             validReply.enable = true;
             validUser.enable = true;
             vencordToolbox.enable = true;

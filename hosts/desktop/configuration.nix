@@ -3,7 +3,6 @@
   home-manager.users.${vars.username}.home.stateVersion = "25.11";
 
   huncs = {
-    hardware.amd-cpu.enable = true;
     desktops.gnome.enable = true;
     networking.wireguard.client = {
       ludd.enable = true;

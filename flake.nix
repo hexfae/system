@@ -2,7 +2,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-copyous.url = "github:jmir1/nixpkgs/copyous";
-    ucodenix.url = "github:e-tho/ucodenix";
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     agenix = {
@@ -55,7 +54,6 @@
         specialArgs = {inherit inputs vars;};
         modules = [
           ./common
-          ./hardware
           ./desktops
           ./programs
           ./services
@@ -66,7 +64,6 @@
           inputs.home-manager.nixosModules.default
           inputs.nixos-facter-modules.nixosModules.facter
           inputs.agenix.nixosModules.default
-          inputs.ucodenix.nixosModules.default
           inputs.disko.nixosModules.disko
           inputs.harry.nixosModules.default
           {config.facter.reportPath = ./hosts/${hostname}/facter.json;}

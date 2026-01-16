@@ -7,6 +7,7 @@
   ...
 }: let
   user = vars.username;
+  isDesktop = config.networking.hostName == "desktop";
 in {
   options.huncs.desktops.gnome.enable = lib.mkEnableOption "gnome";
 
@@ -258,7 +259,7 @@ in {
       };
       xdg.configFile = {
         "burn-my-windows/profiles/bmw.conf".source = ../files/bmw.conf;
-        "monitors.xml" = lib.mkIf (config.networking.hostName == "desktop") {
+        "monitors.xml" = lib.mkIf isDesktop {
           source = ../files/monitors.xml;
           force = true;
         };

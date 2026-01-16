@@ -3,7 +3,9 @@
   lib,
   config,
   ...
-}: {
+}: let
+  notServer = config.networking.hostName != "server";
+in {
   time.timeZone = "Europe/Stockholm";
   console.keyMap = "sv-latin1";
   services.xserver.xkb.layout = "se";
@@ -25,16 +27,21 @@
   zramSwap.enable = true;
   boot = {
     tmp.useTmpfs = true;
-    kernelPackages = lib.mkIf (config.networking.hostName != "server") pkgs.linuxPackages_cachyos-lto-znver4;
+    kernelPackages = lib.mkIf notServer pkgs.linuxPackages_cachyos-lto-znver4;
   };
 
   # alternative scheduler
-  services.scx.enable = lib.mkDefault true;
+  services.scx = {
+    enable = lib.mkIf notServer true;
+    scheduler = "scx_lavd";
+  };
   # auto nice
-  services.ananicy.enable = true;
-  services.ananicy.rulesProvider = pkgs.ananicy-rules-cachyos_git;
+  services.ananicy = {
+    enable = true;
+    rulesProvider = pkgs.ananicy-rules-cachyos_git;
+  };
   chaotic.mesa-git = {
-    enable = lib.mkDefault true;
+    enable = lib.mkIf notServer true;
     fallbackSpecialisation = false;
   };
   security.sudo-rs = {

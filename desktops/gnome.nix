@@ -26,13 +26,10 @@ in {
       libinput.mouse.accelProfile = "flat";
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
+      gnome.gnome-browser-connector.enable = true;
       dbus = {
         enable = true;
         implementation = "broker";
-      };
-      gnome = {
-        evolution-data-server.enable = lib.mkForce false;
-        gnome-browser-connector.enable = true;
       };
     };
     # gnome auto login workaround

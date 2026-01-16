@@ -9,7 +9,7 @@ rec {
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIECm6LZ8DR+ASM0Du6W50Zrw41LgaBD0Q6IXm4jtDSBC hexfae@thinkpad"
     ];
     root = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPSALw/QA4z+t5spVqmmOseCeLrGM0eqKfGFIt8UPYjm root@desktop"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKmYt2uCGGDrW9ckK1ubHf0x+ttmGwi2OHeUc5FonB+X root@desktop"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO3rgqbhUiuc5MV+niwye5UluNH/ERtBoUbrtZIixrPp root@server"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGW6UmPfAV2qVVHDqGit+OSPQd0dzmj9P0MqvYShkdVK root@thinkpad"
     ];

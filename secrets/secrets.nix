@@ -1,16 +1,11 @@
 let
   vars = import ../vars.nix;
 
-  desktop = builtins.elemAt vars.keys.root 0;
-  server = builtins.elemAt vars.keys.root 1;
-  thinkpad = builtins.elemAt vars.keys.root 2;
-
-  all = [desktop server thinkpad];
+  all = vars.keys.${vars.username} ++ vars.keys.root;
 in {
   "transmission.age".publicKeys = all;
   "github-token.age".publicKeys = all;
   "vortex-password.age".publicKeys = all;
-  "user-password.age".publicKeys = all;
   "discordtavern.age".publicKeys = all;
   "harry.age".publicKeys = all;
   "syncthing.age".publicKeys = all;

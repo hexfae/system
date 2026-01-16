@@ -27,10 +27,10 @@ in {
       libinput.mouse.accelProfile = "flat";
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
-      gnome.gnome-browser-connector.enable = true;
       dbus = {
         enable = true;
         implementation = "broker";
+        packages = [pkgs.gnome-browser-connector];
       };
     };
     # gnome auto login workaround
@@ -272,6 +272,7 @@ in {
           adwsteamgtk
           resources
           kdePackages.ocean-sound-theme
+          gnome-browser-connector
         ])
         ++ (with pkgs.gnomeExtensions; [
           dash-to-dock

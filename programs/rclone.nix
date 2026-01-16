@@ -12,7 +12,10 @@ in {
   };
 
   config = lib.mkIf config.huncs.programs.rclone.enable {
-    age.secrets.s3-ludd-secret-access-key.file = ../secrets/ludd-s3-secret-access-key.age;
+    age.secrets.s3-ludd-secret-access-key = {
+      file = ../secrets/ludd-s3-secret-access-key.age;
+      owner = vars.username;
+    };
     home-manager.users.${user}.programs.rclone = {
       enable = true;
       remotes = {

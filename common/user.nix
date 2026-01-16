@@ -10,13 +10,12 @@
   dataHome = config.home-manager.users.${user}.xdg.dataHome;
   configHome = config.home-manager.users.${user}.xdg.configHome;
 in {
-  age.secrets.user-password.file = ../secrets/user-password.age;
   services.userborn.enable = true;
   users = {
     mutableUsers = false;
     users.${user} = {
       isNormalUser = true;
-      hashedPasswordFile = config.age.secrets.user-password.path;
+      hashedPasswordFile = "../secrets/user-password.txt";
       extraGroups = ["networkmanager" "wheel" "input" "libvirtd" "transmission" "dialout"];
       uid = vars.uid;
     };

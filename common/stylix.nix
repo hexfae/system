@@ -26,18 +26,16 @@
   fonts.monospace = monospace;
   fonts.emoji = emoji;
   fonts.sizes.terminal = 16;
-  iconTheme.package = pkgs.papirus-icon-theme;
-  iconTheme.dark = "Papirus-Dark";
-  iconTheme.enable = true;
+  icons.package = pkgs.papirus-icon-theme;
+  icons.dark = "Papirus-Dark";
+  icons.enable = true;
 in {
   stylix = {
-    inherit enable image polarity base16Scheme cursor fonts iconTheme;
+    inherit enable image polarity base16Scheme cursor fonts icons;
   };
 
-  home-manager.users.${vars.username} = {
-    stylix = {
-      inherit iconTheme;
-      targets.zen-browser.profileNames = ["${vars.username}"];
-    };
+  home-manager.users.${vars.username}.stylix.targets = {
+    qt.platform = "qtct";
+    zen-browser.profileNames = ["${vars.username}"];
   };
 }

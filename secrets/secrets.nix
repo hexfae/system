@@ -10,6 +10,8 @@ in {
   "harry.age".publicKeys = all;
   "syncthing-desktop-cert.age".publicKeys = all;
   "syncthing-desktop-key.age".publicKeys = all;
+  "syncthing-thinkpad-cert.age".publicKeys = all;
+  "syncthing-thinkpad-key.age".publicKeys = all;
   "syncthing-server-cert.age".publicKeys = all;
   "syncthing-server-key.age".publicKeys = all;
   "ludd-wireguard-private-key.age".publicKeys = all;

@@ -12,5 +12,6 @@
     ./nginx.nix
     ./fail2ban.nix
     ./kerberos.nix
+    ./syncthing.nix
   ];
 }

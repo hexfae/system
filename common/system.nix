@@ -24,7 +24,7 @@ in {
     };
   };
 
-  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+  boot.binfmt.emulatedSystems = lib.mkIf notServer ["aarch64-linux"];
 
   zramSwap.enable = true;
   boot = {

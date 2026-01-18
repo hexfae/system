@@ -24,6 +24,8 @@ in {
     };
   };
 
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+
   zramSwap.enable = true;
   boot = {
     tmp.useTmpfs = true;

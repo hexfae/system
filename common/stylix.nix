@@ -34,8 +34,27 @@ in {
     inherit enable image polarity base16Scheme cursor fonts icons;
   };
 
-  home-manager.users.${vars.username}.stylix.targets = {
-    qt.platform = "qtct";
-    zen-browser.profileNames = ["${vars.username}"];
+  home-manager.users.${vars.username} = {
+    stylix.targets = {
+      qt.platform = "qtct";
+      zen-browser.profileNames = ["${vars.username}"];
+    };
+    xdg.desktopEntries = {
+      "kvantummanager" = {
+        name = "Kvantum Manager";
+        exec = "kvantummanager";
+        noDisplay = true;
+      };
+      "qt5ct" = {
+        name = "Qt5 Settings";
+        exec = "qt5ct";
+        noDisplay = true;
+      };
+      "qt6ct" = {
+        name = "Qt6 Settings";
+        exec = "qt6ct";
+        noDisplay = true;
+      };
+    };
   };
 }

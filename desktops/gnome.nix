@@ -268,11 +268,10 @@ in {
         (with pkgs; [
           refine
           gnome-extension-manager
-          fragments
-          adwsteamgtk
           resources
           kdePackages.ocean-sound-theme
           gnome-browser-connector
+          (lib.mkIf isDesktop adwsteamgtk)
         ])
         ++ (with pkgs.gnomeExtensions; [
           dash-to-dock
@@ -310,6 +309,8 @@ in {
       simple-scan # document scanner
       snapshot # camera app
       totem # video player
+      showtime # video player 2
+      decibels # audio player
       yelp # help app
       papers # document viewer
       gnome-disk-utility

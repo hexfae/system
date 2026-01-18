@@ -58,6 +58,7 @@ in {
     };
     services.syncthing = {
       enable = true;
+      openDefaultPorts = true;
       user = vars.username;
       dataDir = "/home/${vars.username}";
       cert = config.age.secrets.syncthing-cert.path;

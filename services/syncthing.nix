@@ -29,13 +29,14 @@
   };
   desktop.id = "76J56NK-ZJOUZ4D-ZPMF3SV-A7B6L6L-MXQGCBR-KG6Z6M3-JAG2MXL-3LOSXAX";
   thinkpad.id = "ZV5OSD3-NNBYHNU-NIHHYGY-JBQYUNQ-SOVPGHN-SZML2AI-WNPQC6F-BBDNSQR";
+  phone.id = "2N72XWL-5CK7PQL-L3FWHRW-KF3Z5GC-JKML76J-VNVGUEG-BOVJZHY-6K5ZRQP";
   devices =
     if isServer # if this is server...
-    then ["desktop" "thinkpad"] # then allow desktop and thinkpad to sync this folder
+    then ["desktop" "thinkpad" "phone"] # then allow desktop, thinkpad, and phone to sync this folder
     else ["server"]; # otherwise, sync this folder to server
   peers =
     if isServer # if this is server...
-    then {inherit desktop thinkpad;} # then allow desktop and thinkpad to connect
+    then {inherit desktop thinkpad phone;} # then allow desktop, thinkpad, and phone to connect
     else if isDesktop || isThinkpad # if this is desktop or thinkpad...
     then {inherit server;} # then connect to server
     else throw "no syncthing devices known for current hostname";

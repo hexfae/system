@@ -8,7 +8,7 @@
   options.huncs.networking.wireguard.client.ludd.enable = lib.mkEnableOption "ludd wireguard client";
 
   config = lib.mkIf config.huncs.networking.wireguard.client.ludd.enable {
-    age.secrets.ludd-wireguard-private-key.file = ../secrets/ludd-wireguard-private-key.age;
+    age.secrets.ludd-wireguard-private-key.file = ../secrets/wireguard/ludd-private-key.age;
     networking.wg-quick.interfaces.LUDD = {
       address = [vars.networking.ludd.wgIp];
       privateKeyFile = config.age.secrets.ludd-wireguard-private-key.path;

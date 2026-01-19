@@ -8,7 +8,7 @@
   options.huncs.networking.wireguard.server.enable = lib.mkEnableOption "wireguard server";
 
   config = lib.mkIf config.huncs.networking.wireguard.server.enable {
-    age.secrets.server-wireguard-private-key.file = ../secrets/server-wireguard-private-key.age;
+    age.secrets.server-wireguard-private-key.file = ../secrets/wireguard/server-private-key.age;
 
     networking = {
       firewall = {

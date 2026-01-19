@@ -14,11 +14,11 @@ in {
   config = lib.mkIf config.huncs.programs.git.enable {
     age.secrets = {
       github-token = {
-        file = ../secrets/github-token.age;
+        file = ../secrets/authentication/github-token.age;
         owner = "${user}";
       };
       vortex-password = {
-        file = ../secrets/vortex-password.age;
+        file = ../secrets/authentication/vortex-password.age;
         owner = "${user}";
       };
     };

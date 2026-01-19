@@ -7,7 +7,7 @@
 
   config = lib.mkIf config.huncs.services.harry.enable {
     services.harry.enable = true;
-    age.secrets.harry.file = ../secrets/harry.age;
+    age.secrets.harry.file = ../secrets/configs/harry.age;
     age.secrets.harry.owner = "harry";
     services.harry.configFile = config.age.secrets.harry.path;
   };

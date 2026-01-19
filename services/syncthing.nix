@@ -9,19 +9,19 @@
   isThinkpad = config.networking.hostName == "thinkpad";
   cert-path =
     if isServer
-    then ../secrets/syncthing-server-cert.age
+    then ../secrets/syncthing/server-cert.age
     else if isDesktop
-    then ../secrets/syncthing-desktop-cert.age
+    then ../secrets/syncthing/desktop-cert.age
     else if isThinkpad
-    then ../secrets/syncthing-thinkpad-cert.age
+    then ../secrets/syncthing/thinkpad-cert.age
     else throw "no syncthing cert found for current hostname";
   key-path =
     if isServer
-    then ../secrets/syncthing-server-key.age
+    then ../secrets/syncthing/server-key.age
     else if isDesktop
-    then ../secrets/syncthing-desktop-key.age
+    then ../secrets/syncthing/desktop-key.age
     else if isThinkpad
-    then ../secrets/syncthing-thinkpad-key.age
+    then ../secrets/syncthing/thinkpad-key.age
     else throw "no syncthing key found for current hostname";
   server = {
     id = "GXEMEIX-VZYYIUT-BH27PKL-GP6BH2J-ABXWAFQ-KD4YJM2-IKVPYVE-IJ4M7Q5";
@@ -69,7 +69,13 @@ in {
         folders = {
           "dox" = {
             path = "~/dox";
-            ignorePatterns = ["target/"];
+            ignorePatterns = [
+              # rust build artifacts
+              "target/"
+              # these get made as nix store symlinks by the home manager obsidian module, phone is unfortunately not on nixos
+              ".obsidian/community-plugins.json"
+              ".obsidian/hotkeys.json"
+            ];
             inherit devices;
           };
           "mus" = {

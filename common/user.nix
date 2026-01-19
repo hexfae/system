@@ -15,7 +15,7 @@ in {
     mutableUsers = false;
     users.${user} = {
       isNormalUser = true;
-      hashedPasswordFile = "${inputs.self}/secrets/user-password.txt";
+      hashedPasswordFile = "${inputs.self}/secrets/authentication/user-password.txt";
       extraGroups = ["networkmanager" "wheel" "input" "libvirtd" "transmission" "dialout"];
       uid = vars.uid;
     };

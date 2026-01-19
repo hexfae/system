@@ -8,7 +8,7 @@
   options.huncs.networking.wireguard.client.server.enable = lib.mkEnableOption "server wireguard client";
 
   config = lib.mkIf config.huncs.networking.wireguard.client.server.enable {
-    age.secrets.desktop-wireguard-private-key.file = ../secrets/desktop-wireguard-private-key.age;
+    age.secrets.desktop-wireguard-private-key.file = ../secrets/wireguard/desktop-private-key.age;
     networking.wg-quick.interfaces.Server = {
       address = [vars.networking.desktop.wgIp];
       privateKeyFile = config.age.secrets.desktop-wireguard-private-key.path;

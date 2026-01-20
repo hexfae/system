@@ -37,9 +37,7 @@
   peers =
     if isServer # if this is server...
     then {inherit desktop thinkpad phone;} # then allow desktop, thinkpad, and phone to connect
-    else if isDesktop || isThinkpad # if this is desktop or thinkpad...
-    then {inherit server;} # then connect to server
-    else throw "no syncthing devices known for current hostname";
+    else {inherit server;}; # otherwise connect to server
 in {
   options.huncs.services.syncthing.enable = lib.mkOption {
     type = lib.types.bool;

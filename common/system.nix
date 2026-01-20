@@ -29,7 +29,7 @@ in {
   zramSwap.enable = true;
   boot = {
     tmp.useTmpfs = true;
-    kernelPackages = lib.mkIf notServer pkgs.linuxPackages_cachyos-lto-znver4;
+    kernelPackages = lib.mkIf notServer (lib.mkDefault pkgs.linuxPackages_cachyos-lto-znver4);
   };
 
   # alternative scheduler

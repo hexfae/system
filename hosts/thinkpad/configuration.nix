@@ -2,6 +2,11 @@
   home-manager.users.${vars.username}.home.stateVersion = "25.05";
   system.stateVersion = "25.05";
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
+
   huncs = {
     desktops.gnome.enable = true;
     services = {

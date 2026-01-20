@@ -15,7 +15,11 @@
     "d /home/${vars.username}/.config/obsidian 755 ${vars.username} users"
     "d /home/${vars.username}/.config 755 ${vars.username} users"
   ];
-  systemd.tmpfiles.settings.preservation."/home/hexfae/.config".d = {user = vars.username; group = "users"; mode = "0755"; };
+  systemd.tmpfiles.settings.preservation."/home/hexfae/.config".d = {
+    user = vars.username;
+    group = "users";
+    mode = "0755";
+  };
 
   users.users.root.password = "pass";
   services.getty.autologinUser = "root";
@@ -48,21 +52,4 @@
       obs-studio.enable = true;
     };
   };
-
-  # TODO: to check out from chaotic's nyx:
-  # discord-krisp
-  # all of the jovian packages
-  # jujutsu
-  # linuxPackages_cachyos-server / linux_cachyos-server for server
-  # latencyflex
-  # niri_git
-  # mangohud
-  # nix_git
-  # openrgb_git
-  # proton-cachyos
-  # proton-ge-custom
-  # pwvucontrol-git
-  # xdg-desktop-portal
-  # yt-dlp
-  # zfs-cachyos
 }

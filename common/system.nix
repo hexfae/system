@@ -27,10 +27,7 @@ in {
   boot.binfmt.emulatedSystems = lib.mkIf notServer ["aarch64-linux"];
 
   zramSwap.enable = true;
-  boot = {
-    tmp.useTmpfs = true;
-    kernelPackages = lib.mkIf notServer (lib.mkDefault pkgs.linuxPackages_cachyos-lto-znver4);
-  };
+  boot.tmp.useTmpfs = true;
 
   # alternative scheduler
   services.scx = {
@@ -40,11 +37,8 @@ in {
   # auto nice
   services.ananicy = {
     enable = true;
-    rulesProvider = pkgs.ananicy-rules-cachyos_git;
-  };
-  chaotic.mesa-git = {
-    enable = lib.mkIf notServer true;
-    fallbackSpecialisation = false;
+    package = pkgs.ananicy-cpp;
+    rulesProvider = pkgs.ananicy-rules-cachyos;
   };
   security.sudo-rs = {
     enable = true;

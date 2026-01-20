@@ -3,7 +3,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-copyous.url = "github:jmir1/nixpkgs/copyous";
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     agenix = {
       url = "github:yaxitech/ragenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -61,7 +60,6 @@
           ./networking
           ./hosts/${hostname}
           inputs.stylix.nixosModules.stylix
-          inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.default
           inputs.nixos-facter-modules.nixosModules.facter
           inputs.agenix.nixosModules.default

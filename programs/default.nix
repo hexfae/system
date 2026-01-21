@@ -28,5 +28,6 @@
     ./bottles.nix
     ./obs-studio.nix
     ./openssh.nix
+    ./qimgv.nix
   ];
 }

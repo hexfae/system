@@ -45,6 +45,7 @@
       ghostty.enable = true;
       # zed-editor.enable = true;
       mpv.enable = true;
+      qimgv.enable = true;
       obsidian.enable = true;
       telegram-desktop.enable = true;
       distrobox.enable = true;

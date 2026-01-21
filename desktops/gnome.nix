@@ -288,6 +288,7 @@ in {
       decibels # audio player
       yelp # help app
       papers # document viewer
+      loupe # image viewer
       gnome-disk-utility
       gnome-shell-extensions
       gnome-backgrounds

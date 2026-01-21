@@ -48,21 +48,6 @@ in {
     };
     home-manager.users.${user} = {lib, ...}: {
       programs.zen-browser.nativeMessagingHosts = [pkgs.gnome-browser-connector];
-      xdg = {
-        mimeApps = {
-          defaultApplications = {
-            "image/jpeg" = "org.gnome.Loupe.desktop";
-            "image/png" = "org.gnome.Loupe.desktop";
-            "x-scheme-handler/sms" = "org.gnome.Shell.Extensions.GSConnect.desktop";
-            "x-scheme-handler/tel" = "org.gnome.Shell.Extensions.GSConnect.desktop";
-          };
-        };
-        desktopEntries."org.gnome.Extensions" = {
-          name = "Extensions";
-          exec = "gnome-extensions-app";
-          noDisplay = true;
-        };
-      };
       dconf.settings = {
         "org/gnome/shell".disable-user-extensions = false;
         "org/gnome/shell/keybindings" = {
@@ -181,7 +166,6 @@ in {
           user-themes.extensionUuid
           blur-my-shell.extensionUuid
           dash-to-dock.extensionUuid
-          pano.extensionUuid
           gsconnect.extensionUuid
           appindicator.extensionUuid
           vitals.extensionUuid
@@ -192,7 +176,6 @@ in {
           runcat.extensionUuid
           color-picker.extensionUuid
           burn-my-windows.extensionUuid
-          # smart-home.extensionUuid
           color-picker.extensionUuid
           gnome-40-ui-improvements.extensionUuid
           simpleweather.extensionUuid
@@ -221,12 +204,6 @@ in {
           show-control-icons-seek-forward = false;
           colored-player-icon = false;
           extension-position = "Center";
-        };
-        "org/gnome/shell/extensions/pano" = {
-          paste-on-select = false;
-          send-notification-on-copy = false;
-          play-audio-on-copy = false;
-          history-length = 200;
         };
         "org/gnome/shell/extensions/simple-weather" = {
           locations = ["{\"name\":\"Luleå\",\"lat\":65.619023,\"lon\":22.1471079}"];
@@ -277,7 +254,6 @@ in {
           dash-to-dock
           blur-my-shell
           gsconnect
-          pano
           appindicator
           vitals
           quick-settings-audio-panel
@@ -287,7 +263,6 @@ in {
           runcat
           color-picker
           burn-my-windows
-          # smart-home
           color-picker
           gnome-40-ui-improvements
           simpleweather

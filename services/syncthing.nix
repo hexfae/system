@@ -45,6 +45,11 @@ in {
   };
 
   config = lib.mkIf config.huncs.services.syncthing.enable {
+    home-manager.users.${vars.username}.xdg.desktopEntries."syncthing-ui" = {
+      name = "Syncthing Web UI";
+      exec = "syncthing";
+      noDisplay = true;
+    };
     age.secrets = {
       syncthing-cert = {
         file = cert-path;

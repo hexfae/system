@@ -30,6 +30,7 @@ in {
           name = "${user}";
           email = "${vars.email}";
         };
+        push.autoSetupRemote = true;
         init.defaultBranch = "main";
         "credential \"https://github.com\"" = {
           username = "${user}";

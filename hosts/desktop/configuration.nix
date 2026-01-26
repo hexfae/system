@@ -1,13 +1,6 @@
-{
-  pkgs,
-  vars,
-  ...
-}: {
+{vars, ...}: {
   system.stateVersion = "25.11";
-  home-manager.users.${vars.username}.home = {
-    stateVersion = "25.11";
-    packages = [pkgs.fragments];
-  };
+  home-manager.users.${vars.username}.home.stateVersion = "25.11";
 
   age.identityPaths = ["/home/hexfae/.ssh/id_ed25519"];
   services.openssh.generateHostKeys = false;

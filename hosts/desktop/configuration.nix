@@ -41,7 +41,7 @@
       discord.enable = true;
       steam.enable = true;
       ghostty.enable = true;
-      # zed-editor.enable = true;
+      zed-editor.enable = true;
       mpv.enable = true;
       qimgv.enable = true;
       obsidian.enable = true;

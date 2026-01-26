@@ -35,7 +35,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     preservation.url = "github:nix-community/preservation";
-    # harry.url = "/home/hexfae/dox/rust/ultimate_harry";
+    harry.url = "/home/hexfae/dox/rust/ultimate_harry";
     "hexfaedotdev" = {
       url = "github:hexfae/hexfae.dev";
       flake = false;
@@ -63,7 +63,7 @@
           inputs.nixos-facter-modules.nixosModules.facter
           inputs.agenix.nixosModules.default
           inputs.disko.nixosModules.disko
-          # inputs.harry.nixosModules.default
+          inputs.harry.nixosModules.default
           inputs.preservation.nixosModules.preservation
           {config.facter.reportPath = ./hosts/${hostname}/facter.json;}
           {networking.hostName = "${hostname}";}

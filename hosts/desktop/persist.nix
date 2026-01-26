@@ -30,6 +30,7 @@
       ];
       users.${vars.username} = {
         commonMountOptions = ["x-gvfs-hide"];
+        files = [".config/nushell/history.txt"];
         directories = [
           "dox"
           "mus"
@@ -44,6 +45,7 @@
           ".config/discordcanary"
           ".steam"
           ".local/share/Steam"
+          ".local/share/TelegramDesktop/tdata"
         ];
       };
     };

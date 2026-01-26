@@ -26,6 +26,9 @@ in {
 
   boot.binfmt.emulatedSystems = lib.mkIf notServer ["aarch64-linux"];
 
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.zfs.package = pkgs.zfs_unstable;
+
   zramSwap.enable = true;
   boot.tmp.useTmpfs = true;
 

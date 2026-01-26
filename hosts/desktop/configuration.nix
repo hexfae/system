@@ -24,8 +24,6 @@
   users.users.root.password = "pass";
   services.getty.autologinUser = "root";
 
-  boot.kernelPackages = pkgs.linuxPackages;
-
   huncs = {
     desktops.gnome.enable = true;
     networking.wireguard.client = {

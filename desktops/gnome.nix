@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  inputs,
   vars,
   ...
 }: let
@@ -12,16 +11,6 @@ in {
   options.huncs.desktops.gnome.enable = lib.mkEnableOption "gnome";
 
   config = lib.mkIf config.huncs.desktops.gnome.enable {
-    nixpkgs.overlays = [
-      (final: prev: {
-        gnomeExtensions =
-          prev.gnomeExtensions
-          // {
-            copyous = prev.callPackage "${inputs.nixpkgs-copyous}/pkgs/desktops/gnome/extensions/copyous/default.nix" {};
-          };
-      })
-    ];
-
     services = {
       displayManager.autoLogin.user = "${user}";
       libinput.mouse.accelProfile = "flat";

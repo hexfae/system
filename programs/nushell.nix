@@ -25,6 +25,7 @@
         test = "nh os test ~/nix";
         build = "nh os build ~/nix";
         repl = "nh os repl ~/nix";
+        search = "nh search";
       };
     };
   };

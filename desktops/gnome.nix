@@ -232,8 +232,6 @@ in {
       };
       home.packages =
         (with pkgs; [
-          refine
-          gnome-extension-manager
           resources
           kdePackages.ocean-sound-theme
           gnome-browser-connector

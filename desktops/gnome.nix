@@ -230,31 +230,37 @@ in {
           force = true;
         };
       };
-      home.packages =
-        (with pkgs; [
-          resources
-          kdePackages.ocean-sound-theme
-          gnome-browser-connector
-          (lib.mkIf isDesktop adwsteamgtk)
-        ])
-        ++ (with pkgs.gnomeExtensions; [
-          dash-to-dock
-          blur-my-shell
-          gsconnect
-          appindicator
-          vitals
-          quick-settings-audio-panel
-          rounded-window-corners-reborn
-          media-controls
-          tiling-assistant
-          runcat
-          color-picker
-          burn-my-windows
-          color-picker
-          gnome-40-ui-improvements
-          simpleweather
-          copyous
-        ]);
+      home = {
+        activation = lib.mkIf config.huncs.programs.steam.enable {
+          applyAdwaitaSteam = lib.hm.dag.entryAfter ["writeBoundary"] ''
+            ${pkgs.adwsteamgtk}/bin/adwaita-steam-gtk --install --options "color_theme:catpuccin-frappe;rounded_corners:true"
+          '';
+        };
+        packages =
+          (with pkgs; [
+            resources
+            kdePackages.ocean-sound-theme
+            gnome-browser-connector
+          ])
+          ++ (with pkgs.gnomeExtensions; [
+            dash-to-dock
+            blur-my-shell
+            gsconnect
+            appindicator
+            vitals
+            quick-settings-audio-panel
+            rounded-window-corners-reborn
+            media-controls
+            tiling-assistant
+            runcat
+            color-picker
+            burn-my-windows
+            color-picker
+            gnome-40-ui-improvements
+            simpleweather
+            copyous
+          ]);
+      };
     };
     # https://wiki.nixos.org/wiki/GNOME#Excluding_GNOME_Applications
     environment.gnome.excludePackages = with pkgs; [

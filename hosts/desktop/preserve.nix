@@ -37,6 +37,7 @@
           "pix"
           "vid"
           "nix"
+          "gam"
           ".zen"
           {
             directory = ".ssh";
@@ -46,6 +47,7 @@
           ".steam"
           ".local/share/Steam"
           ".local/share/TelegramDesktop/tdata"
+          ".local/share/bottles"
         ];
       };
     };

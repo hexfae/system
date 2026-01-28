@@ -1,4 +1,9 @@
-{vars, ...}: {
+{
+  lib,
+  pkgs,
+  vars,
+  ...
+}: {
   system.stateVersion = "25.11";
   home-manager.users.${vars.username}.home.stateVersion = "25.11";
 
@@ -16,6 +21,7 @@
 
   users.users.root.password = "pass";
   services.getty.autologinUser = "root";
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
 
   huncs = {
     desktops.gnome.enable = true;

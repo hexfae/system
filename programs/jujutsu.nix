@@ -5,8 +5,8 @@
   ...
 }: {
   options.huncs.programs.jujutsu.enable = lib.mkOption {
-    default = true;
     type = lib.types.bool;
+    default = true;
   };
 
   config = lib.mkIf config.huncs.programs.jujutsu.enable {

@@ -12,24 +12,24 @@
 
   config = lib.mkIf config.huncs.programs.nushell.enable {
     users.users.${vars.username}.shell = pkgs.nushell;
-    home-manager.users.${vars.username}.programs.nushell = {
-      enable = true;
-      settings = {
-        show_banner = false;
-      };
-      extraEnv = ''
-        jj util completion nushell | save -f ~/.cache/completions-jj.nu
-        use ~/.cache/completions-jj.nu *
+    home-manager.users.${vars.username} = {
+      xdg.configFile."nushell/completions-jj.nu".source = pkgs.runCommand "jj-nu-completions" {} ''
+        ${pkgs.jujutsu}/bin/jj util completion nushell > $out
       '';
-      environmentVariables."EDITOR" = "hx";
-      shellAliases = {
-        edit = "hx ~/nix";
-        switch = "nh os switch ~/nix";
-        boot = "nh os boot ~/nix";
-        test = "nh os test ~/nix";
-        build = "nh os build ~/nix";
-        repl = "nh os repl ~/nix";
-        search = "nh search";
+      programs.nushell = {
+        enable = true;
+        settings.show_banner = false;
+        extraConfig = "use completions-jj.nu *";
+        environmentVariables."EDITOR" = "hx";
+        shellAliases = {
+          edit = "hx ~/nix";
+          switch = "nh os switch ~/nix";
+          boot = "nh os boot ~/nix";
+          test = "nh os test ~/nix";
+          build = "nh os build ~/nix";
+          repl = "nh os repl ~/nix";
+          search = "nh search";
+        };
       };
     };
   };

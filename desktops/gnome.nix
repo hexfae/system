@@ -143,6 +143,7 @@ in {
           sleep-inactive-battery-type = "nothing";
           sleep-inactive-ac-type = "nothing";
         };
+        "org/gnome/settings-daemon/plugins/housekeeping".donation-reminder-enabled = false;
         "org/gnome/shell".favorite-apps = [
           "zen-twilight.desktop"
           "discord-canary.desktop"

@@ -30,5 +30,6 @@
     ./openssh.nix
     ./qimgv.nix
     ./jujutsu.nix
+    ./pay-respects.nix
   ];
 }

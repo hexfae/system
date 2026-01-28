@@ -2,7 +2,7 @@
   systemd.suppressedSystemUnits = ["systemd-machine-id-commit.service"];
   preservation = {
     enable = true;
-    preserveAt."/persist" = {
+    preserveAt."/preserve" = {
       directories = [
         "/var/log"
         "/var/lib/systemd/coredump"

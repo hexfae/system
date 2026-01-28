@@ -37,8 +37,8 @@
       fsType = "zfs";
       neededForBoot = true;
     };
-    "/persist" = {
-      device = "zroot/persist";
+    "/preserve" = {
+      device = "zroot/preserve";
       fsType = "zfs";
       neededForBoot = true;
     };

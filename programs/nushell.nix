@@ -17,6 +17,10 @@
       settings = {
         show_banner = false;
       };
+      extraEnv = ''
+        jj util completion nushell | save -f ~/.cache/completions-jj.nu
+        use ~/.cache/completions-jj.nu *
+      '';
       environmentVariables."EDITOR" = "hx";
       shellAliases = {
         edit = "hx ~/nix";

@@ -29,5 +29,6 @@
     ./obs-studio.nix
     ./openssh.nix
     ./qimgv.nix
+    ./jujutsu.nix
   ];
 }

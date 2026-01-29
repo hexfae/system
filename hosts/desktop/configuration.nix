@@ -32,7 +32,6 @@
     services = {
       pipewire.enable = true;
       easyeffects.enable = true;
-      amberol.enable = true;
       kerberos.enable = true;
     };
     programs = {

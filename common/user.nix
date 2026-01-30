@@ -3,6 +3,7 @@
   inputs,
   config,
   vars,
+  lib,
   ...
 }: let
   user = vars.username;
@@ -20,6 +21,13 @@ in {
       uid = vars.uid;
     };
   };
+  environment.variables = {
+    # TODO: zen browser directory (.zen)
+    TERM = "xterm";
+    CARGO_HOME = "${dataHome}/cargo";
+    HISTFILE = "${stateHome}/bash/history";
+    XCURSOR_PATH = lib.mkForce "/usr/share/icons:${dataHome}/icons";
+  };
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -31,18 +39,15 @@ in {
       };
       gtk.gtk2.configLocation = "${configHome}/gtk-2.0/gtkrc";
       home = {
-        sessionVariables = {
-          CARGO_HOME = "${dataHome}/cargo";
-          # TODO: zen browser directory (.zen)
-          XCURSOR_PATH = "/usr/share/icons:${dataHome}/icons";
-        };
         username = "${user}";
         homeDirectory = "/home/${user}";
+        preferXdgDirectories = true;
         packages = with pkgs; [
           uutils-coreutils-noprefix
           inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
         ];
       };
+      xresources.path = "${configHome}/X11/resources";
       xdg = {
         enable = true;
         userDirs = {

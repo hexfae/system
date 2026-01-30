@@ -148,9 +148,7 @@ in {
           "zen-twilight.desktop"
           "discord-canary.desktop"
           "org.telegram.desktop.desktop"
-          "org.gnome.Nautilus.desktop"
           "com.mitchellh.ghostty.desktop"
-          "org.gnome.Settings.desktop"
         ];
         "org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
           user-themes.extensionUuid

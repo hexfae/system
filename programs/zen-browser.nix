@@ -18,6 +18,7 @@
           settings = {
             "middlemouse.paste" = false;
             "general.autoScroll" = true;
+            "signon.rememberSignons" = false;
             "browser.aboutConfig.showWarning" = false;
             "browser.ctrlTab.sortByRecentlyUsed" = true;
             "browser.warnOnQuitShortcut" = false;

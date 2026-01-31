@@ -59,7 +59,10 @@
         nix = {
           type = "zfs_fs";
           mountpoint = "/nix";
-          options.mountpoint = "legacy";
+          options = {
+            mountpoint = "legacy";
+            recordsize = "128k";
+          };
         };
         preserve = {
           type = "zfs_fs";

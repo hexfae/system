@@ -18,6 +18,7 @@
     group = "users";
     mode = "0755";
   };
+  services.zfs.autoScrub.enable = true;
 
   users.users.root.password = "pass";
   services.getty.autologinUser = "root";

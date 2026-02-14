@@ -1,3 +1,3 @@
-# hexfae's NixOS configuration
+# hexfae's DENDRITIC NixOS configuration
 
 details tbd

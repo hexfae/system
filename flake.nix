@@ -1,79 +1,117 @@
+# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
+# Use `nix run .#write-flake` to regenerate it.
 {
+
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
     agenix = {
-      url = "github:yaxitech/ragenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixcord = {
-      url = "github:FlameFlag/nixcord";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        home-manager = {
+          follows = "home-manager";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
+      url = "github:ryantm/agenix";
     };
     disko = {
-      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/disko";
+    };
+    elephant = {
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
+      url = "github:abenz1267/elephant";
+    };
+    flake-file.url = "github:vic/flake-file";
+    flake-parts = {
+      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+      url = "github:hercules-ci/flake-parts";
+    };
+    hexfaedotdev = {
+      flake = false;
+      url = "github:hexfae/hexfae.dev";
+    };
+    home-manager = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+    };
+    import-tree.url = "github:vic/import-tree";
+    niri-flake = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:sodiboo/niri-flake";
+    };
+    nixcord = {
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:FlameFlag/nixcord";
+    };
+    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+    nixpkgs-lib.follows = "nixpkgs";
+    nur = {
+      inputs = {
+        flake-parts = {
+          follows = "flake-parts";
+          inputs.nixpkgs-lib.follows = "nixpkgs";
+        };
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:nix-community/NUR";
     };
     preservation.url = "github:nix-community/preservation";
-    harry.url = "/home/hexfae/dox/rust/ultimate_harry";
-    "hexfaedotdev" = {
-      url = "github:hexfae/hexfae.dev";
+    secrets = {
       flake = false;
+      url = "path:./secrets";
+    };
+    stylix = {
+      inputs = {
+        flake-parts = {
+          follows = "flake-parts";
+          inputs.nixpkgs-lib.follows = "nixpkgs";
+        };
+        nixpkgs.follows = "nixpkgs";
+        nur = {
+          follows = "nur";
+          inputs = {
+            flake-parts.follows = "nixpkgs";
+            nixpkgs.follows = "nixpkgs";
+          };
+        };
+        systems.follows = "systems";
+      };
+      url = "github:nix-community/stylix";
+    };
+    systems.url = "github:nix-systems/default";
+    walker = {
+      inputs = {
+        elephant = {
+          follows = "elephant";
+          inputs = {
+            nixpkgs.follows = "nixpkgs";
+            systems.follows = "systems";
+          };
+        };
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
+      url = "github:abenz1267/walker";
+    };
+    zen-browser = {
+      inputs = {
+        home-manager = {
+          follows = "home-manager";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
+        nixpkgs.follows = "nixpkgs";
+      };
+      url = "github:0xc000022070/zen-browser-flake/feat/hm-module-sine-reusing-src-and-bootloader-everywhere";
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    vars = import ./vars.nix;
-    mkSystem = {hostname}:
-      nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs vars;};
-        modules = [
-          ./common
-          ./desktops
-          ./programs
-          ./services
-          ./networking
-          ./hosts/${hostname}
-          inputs.stylix.nixosModules.stylix
-          inputs.home-manager.nixosModules.default
-          inputs.nixos-facter-modules.nixosModules.facter
-          inputs.agenix.nixosModules.default
-          inputs.disko.nixosModules.disko
-          inputs.harry.nixosModules.default
-          inputs.preservation.nixosModules.preservation
-          {config.facter.reportPath = ./hosts/${hostname}/facter.json;}
-          {networking.hostName = "${hostname}";}
-        ];
-      };
-  in {
-    nixosConfigurations = {
-      desktop = mkSystem {hostname = "desktop";};
-      thinkpad = mkSystem {hostname = "thinkpad";};
-      server = mkSystem {hostname = "server";};
-    };
-  };
 }

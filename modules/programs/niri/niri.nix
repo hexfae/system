@@ -13,6 +13,10 @@
           "split_lock_detect=off"
         ];
       };
+
+      # https://github.com/niri-wm/niri/wiki/Application-Issues#gtk-4-dead-keys--compose
+      environment.variables.GTK_IM_MODULE = "simple";
+
       imports = [inputs.niri-flake.nixosModules.niri];
       home-manager.sharedModules = [inputs.self.modules.homeManager.niri];
       nixpkgs.overlays = [inputs.niri-flake.overlays.niri];

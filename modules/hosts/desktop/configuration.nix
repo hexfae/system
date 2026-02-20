@@ -24,6 +24,7 @@
       zfs
 
       niri
+      noctalia-shell
       # gnome
       # gnome-monitors-desktop
 

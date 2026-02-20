@@ -2,8 +2,8 @@
   flake.modules = {
     homeManager.niri = {pkgs, ...}: let
       image = pkgs.fetchurl {
-        url = "https://w.wallhaven.cc/full/k8/wallhaven-k898gq.jpg";
-        sha256 = "sha256-BjREdU8AqHatcnVdpGE09kPrQTTt1mIagiHfLRSxPVw=";
+        url = "https://w.wallhaven.cc/full/1k/wallhaven-1kpqw9.jpg";
+        sha256 = "sha256-C7w/kRuy5Ho+IeXkfECUYwsP+5pAkUdR9/zVEFsBrEU=";
       };
       blurred-image = pkgs.runCommand "blurred-wallpaper.png" {} ''
         ${pkgs.imagemagick}/bin/magick "${image}" -blur 0x8 $out

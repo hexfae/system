@@ -22,7 +22,6 @@
       nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
       hardware.bluetooth.enable = true;
       services.resolved.enable = true;
-      programs.dms-shell.enable = true;
       programs.niri = {
         package = pkgs.niri-unstable;
         enable = true;
@@ -50,10 +49,10 @@
           clipboard.disable-primary = true;
           screenshot-path = "~/pix/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
           xwayland-satellite.path = "${pkgs.xwayland-satellite}/bin/xwayland-satellite";
-          cursor = {
-            hide-after-inactive-ms = 5000;
-            hide-when-typing = true;
-          };
+          # cursor = {
+          #   hide-after-inactive-ms = 5000;
+          #   hide-when-typing = true;
+          # };
           layout = {
             gaps = 8;
             shadow.enable = true;

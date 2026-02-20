@@ -4,6 +4,7 @@
       "middlemouse.paste" = false;
       "general.autoScroll" = true;
       "signon.rememberSignons" = false;
+      "dom.webgpu.enabled" = true;
       "browser.aboutConfig.showWarning" = false;
       "browser.ctrlTab.sortByRecentlyUsed" = true;
       "browser.warnOnQuitShortcut" = false;

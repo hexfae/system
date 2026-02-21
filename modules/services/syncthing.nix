@@ -9,8 +9,14 @@
       systemd.services.syncthing.wants = ["network-online.target"];
       home-manager.sharedModules = [inputs.self.modules.homeManager.syncthing];
       age.secrets = {
-        syncthing-cert.file = config.constants.syncthing.cert-path;
-        syncthing-key.file = config.constants.syncthing.key-path;
+        syncthing-cert = {
+          file = config.constants.syncthing.cert-path;
+          owner = config.constants.username;
+        };
+        syncthing-key = {
+          file = config.constants.syncthing.key-path;
+          owner = config.constants.username;
+        };
       };
       services.syncthing = {
         enable = true;

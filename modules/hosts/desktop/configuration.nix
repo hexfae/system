@@ -12,6 +12,7 @@
       disko
       emulate-aarch64
       home-manager
+      i18n
       nix
       preservation
       remote-builds

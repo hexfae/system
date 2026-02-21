@@ -9,7 +9,6 @@
       fd
       ffmpeg
       git
-      helix
       imagemagick
       jujutsu
       nh

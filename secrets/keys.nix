@@ -7,6 +7,6 @@
   root = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILFdQ1RrRavMN3t0+em3IUPZ8Qnxy9Pkr3xCxuA29i+m root@desktop"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO3rgqbhUiuc5MV+niwye5UluNH/ERtBoUbrtZIixrPp root@server"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGW6UmPfAV2qVVHDqGit+OSPQd0dzmj9P0MqvYShkdVK root@thinkpad"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB0AnEX+S2sAVXOuMpLKcC149tqgfE911dYaQ9UX/f3T root@thinkpad"
   ];
 }

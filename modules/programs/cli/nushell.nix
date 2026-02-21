@@ -24,21 +24,28 @@
       xdg.configFile."nushell/completions-jj.nu".source = lib.mkIf jujutsuEnabled (pkgs.runCommand "jj-nu-completions" {} ''
         ${pkgs.jujutsu}/bin/jj util completion nushell > $out
       '');
-      programs.nushell = {
-        enable = true;
-        settings = {
-          show_banner = false;
-          cursor_shape.emacs = "line";
-        };
-        extraConfig = lib.mkIf jujutsuEnabled "use completions-jj.nu *";
-        shellAliases = {
-          edit = lib.mkIf helixEnabled "${helix} ${nixDir}";
-          switch = lib.mkIf nhEnabled "${nh} os switch ${nixDir}";
-          boot = lib.mkIf nhEnabled "${nh} os boot ${nixDir}";
-          test = lib.mkIf nhEnabled "${nh} os test ${nixDir}";
-          build = lib.mkIf nhEnabled "${nh} os build ${nixDir}";
-          repl = lib.mkIf nhEnabled "${nh} os repl ${nixDir}";
-          search = lib.mkIf nhEnabled "${nh} search";
+      programs = {
+        bash.initExtra = ''
+          if ! [ "$TERM" = "dumb" ] && [ -z "$BASH_EXECUTION_STRING" ]; then
+            exec nu
+          fi
+        '';
+        nushell = {
+          enable = true;
+          settings = {
+            show_banner = false;
+            cursor_shape.emacs = "line";
+          };
+          extraConfig = lib.mkIf jujutsuEnabled "use completions-jj.nu *";
+          shellAliases = {
+            edit = lib.mkIf helixEnabled "${helix} ${nixDir}";
+            switch = lib.mkIf nhEnabled "${nh} os switch ${nixDir}";
+            boot = lib.mkIf nhEnabled "${nh} os boot ${nixDir}";
+            test = lib.mkIf nhEnabled "${nh} os test ${nixDir}";
+            build = lib.mkIf nhEnabled "${nh} os build ${nixDir}";
+            repl = lib.mkIf nhEnabled "${nh} os repl ${nixDir}";
+            search = lib.mkIf nhEnabled "${nh} search";
+          };
         };
       };
     };

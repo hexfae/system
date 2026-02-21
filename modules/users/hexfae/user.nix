@@ -5,6 +5,7 @@
       stateHome = "${config.constants.home}/.local/state";
       dataHome = "${config.constants.home}/.local/share";
     in {
+      home-manager.sharedModules = [inputs.self.modules.homeManager.user];
       environment.variables = {
         HISTFILE = "${stateHome}/bash/history";
         CARGO_HOME = "${dataHome}/cargo";

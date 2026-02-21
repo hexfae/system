@@ -9,7 +9,7 @@
       };
       settings = {
         experimental-features = "nix-command flakes";
-        use-xdg-base-directories = "true";
+        use-xdg-base-directories = true;
         trusted-users = [config.constants.username];
       };
     };

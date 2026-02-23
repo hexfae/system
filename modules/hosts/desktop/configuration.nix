@@ -14,6 +14,7 @@
       home-manager
       i18n
       nix
+      nix-ld
       preservation
       remote-builds
       scx

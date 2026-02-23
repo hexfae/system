@@ -14,6 +14,7 @@
       emulate-aarch64
       home-manager
       i18n
+      kmscon
       nix
       nix-ld
       preservation

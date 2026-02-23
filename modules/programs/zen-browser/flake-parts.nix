@@ -12,9 +12,13 @@
     };
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts = {
+          follows = "flake-parts";
+          inputs.nixpkgs-lib.follows = "nixpkgs";
+        };
+      };
     };
   };
 }

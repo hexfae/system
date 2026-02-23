@@ -45,6 +45,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:sodiboo/niri-flake";
     };
+    nix-index-database = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nix-index-database";
+    };
     nixcord = {
       inputs = {
         flake-parts.follows = "flake-parts";

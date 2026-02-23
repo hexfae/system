@@ -1,8 +1,9 @@
 {inputs, ...}: {
   flake.modules.nixos.cli = {
     imports = with inputs.self.modules.nixos; [
-      sudo-rs
       helix
+      nix-index-database
+      sudo-rs
     ];
     home-manager.sharedModules = with inputs.self.modules.homeManager; [
       bat

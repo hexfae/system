@@ -37,6 +37,11 @@
         keymap = {
           mgr.prepend_keymap = [
             {
+              on = "A";
+              run = "create --dir";
+              desc = "create directory";
+            }
+            {
               on = ["g" "j"];
               run = "plugin jjui";
               desc = "run jjui";

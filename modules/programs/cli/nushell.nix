@@ -25,11 +25,6 @@
         ${pkgs.jujutsu}/bin/jj util completion nushell > $out
       '');
       programs = {
-        bash.initExtra = ''
-          if ! [ "$TERM" = "dumb" ] && [ -z "$BASH_EXECUTION_STRING" ]; then
-            exec nu
-          fi
-        '';
         nushell = {
           enable = true;
           settings = {

@@ -11,9 +11,9 @@
         url = "https://w.wallhaven.cc/full/1k/wallhaven-1kpqw9.jpg";
         sha256 = "sha256-C7w/kRuy5Ho+IeXkfECUYwsP+5pAkUdR9/zVEFsBrEU=";
       };
-      posy-cursors = {
-        package = pkgs.posy-cursors;
-        name = "Posy_Cursor_Black";
+      phinger-cursors = {
+        package = pkgs.phinger-cursors;
+        name = "phinger-cursors-dark";
         size = 32;
       };
       atkinson-hyperlegible-next = {
@@ -43,7 +43,7 @@
         image = wallpaper;
         polarity = "dark";
         base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
-        cursor = posy-cursors;
+        cursor = phinger-cursors;
         icons = papirus-icon-theme;
         fonts = {
           sansSerif = atkinson-hyperlegible-next;
@@ -57,8 +57,7 @@
     homeManager.stylix = {config, ...}: {
       stylix.targets = {
         qt.platform = "qtct";
-        # zen-browser.profileNames = [config.constants.username];
-        zen-browser.enable = false;
+        zen-browser.profileNames = [config.constants.username];
       };
       xdg.desktopEntries = {
         "kvantummanager" = {

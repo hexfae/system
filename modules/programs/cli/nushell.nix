@@ -25,6 +25,7 @@
         ${pkgs.jujutsu}/bin/jj util completion nushell > $out
       '');
       programs = {
+        ghostty.settings.command = pkgs.nushell + /bin/nu;
         nushell = {
           enable = true;
           settings = {

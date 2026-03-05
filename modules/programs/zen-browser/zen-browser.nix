@@ -15,6 +15,7 @@
       programs.zen-browser = {
         enable = true;
         configPath = ".config/zen";
+        suppressXdgMigrationWarning = true;
         profiles.${config.constants.username} = {
         };
       };

@@ -1,7 +1,7 @@
 {
   flake-file.inputs = {
     zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake/feat/hm-module-sine-reusing-src-and-bootloader-everywhere";
+      url = "github:0xc000022070/zen-browser-flake";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager = {

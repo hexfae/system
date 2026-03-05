@@ -37,7 +37,6 @@
       multimedia
       obsidian
       telegram-desktop
-      walker
       zed-editor
       zen-browser
 

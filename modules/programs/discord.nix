@@ -213,7 +213,6 @@
           TiktokTTS.enable = true;
           timezones.enable = true;
           title.enable = true;
-          toastNotifications.enable = true;
           toneIndicators.enable = true;
           translate.enable = true;
           # translate+?

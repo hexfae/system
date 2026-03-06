@@ -11,6 +11,8 @@
         CARGO_HOME = "${dataHome}/cargo";
         QT_QPA_PLATFORM = "wayland";
         NIXOS_OZONE_WL = "1";
+        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+        MOZ_ENABLE_WAYLAND = "1";
       };
       services.userborn.enable = true;
       users = {

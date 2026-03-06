@@ -22,6 +22,7 @@
       nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
       hardware.bluetooth.enable = true;
       services.resolved.enable = true;
+      xdg.portal.config.niri."org.freedesktop.impl.portal.FileChooser" = ["gtk"];
       programs.niri = {
         package = pkgs.niri-unstable;
         enable = true;

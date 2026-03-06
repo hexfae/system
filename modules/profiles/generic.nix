@@ -10,7 +10,6 @@
     nix
     nix-ld
     preservation
-    scx
     sshd
     syncthing
     stylix

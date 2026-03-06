@@ -11,7 +11,7 @@
         server = {
           config = {
             type = "sftp";
-            host = "129.151.192.240";
+            host = config.constants.networking.server.ip;
           };
           mounts.server = {
             enable = true;

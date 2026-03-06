@@ -1,11 +1,4 @@
 {inputs, ...}: {
-  flake-file.inputs.nixcord = {
-    url = "github:FlameFlag/nixcord";
-    inputs = {
-      nixpkgs.follows = "nixpkgs";
-      flake-parts.follows = "flake-parts";
-    };
-  };
   flake.modules = {
     nixos.discord.home-manager.sharedModules = [
       inputs.nixcord.homeModules.nixcord

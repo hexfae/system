@@ -3,6 +3,8 @@
     imports = with inputs.self.modules.nixos; [
       helix
       nix-index-database
+      nushell
+      ssh
       sudo-rs
     ];
     home-manager.sharedModules = with inputs.self.modules.homeManager; [
@@ -13,11 +15,9 @@
       imagemagick
       jujutsu
       nh
-      nushell
       pay-respects
       rclone
       ripgrep-all
-      ssh
       starship
       tealdeer
       uutils

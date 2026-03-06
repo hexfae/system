@@ -33,7 +33,6 @@
         ];
         users.${config.constants.username} = {
           commonMountOptions = ["x-gvfs-hide"];
-          files = [".config/nushell/history.txt"];
           directories = [
             "dox"
             "mus"
@@ -42,18 +41,6 @@
             "vid"
             "nix"
             "gam"
-            {
-              directory = ".ssh";
-              mode = "0700";
-            }
-            ".steam"
-            ".config/zen"
-            ".config/equibop"
-            ".config/obs-studio"
-            ".local/share/Steam"
-            ".local/share/bottles"
-            ".local/share/PrismLauncher"
-            ".local/share/TelegramDesktop/tdata"
           ];
         };
       };

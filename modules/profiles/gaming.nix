@@ -1,9 +1,7 @@
 {inputs, ...}: {
-  flake.modules.nixos.gaming = {
-    imports = [inputs.self.modules.nixos.steam];
-    home-manager.sharedModules = with inputs.self.modules.homeManager; [
-      bottles
-      prismlauncher
-    ];
-  };
+  flake.modules.nixos.gaming.imports = with inputs.self.modules.nixos; [
+    bottles
+    steam
+    prismlauncher
+  ];
 }

@@ -10,6 +10,8 @@
           "/var/lib/systemd/coredump"
           "/var/lib/systemd/timers"
           "/var/lib/nixos"
+          "/var/lib/bluetooth"
+          "/etc/NetworkManager/system-connections"
         ];
         files = [
           {

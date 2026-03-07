@@ -6,11 +6,10 @@
     pkgs,
     ...
   }: {
-    # xdg.desktopEntries."yazi" = {
-    #   name = "Yazi";
-    #   exec = "yazi %u";
-    #   noDisplay = true;
-    # };
+    xdg.mimeApps = {
+      associations.added."inode/directory" = ["yazi.desktop"];
+      defaultApplications."inode/directory" = ["yazi.desktop"];
+    };
     programs = {
       yazi = {
         enable = true;

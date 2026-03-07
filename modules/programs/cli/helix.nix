@@ -5,10 +5,9 @@
       home-manager.sharedModules = [inputs.self.modules.homeManager.helix];
     };
     homeManager.helix = {pkgs, ...}: {
-      xdg.desktopEntries."Helix" = {
-        name = "Helix";
-        exec = "helix";
-        noDisplay = true;
+      xdg.mimeApps = {
+        associations.added."text/plain" = ["Helix.desktop"];
+        defaultApplications."text/plain" = ["Helix.desktop"];
       };
       home.packages = with pkgs; [
         bacon

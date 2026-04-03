@@ -54,7 +54,14 @@
         };
       };
     };
-    homeManager.stylix = {config, ...}: {
+    homeManager.stylix = {
+      config,
+      lib,
+      ...
+    }: let
+      dataHome = "${config.constants.home}/.local/share";
+    in {
+      programs.nushell.environmentVariables.XCURSOR_PATH = lib.mkForce "${dataHome}/icons";
       stylix.targets = {
         qt.platform = "qtct";
         zen-browser.profileNames = [config.constants.username];

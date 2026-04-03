@@ -6,9 +6,7 @@
   }: {
     programs.niri.settings.binds = with config.lib.niri.actions; {
       "Mod+Return".action.spawn = ["${pkgs.ghostty}/bin/ghostty" "+new-window"];
-      # TODO: add +new-window: https://github.com/ghostty-org/ghostty/issues/8862
-      "Mod+E".action.spawn = ["${pkgs.ghostty}/bin/ghostty" "-e" "${pkgs.yazi}/bin/yazi"];
-      # "Mod+Space".action.spawn = ["${pkgs.netcat}/bin/nc" "-U" "/run/user/1000/walker/walker.sock"];
+      "Mod+E".action.spawn = ["${pkgs.ghostty}/bin/ghostty" "+new-window" "-e" "${pkgs.yazi}/bin/yazi"];
       "Mod+Space".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
 
       "Mod+F".action = maximize-column;

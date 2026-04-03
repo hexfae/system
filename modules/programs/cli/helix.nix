@@ -34,8 +34,24 @@
               name = "toml";
               auto-format = true;
             }
+            {
+              name = "hcl";
+              language-servers = ["terraform-ls"];
+              language-id = "terraform";
+            }
+            {
+              name = "tfvars";
+              language-servers = ["terraform-ls"];
+              language-id = "terraform-vars";
+            }
           ];
-          language-server.rust-analyzer.config.check.command = "clippy";
+          language-server = {
+            rust-analyzer.config.check.command = "clippy";
+            terraform-ls = {
+              command = "terraform-ls";
+              args = ["serve"];
+            };
+          };
         };
         settings.editor = {
           scrolloff = 10;

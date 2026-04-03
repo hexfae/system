@@ -7,15 +7,6 @@
         inputs.zen-browser.homeModules.twilight
       ];
     };
-    homeManager.zen-browser = {
-      pkgs,
-      config,
-      ...
-    }: {
-      programs.zen-browser = {
-        enable = true;
-        suppressXdgMigrationWarning = true;
-      };
-    };
+    homeManager.zen-browser.programs.zen-browser.enable = true;
   };
 }

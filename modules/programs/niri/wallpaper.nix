@@ -12,61 +12,61 @@
     in {
       programs.niri.settings.layer-rules = [
         {
-          matches = [{namespace = "swww-daemonoverview$";}];
+          matches = [{namespace = "awww-daemonoverview$";}];
           place-within-backdrop = true;
         }
       ];
       systemd.user.services = {
-        swww = {
+        awww = {
           Unit = {
             After = ["graphical-session.target"];
             PartOf = ["graphical-session.target"];
           };
           Service = {
-            ExecStart = "${pkgs.swww}/bin/swww-daemon";
+            ExecStart = "${pkgs.awww}/bin/awww-daemon";
             Restart = "on-failure";
           };
           Install.WantedBy = ["graphical-session.target"];
         };
 
-        swww-overview = {
+        awww-overview = {
           Unit = {
-            Description = "swww overview daemon";
+            Description = "awww overview daemon";
             After = ["graphical-session.target"];
             PartOf = ["graphical-session.target"];
           };
           Service = {
-            ExecStart = "${pkgs.swww}/bin/swww-daemon -n overview";
+            ExecStart = "${pkgs.awww}/bin/awww-daemon -n overview";
             Restart = "on-failure";
           };
           Install.WantedBy = ["graphical-session.target"];
         };
 
-        swww-set = {
+        awww-set = {
           Unit = {
-            Description = "Set swww wallpaper";
-            After = ["swww.service" "graphical-session.target"];
-            Requires = ["swww.service"];
+            Description = "Set awww wallpaper";
+            After = ["awww.service" "graphical-session.target"];
+            Requires = ["awww.service"];
             PartOf = ["graphical-session.target"];
           };
           Service = {
             Type = "oneshot";
-            ExecStart = "${pkgs.swww}/bin/swww img -t none ${image}";
+            ExecStart = "${pkgs.awww}/bin/awww img -t none ${image}";
             RemainAfterExit = true;
           };
           Install.WantedBy = ["graphical-session.target"];
         };
 
-        swww-overview-set = {
+        awww-overview-set = {
           Unit = {
-            Description = "Set swww overview wallpaper";
-            After = ["swww-overview.service" "graphical-session.target"];
-            Requires = ["swww-overview.service"];
+            Description = "Set awww overview wallpaper";
+            After = ["awww-overview.service" "graphical-session.target"];
+            Requires = ["awww-overview.service"];
             PartOf = ["graphical-session.target"];
           };
           Service = {
             Type = "oneshot";
-            ExecStart = "${pkgs.swww}/bin/swww img -t none -n overview ${blurred-image}";
+            ExecStart = "${pkgs.awww}/bin/awww img -t none -n overview ${blurred-image}";
             RemainAfterExit = true;
           };
           Install.WantedBy = ["graphical-session.target"];

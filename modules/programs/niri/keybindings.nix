@@ -46,6 +46,19 @@
       "Mod+Shift+W".action = move-window-up-or-to-workspace-up;
       "Mod+Control+Shift+A".action = move-window-to-monitor-left;
       "Mod+Control+Shift+D".action = move-window-to-monitor-right;
+
+      "Mod+Left".action = focus-column-or-monitor-left;
+      "Mod+Right".action = focus-column-or-monitor-right;
+      "Mod+Down".action = focus-window-or-workspace-down;
+      "Mod+Up".action = focus-window-or-workspace-up;
+      "Mod+Control+Left".action = focus-monitor-left;
+      "Mod+Control+Right".action = focus-monitor-right;
+      "Mod+Shift+Left".action = move-column-left-or-to-monitor-left;
+      "Mod+Shift+Right".action = move-column-right-or-to-monitor-right;
+      "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
+      "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
+      "Mod+Control+Shift+Left".action = move-window-to-monitor-left;
+      "Mod+Control+Shift+Right".action = move-window-to-monitor-right;
     };
   };
 }

@@ -1,6 +1,7 @@
 {inputs, ...}: {
   flake.modules.nixos.profiles-generic.imports = with inputs.self.modules.nixos; [
     agenix
+    cachyos-kernel
     cli
     constants
     disko
@@ -16,7 +17,6 @@
     systemd-boot
     tmpfs
     user
-    xanmod-kernel
     zram
   ];
 }

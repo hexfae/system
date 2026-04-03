@@ -1,7 +1,12 @@
 {
-  flake.modules.nixos.zfs = {pkgs, ...}: {
+  flake.modules.nixos.zfs = {
+    pkgs,
+    lib,
+    ...
+  }: {
     services.zfs.autoScrub.enable = true;
     # TODO: services.zfs.expandOnBoot
-    boot.zfs.package = pkgs.zfs_unstable;
+    boot.supportedFilesystems.zfs = true;
+    boot.zfs.package = lib.mkDefault pkgs.zfs_unstable;
   };
 }

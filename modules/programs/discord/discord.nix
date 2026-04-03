@@ -19,7 +19,6 @@
           alwaysExpandProfiles.enable = true;
           alwaysExpandRoles.enable = true;
           alwaysTrust.enable = true;
-          anammox.enable = true;
           # animalese.enable = true;
           anonymiseFileNames.enable = true;
           atSomeone.enable = true;
@@ -85,7 +84,6 @@
           forceOwnerCrown.enable = true;
           forwardAnywhere.enable = true;
           frequentQuickSwitcher.enable = true;
-          friendCloud.enable = true;
           friendCodes.enable = true;
           friendInvites.enable = true;
           friendshipRanks.enable = true;
@@ -94,7 +92,6 @@
           fullUserInChatbox.enable = true;
           FullVCPFP.enable = true;
           gifPaste.enable = true;
-          gifRoulette.enable = true;
           gitHubRepos.enable = true;
           globalBadges.enable = true;
           googleThat.enable = true;
@@ -104,18 +101,15 @@
           holyNotes.enable = true;
           homeTyping.enable = true;
           iconViewer.enable = true;
-          ignoreTerms.enable = true;
           iLoveSpam.enable = true;
           imageFilename.enable = true;
           imageLink.enable = true;
-          imgToGif.enable = true;
           implicitRelationships.enable = true;
           inRole.enable = true;
           IRememberYou.enable = true;
           jumpTo.enable = true;
           keepCurrentChannel.enable = true;
           lastActive.enable = true;
-          limitMiddleClickPaste.enable = true;
           loadingQuotes.enable = true;
           mediaPlaybackSpeed.enable = true;
           memberCount.enable = true;
@@ -127,7 +121,6 @@
           messageLogger.enable = true; # TODO: remove
           messageLoggerEnhanced.enable = true;
           # messagePeek.enable = true; # TODO
-          moreKaomoji.enable = true;
           moreQuickReactions.enable = true;
           moreStickers.enable = true;
           moreUserTags.enable = true;
@@ -136,7 +129,6 @@
           newPluginsManager.enable = true;
           noDevtoolsWarning.enable = true;
           noF1.enable = true;
-          noModalAnimation.enable = true;
           noNitroUpsell.enable = true;
           noOnboardingDelay.enable = true;
           normalizeMessageLinks.enable = true;
@@ -243,7 +235,6 @@
           whosWatching.enable = true;
           wigglyText.enable = true;
           youtubeAdblock.enable = true;
-          youtubeDescription.enable = true;
         };
       };
     };

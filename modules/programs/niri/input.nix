@@ -14,7 +14,7 @@
       repeat-delay = 300;
       repeat-rate = 40;
       xkb = {
-        layout = "se";
+        layout = "eu";
         options = "compose:caps";
       };
     };

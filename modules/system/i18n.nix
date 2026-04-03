@@ -2,7 +2,7 @@
   flake.modules.nixos.i18n = {
     time.timeZone = "Europe/Stockholm";
     console.keyMap = "sv-latin1";
-    services.xserver.xkb.layout = "se";
+    services.xserver.xkb.layout = "eu";
     i18n = {
       defaultLocale = "en_US.UTF-8";
       extraLocaleSettings = {

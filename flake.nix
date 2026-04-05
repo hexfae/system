@@ -19,13 +19,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    elephant = {
-      url = "github:abenz1267/elephant";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
-    };
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -102,20 +95,6 @@
       };
     };
     systems.url = "github:nix-systems/default";
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs = {
-        elephant = {
-          follows = "elephant";
-          inputs = {
-            nixpkgs.follows = "nixpkgs";
-            systems.follows = "systems";
-          };
-        };
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
-    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {

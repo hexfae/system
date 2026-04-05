@@ -9,17 +9,16 @@
       # ananicy
       emulate-aarch64
       remote-builds
+      zfs
 
       niri
       noctalia-shell
 
       discord
-      gaming
       ghostty
       multimedia
       obsidian
       telegram-desktop
-      walker
       zed-editor
       zen-browser
 

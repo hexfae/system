@@ -43,7 +43,6 @@
           callTimer.enable = true;
           channelBadges.enable = true;
           channelTabs.enable = true;
-          characterCounter.enable = true;
           # cleanChannelName.enable = true;
           # cleanerChannelGroups.enable = true; # TODO
           ClearURLs.enable = true;
@@ -97,7 +96,6 @@
           googleThat.enable = true;
           greetStickerPicker.enable = true;
           guildPickerDumper.enable = true;
-          guildTagSettings.enable = true;
           holyNotes.enable = true;
           homeTyping.enable = true;
           iconViewer.enable = true;
@@ -186,7 +184,6 @@
           soggy.enable = true;
           songLink.enable = true;
           sortFriendRequests.enable = true;
-          soundBoardLogger.enable = true;
           # splitLargeMessages.enable = true;
           spotifyCrack.enable = true;
           startupTimings.enable = true;

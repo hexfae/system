@@ -3,6 +3,7 @@
     networking.hostId = "611d21b4";
     system.stateVersion = "25.11";
     home-manager.users.${config.constants.username}.home.stateVersion = "25.11";
+
     imports = with inputs.self.modules.nixos; [
       profiles-generic
       # ananicy
@@ -24,6 +25,7 @@
 
       easyeffects
       kerberos
+      ollama
       pipewire
 
       ludd-wireguard-client

@@ -1,31 +1,23 @@
-{inputs, ...}: {
+{
   flake.modules.homeManager.git = {
     lib,
     config,
     vars,
     ...
   }: {
-    age.secrets = {
-      github-token.file = inputs.self + /secrets/authentication/github-token.age;
-      vortex-password.file = inputs.self + /secrets/authentication/vortex-password.age;
-    };
-
     programs.git = {
       enable = true;
+      signing = {
+        format = "ssh";
+        key = "${config.constants.home}/.ssh/id_ed25519.pub";
+        signByDefault = true;
+      };
       settings = {
+        push.autoSetupRemote = true;
+        init.defaultBranch = "main";
         user = {
           name = config.constants.username;
           email = config.constants.email;
-        };
-        push.autoSetupRemote = true;
-        init.defaultBranch = "main";
-        "credential \"https://github.com\"" = {
-          username = config.constants.username;
-          helper = "store --file ${config.age.secrets.github-token.path}";
-        };
-        "credential \"https://git.ludd.ltu.se\"" = {
-          username = config.constants.username;
-          helper = "store --file ${config.age.secrets.vortex-password.path}";
         };
       };
     };

@@ -17,8 +17,8 @@
         ecosia.metaData.hidden = true;
         perplexity.metaData.hidden = true;
         "4get" = {
-          urls = [{template = "https://4get.lunar.icu/web?s={searchTerms}";}];
-          icon = "https://4get.lunar.icu/favicon.ico";
+          urls = [{template = "https://4get.hexfae.dev/web?s={searchTerms}";}];
+          icon = "https://4get.hexfae.dev/favicon.ico";
         };
         "Nix Packages" = {
           urls = [{template = "https://search.nixos.org/packages?type=packages&channel=unstable&query={searchTerms}";}];

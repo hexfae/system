@@ -66,6 +66,7 @@
           bufferline = "multiple";
           color-modes = true;
           soft-wrap.enable = true;
+          rulers = [80];
           lsp = {
             display-messages = true;
             display-inlay-hints = true;
